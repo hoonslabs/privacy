@@ -245,6 +245,7 @@
     .tag-local  { background: color-mix(in srgb, var(--mint) 15%, transparent);  color: var(--sage-dark); }
     .tag-third  { background: color-mix(in srgb, var(--peach) 20%, transparent); color: #8B4513; }
     .tag-no     { background: color-mix(in srgb, var(--muted) 15%, transparent); color: var(--muted); }
+    .tag-icloud { background: color-mix(in srgb, #007AFF 12%, transparent); color: #0051a8; }
 
     /* ── Contact Card ────────────────────────────────────── */
     .contact-card {
@@ -325,7 +326,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    최종 업데이트: 2026년 3월 24일 &nbsp;·&nbsp; 시행일: 2026년 3월 24일
+    최종 업데이트: 2026년 3월 25일 &nbsp;·&nbsp; 시행일: 2026년 3월 25일
   </div>
 
   <!-- 1. 개요 -->
@@ -340,7 +341,9 @@
     </p>
     <div class="highlight">
       Virmina는 <strong>로컬 우선(Local-First)</strong> 앱입니다. 습관 데이터와 기록은
-      사용자 기기에만 저장되며 당사 서버로 전송되지 않습니다.
+      기본적으로 사용자 기기에 저장됩니다. iCloud에 로그인한 경우, 멀티기기 동기화를 위해
+      Apple의 iCloud(CloudKit)에 암호화되어 저장될 수 있습니다.
+      당사 서버로는 어떠한 데이터도 전송되지 않습니다.
     </div>
     <p>
       앱을 설치하거나 사용함으로써 본 방침에 동의하는 것으로 간주됩니다.
@@ -368,12 +371,12 @@
         <tr>
           <td><strong>습관 데이터</strong><br>이름, 이모지, 색상, 빈도, 목표</td>
           <td>앱 핵심 기능</td>
-          <td><span class="tag tag-local">기기 전용</span></td>
+          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
           <td><strong>기록 데이터</strong><br>완료 여부, 날짜, 스트릭</td>
           <td>진행 상황 추적</td>
-          <td><span class="tag tag-local">기기 전용</span></td>
+          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
           <td><strong>광고 식별자</strong><br>IDFA (iOS), GAID (Android)</td>
@@ -402,6 +405,9 @@
         </tr>
       </tbody>
     </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * iCloud 계정에 로그인된 경우에만 적용됩니다. iCloud를 사용하지 않으면 데이터는 기기에만 저장됩니다.
+    </p>
   </section>
 
   <!-- 3. 광고 및 Google AdMob -->
@@ -466,6 +472,11 @@
       </thead>
       <tbody>
         <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>습관 데이터 멀티기기 동기화 (iOS, iCloud 로그인 시)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
           <td><strong>Google AdMob</strong></td>
           <td>광고 게재 및 수익화</td>
           <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
@@ -491,14 +502,15 @@
       <h2>6. 데이터 보관 및 삭제</h2>
     </div>
     <ul>
-      <li><strong>습관·기록 데이터:</strong> 사용자 기기에 보관되며, 앱 삭제 시 즉시 삭제됩니다.</li>
+      <li><strong>습관·기록 데이터 (로컬):</strong> 사용자 기기에 보관되며, 앱 삭제 시 로컬 데이터는 즉시 삭제됩니다.</li>
+      <li><strong>습관·기록 데이터 (iCloud):</strong> iCloud를 사용하는 경우, 앱 삭제만으로는 iCloud 사본이 제거되지 않습니다. iCloud 데이터까지 완전히 삭제하려면 앱 삭제 전에 <em>설정 → 데이터 초기화</em>를 먼저 실행해 주세요.</li>
       <li><strong>광고 데이터:</strong> Google의 데이터 보관 정책에 따릅니다.</li>
       <li>
-        <strong>수동 삭제:</strong> 앱 내 <em>설정 → 데이터 초기화</em>에서 모든 데이터를 즉시 삭제할 수 있습니다.
+        <strong>수동 삭제:</strong> 앱 내 <em>설정 → 데이터 초기화</em>에서 기기 및 iCloud의 모든 데이터를 즉시 삭제할 수 있습니다.
       </li>
     </ul>
     <div class="highlight">
-      당사는 사용자 습관 데이터의 사본을 보유하지 않으므로, 별도의 삭제 요청 없이도 앱 삭제만으로 데이터가 완전히 제거됩니다.
+      당사는 사용자 습관 데이터의 사본을 보유하지 않습니다. iCloud를 사용하지 않는 경우 앱 삭제만으로 데이터가 완전히 제거됩니다.
     </div>
   </section>
 
@@ -552,7 +564,10 @@
     <p>
       습관 데이터는 iOS의 Core Data / Android의 Room Database에 저장되며,
       기기의 파일 시스템 암호화로 보호됩니다.
-      당사 서버로 데이터가 전송되지 않으므로 네트워크 유출 위험이 없습니다.
+    </p>
+    <p>
+      iCloud 동기화를 사용하는 경우, 데이터는 전송 중 및 저장 중 모두 Apple의 암호화 정책에 따라 보호됩니다.
+      당사 서버로는 어떠한 데이터도 전송되지 않습니다.
     </p>
     <p>
       광고 관련 데이터는 Google의 보안 인프라에 의해 보호됩니다.
@@ -605,7 +620,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Last updated: March 24, 2026 &nbsp;·&nbsp; Effective: March 24, 2026
+    Last updated: March 25, 2026 &nbsp;·&nbsp; Effective: March 25, 2026
   </div>
 
   <!-- 1. Overview -->
@@ -619,8 +634,9 @@
       This Privacy Policy explains what information we collect, how we use it, and your rights.
     </p>
     <div class="highlight">
-      Virmina is a <strong>Local-First</strong> app. Your habit data and records are stored only on your device
-      and are never transmitted to our servers.
+      Virmina is a <strong>Local-First</strong> app. Your habit data and records are stored on your device by default.
+      If you are signed into iCloud, data may also be stored in Apple's iCloud (CloudKit) for multi-device sync.
+      Your data is never transmitted to our servers.
     </div>
     <p>
       By installing or using the App, you agree to this Privacy Policy.
@@ -648,12 +664,12 @@
         <tr>
           <td><strong>Habit Data</strong><br>Name, emoji, color, frequency, goals</td>
           <td>Core app functionality</td>
-          <td><span class="tag tag-local">Device only</span></td>
+          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
           <td><strong>Record Data</strong><br>Completions, dates, streaks</td>
           <td>Progress tracking</td>
-          <td><span class="tag tag-local">Device only</span></td>
+          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
           <td><strong>Advertising ID</strong><br>IDFA (iOS), GAID (Android)</td>
@@ -682,6 +698,9 @@
         </tr>
       </tbody>
     </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * Applies only when signed into iCloud. Without iCloud, data is stored on your device only.
+    </p>
   </section>
 
   <!-- 3. Advertising & Google AdMob -->
@@ -746,6 +765,11 @@
       </thead>
       <tbody>
         <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>Multi-device habit sync (iOS, when signed into iCloud)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
           <td><strong>Google AdMob</strong></td>
           <td>Ad serving and monetization</td>
           <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View →</a></td>
@@ -771,14 +795,15 @@
       <h2>6. Data Retention &amp; Deletion</h2>
     </div>
     <ul>
-      <li><strong>Habit &amp; Record Data:</strong> Stored on your device and permanently deleted when you uninstall the App.</li>
+      <li><strong>Habit &amp; Record Data (Local):</strong> Stored on your device and permanently deleted when you uninstall the App.</li>
+      <li><strong>Habit &amp; Record Data (iCloud):</strong> If iCloud sync is in use, uninstalling the App alone does not remove your iCloud copy. To fully delete iCloud data, run <em>Settings → Reset All Data</em> before uninstalling.</li>
       <li><strong>Advertising Data:</strong> Subject to Google's data retention policies.</li>
       <li>
-        <strong>Manual Deletion:</strong> You can delete all data instantly via <em>Settings → Reset All Data</em> within the App.
+        <strong>Manual Deletion:</strong> <em>Settings → Reset All Data</em> deletes all data from both your device and iCloud instantly.
       </li>
     </ul>
     <div class="highlight">
-      We hold no copy of your habit data. Uninstalling the App is sufficient to completely remove all locally stored data.
+      We hold no copy of your habit data. If you do not use iCloud sync, uninstalling the App is sufficient to completely remove all data.
     </div>
   </section>
 
@@ -827,8 +852,11 @@
       <h2>9. Security</h2>
     </div>
     <p>
-      Habit data is stored in iOS Core Data / Android Room Database and protected by the device's
-      file system encryption. Since data is never transmitted to our servers, there is no risk of network exposure.
+      Habit data is stored in iOS Core Data / Android Room Database and protected by the device's file system encryption.
+    </p>
+    <p>
+      When iCloud sync is enabled, data is transmitted to and stored in Apple's iCloud under Apple's encryption policy,
+      both in transit and at rest. Your data is never transmitted to our servers.
     </p>
     <p>
       Advertising-related data is protected by Google's security infrastructure.
