@@ -326,7 +326,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    최종 업데이트: 2026년 3월 25일 &nbsp;·&nbsp; 시행일: 2026년 3월 25일
+    최종 업데이트: 2026년 3월 28일 &nbsp;·&nbsp; 시행일: 2026년 3월 25일
   </div>
 
   <!-- 1. 개요 -->
@@ -394,6 +394,16 @@
           <td><span class="tag tag-third">Google AdMob</span></td>
         </tr>
         <tr>
+          <td><strong>익명 사용 이벤트</strong><br>화면 전환, 습관 완료, 기능 탭 등</td>
+          <td>앱 품질 및 기능 개선</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>충돌 보고서</strong><br>기기 모델, OS 버전, 앱 버전, 충돌 스택</td>
+          <td>앱 안정성 개선</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
           <td><strong>위치 정보</strong></td>
           <td>수집하지 않음</td>
           <td><span class="tag tag-no">미수집</span></td>
@@ -410,11 +420,11 @@
     </p>
   </section>
 
-  <!-- 3. 광고 및 Google AdMob -->
+  <!-- 3. 광고 및 Firebase 서비스 -->
   <section class="section">
     <div class="section-header">
       <div class="section-icon">📢</div>
-      <h2>3. 광고 및 Google AdMob</h2>
+      <h2>3. 광고 및 Firebase 서비스</h2>
     </div>
     <p>
       Virmina는 <strong>Google AdMob</strong>을 통해 광고를 제공합니다.
@@ -438,6 +448,38 @@
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및
       <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob 파트너 정책</a>을 참고해 주세요.
     </p>
+
+    <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+    <p>
+      Virmina는 앱 품질 개선 및 안정성 확보를 위해 <strong>Firebase Analytics</strong> 및
+      <strong>Firebase Crashlytics</strong>(Google LLC)를 사용합니다.
+    </p>
+    <p><strong>Firebase Analytics</strong>는 다음과 같은 익명 이벤트를 수집합니다.</p>
+    <ul>
+      <li>화면 전환 및 기능 탭 이벤트</li>
+      <li>습관 완료·실패, 그레이스 데이 사용 등 앱 내 상호작용</li>
+      <li>온보딩 완료 여부</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics는 <strong>개인 식별 정보를 수집하지 않습니다.</strong>
+      수집된 데이터는 개인과 연결되지 않으며, 앱 기능 개선 목적에만 사용됩니다.
+      제3자에게 판매되거나 마케팅 목적으로 사용되지 않습니다.
+    </div>
+    <p><strong>Firebase Crashlytics</strong>는 앱 충돌 발생 시 다음 정보를 수집합니다.</p>
+    <ul>
+      <li>기기 모델, OS 버전, 앱 버전</li>
+      <li>충돌 발생 위치(스택 트레이스)</li>
+      <li>충돌 발생 시각 (UTC)</li>
+    </ul>
+    <div class="highlight">
+      Crashlytics 데이터는 <strong>앱 안정성 개선에만 사용</strong>되며, 사용자를 개인 식별할 수 있는
+      정보는 포함되지 않습니다.
+    </div>
+    <p>
+      Firebase 데이터 처리 방식에 대한 자세한 내용은
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호</a>를 참고해 주세요.
+    </p>
   </section>
 
   <!-- 4. 정보 이용 목적 -->
@@ -450,7 +492,8 @@
     <ul>
       <li><strong>앱 서비스 제공:</strong> 습관 등록, 기록, 알림, 스트릭 계산</li>
       <li><strong>광고 제공:</strong> Google AdMob을 통한 광고 표시 및 성과 측정</li>
-      <li><strong>서비스 개선:</strong> 충돌 분석 및 앱 안정성 향상</li>
+      <li><strong>앱 개선:</strong> Firebase Analytics를 통한 기능 사용 패턴 분석 (익명)</li>
+      <li><strong>안정성 향상:</strong> Firebase Crashlytics를 통한 충돌 분석 및 버그 수정</li>
     </ul>
     <p>당사는 사용자의 습관 데이터를 제3자에게 판매하거나 공유하지 않습니다.</p>
   </section>
@@ -480,6 +523,16 @@
           <td><strong>Google AdMob</strong></td>
           <td>광고 게재 및 수익화</td>
           <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>익명 앱 사용 이벤트 수집 및 기능 개선</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>앱 충돌 보고 및 안정성 개선</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
@@ -620,7 +673,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Last updated: March 25, 2026 &nbsp;·&nbsp; Effective: March 25, 2026
+    Last updated: March 28, 2026 &nbsp;·&nbsp; Effective: March 25, 2026
   </div>
 
   <!-- 1. Overview -->
@@ -687,6 +740,16 @@
           <td><span class="tag tag-third">Google AdMob</span></td>
         </tr>
         <tr>
+          <td><strong>Anonymous Usage Events</strong><br>Screen transitions, habit completions, feature taps, etc.</td>
+          <td>App quality &amp; feature improvement</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace</td>
+          <td>App stability improvement</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
           <td><strong>Location Data</strong></td>
           <td>Not collected</td>
           <td><span class="tag tag-no">Not collected</span></td>
@@ -703,11 +766,11 @@
     </p>
   </section>
 
-  <!-- 3. Advertising & Google AdMob -->
+  <!-- 3. Advertising & Firebase Services -->
   <section class="section">
     <div class="section-header">
       <div class="section-icon">📢</div>
-      <h2>3. Advertising &amp; Google AdMob</h2>
+      <h2>3. Advertising &amp; Firebase Services</h2>
     </div>
     <p>
       Virmina uses <strong>Google AdMob</strong> to serve advertisements.
@@ -731,6 +794,38 @@
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and
       <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Partner Policies</a>.
     </p>
+
+    <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+    <p>
+      Virmina uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
+      (Google LLC) to improve app quality and stability.
+    </p>
+    <p><strong>Firebase Analytics</strong> collects the following anonymous events:</p>
+    <ul>
+      <li>Screen transitions and feature tap events</li>
+      <li>In-app interactions such as habit completions, failures, and grace day usage</li>
+      <li>Onboarding completion status</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics does <strong>not collect personally identifiable information.</strong>
+      All data is anonymous and used solely to improve app features.
+      It is never sold or used for marketing purposes.
+    </div>
+    <p><strong>Firebase Crashlytics</strong> collects the following information upon a crash:</p>
+    <ul>
+      <li>Device model, OS version, and app version</li>
+      <li>Crash location (stack trace)</li>
+      <li>Timestamp of the crash (UTC)</li>
+    </ul>
+    <div class="highlight">
+      Crashlytics data is used <strong>solely to improve app stability</strong> and does not include
+      any information that can personally identify you.
+    </div>
+    <p>
+      For details on how Firebase handles data, please refer to
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.
+    </p>
   </section>
 
   <!-- 4. How We Use Information -->
@@ -743,7 +838,8 @@
     <ul>
       <li><strong>App Services:</strong> Habit registration, tracking, notifications, and streak calculation</li>
       <li><strong>Advertising:</strong> Displaying and measuring ads via Google AdMob</li>
-      <li><strong>Service Improvement:</strong> Crash analysis and app stability</li>
+      <li><strong>App Improvement:</strong> Anonymous feature usage analysis via Firebase Analytics</li>
+      <li><strong>Stability:</strong> Crash diagnosis and bug fixes via Firebase Crashlytics</li>
     </ul>
     <p>We do not sell or share your habit data with any third parties.</p>
   </section>
@@ -773,6 +869,16 @@
           <td><strong>Google AdMob</strong></td>
           <td>Ad serving and monetization</td>
           <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>Anonymous app usage event collection and feature improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>Crash reporting and app stability improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
