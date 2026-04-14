@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policies — hoonslabs</title>
-  <meta name="description" content="hoonslabs 앱 개인정보 처리방침 목록" />
+  <title>Privacy Policy — Virmina</title>
+  <meta name="description" content="Virmina 개인정보 처리방침 / Privacy Policy" />
   <style>
+    /* ── Reset & Base ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --sage:    #4A7C59;
-      --cream:   #F7F4EF;
-      --surface: #FFFFFF;
-      --charcoal:#2C2C2C;
-      --muted:   #7A9E87;
-      --border:  #E2DDD6;
+      --sage:        #4A7C59;
+      --sage-dark:   #2D5C3F;
+      --peach:       #E8A87C;
+      --mint:        #6FCBA0;
+      --amber:       #F0A500;
+      --cream:       #F7F4EF;
+      --surface:     #FFFFFF;
+      --charcoal:    #2C2C2C;
+      --muted:       #7A9E87;
+      --border:      #E2DDD6;
+      --radius:      12px;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -23,200 +29,1374 @@
         --surface: #252E21;
         --charcoal:#F0EDE8;
         --border:  #344030;
+        --muted:   #7A9E87;
       }
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--cream);
       color: var(--charcoal);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      line-height: 1.75;
+      font-size: 16px;
     }
 
-    /* ── Header ── */
-    header {
-      background: linear-gradient(135deg, #4A7C59 0%, #2D5C3F 100%);
+    /* ── Language Toggle ──────────────────────────────────── */
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 24px;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 5px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--sage);
+      border-color: var(--sage);
       color: #fff;
-      padding: 48px 24px 40px;
+    }
+
+    /* ── Header ───────────────────────────────────────────── */
+    .site-header {
+      background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
       text-align: center;
     }
 
-    .brand {
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 12px;
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
     }
 
-    header h1 {
-      font-size: 26px;
+    .site-header h1 {
+      font-size: 28px;
       font-weight: 700;
       letter-spacing: -0.5px;
       margin-bottom: 8px;
     }
 
-    header p {
+    .site-header .subtitle {
       font-size: 14px;
-      opacity: 0.75;
+      opacity: 0.8;
+      font-weight: 400;
     }
 
-    /* ── Main ── */
-    main {
-      max-width: 600px;
+    /* ── Main Layout ─────────────────────────────────────── */
+    .container {
+      max-width: 760px;
       margin: 0 auto;
-      padding: 48px 24px;
-      flex: 1;
-      width: 100%;
+      padding: 48px 24px 80px;
     }
 
-    h2 {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    /* ── App Card ── */
-    .app-list { display: flex; flex-direction: column; gap: 12px; }
-
-    .app-card {
-      display: flex;
+    /* ── Effective Date Badge ─────────────────────────────── */
+    .meta-badge {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 6px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px 20px;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s, transform 0.15s;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
     }
 
-    .app-card:hover {
-      border-color: var(--sage);
-      transform: translateY(-1px);
+    .meta-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
     }
 
-    .app-card-left {
+    /* ── Section ─────────────────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 12px;
+      margin-bottom: 20px;
     }
 
-    .app-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--sage) 12%, transparent);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 18px;
       flex-shrink: 0;
     }
 
-    .app-icon.virmina {
-      background: linear-gradient(135deg, #4A7C59, #2D5C3F);
-    }
-
-    .app-name {
-      font-size: 16px;
+    .section h2 {
+      font-size: 18px;
       font-weight: 700;
-      margin-bottom: 3px;
+      color: var(--charcoal);
+      letter-spacing: -0.3px;
     }
 
-    .app-desc {
+    /* ── Typography ──────────────────────────────────────── */
+    p { margin-bottom: 14px; color: var(--charcoal); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    strong { color: var(--charcoal); font-weight: 600; }
+
+    a {
+      color: var(--sage);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--sage) 30%, transparent);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--sage); }
+
+    /* ── Highlight Box ───────────────────────────────────── */
+    .highlight {
+      background: color-mix(in srgb, var(--mint) 10%, var(--surface));
+      border-left: 3px solid var(--mint);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight.warn {
+      background: color-mix(in srgb, var(--amber) 10%, var(--surface));
+      border-color: var(--amber);
+    }
+
+    /* ── Table ───────────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: color-mix(in srgb, var(--sage) 10%, var(--surface));
+      color: var(--sage);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Tag Pills ───────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-local  { background: color-mix(in srgb, var(--mint) 15%, transparent);  color: var(--sage-dark); }
+    .tag-third  { background: color-mix(in srgb, var(--peach) 20%, transparent); color: #8B4513; }
+    .tag-no     { background: color-mix(in srgb, var(--muted) 15%, transparent); color: var(--muted); }
+    .tag-icloud { background: color-mix(in srgb, #007AFF 12%, transparent); color: #0051a8; }
+
+    /* ── Contact Card ────────────────────────────────────── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--sage) 8%, var(--surface)),
+        color-mix(in srgb, var(--mint) 8%, var(--surface))
+      );
+      border: 1px solid color-mix(in srgb, var(--sage) 20%, transparent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-card .icon { font-size: 28px; }
+
+    .contact-card .label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .contact-card .value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--sage);
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
       font-size: 13px;
       color: var(--muted);
     }
 
-    .chevron {
-      color: var(--muted);
-      font-size: 18px;
-      font-weight: 300;
-    }
+    .site-footer a { color: var(--muted); }
 
-    /* ── Coming Soon Card ── */
-    .app-card.coming-soon {
-      opacity: 0.5;
-      pointer-events: none;
-      border-style: dashed;
-    }
+    /* ── Language visibility ─────────────────────────────── */
+    [lang-block] { display: none; }
+    [lang-block].visible { display: block; }
 
-    .badge {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      background: color-mix(in srgb, var(--sage) 12%, transparent);
-      color: var(--sage);
-      border-radius: 6px;
-      padding: 3px 8px;
-    }
-
-    /* ── Footer ── */
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 12px;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .site-header { padding: 40px 20px 36px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <p class="brand">hoonslabs</p>
-  <h1>Privacy Policies</h1>
-  <p>개인정보 처리방침 / Privacy Policy</p>
+<!-- ── Language Toggle ─────────────────────────── -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('ko')" id="btn-ko">한국어</button>
+  <button class="lang-btn"        onclick="setLang('en')" id="btn-en">English</button>
+  <button class="lang-btn"        onclick="setLang('ja')" id="btn-ja">日本語</button>
+</div>
+
+<!-- ── Header ─────────────────────────────────── -->
+<header class="site-header">
+  <div class="logo-mark">🌱</div>
+  <h1>Virmina</h1>
+  <p class="subtitle" lang-block="ko" id="hd-ko">개인정보 처리방침</p>
+  <p class="subtitle" lang-block="en" id="hd-en">Privacy Policy</p>
+  <p class="subtitle" lang-block="ja" id="hd-ja">プライバシーポリシー</p>
 </header>
 
-<main>
-  <h2>Apps</h2>
-  <div class="app-list">
+<!-- ══════════════════════════════════════════════
+     KOREAN VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="ko" id="content-ko">
+<main class="container">
 
-    <a class="app-card" href="./virmina/">
-      <div class="app-card-left">
-        <div class="app-icon virmina">🌱</div>
-        <div>
-          <div class="app-name">Virmina</div>
-          <div class="app-desc">Minimalist Habit Tracker</div>
-        </div>
-      </div>
-      <span class="chevron">›</span>
-    </a>
-
-    <!-- 새 앱 추가 시 아래 블록을 복사하고 coming-soon 클래스를 제거하세요 -->
-    <div class="app-card coming-soon">
-      <div class="app-card-left">
-        <div class="app-icon" style="background:#e2ddd6;">🚀</div>
-        <div>
-          <div class="app-name">Next App</div>
-          <div class="app-desc">Coming soon</div>
-        </div>
-      </div>
-      <span class="badge">Soon</span>
-    </div>
-
+  <div class="meta-badge">
+    <span class="dot"></span>
+    최종 업데이트: 2026년 3월 28일 &nbsp;·&nbsp; 시행일: 2026년 3월 25일
   </div>
-</main>
 
-<footer>
-  © 2026 hoonslabs. All rights reserved.
+  <!-- 1. 개요 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. 개요</h2>
+    </div>
+    <p>
+      <strong>Virmina</strong>(이하 "앱")는 건강한 습관 형성을 돕는 미니멀 습관 트래커입니다.
+      본 개인정보 처리방침은 앱이 수집하는 정보, 사용 방식, 그리고 사용자의 권리를 설명합니다.
+    </p>
+    <div class="highlight">
+      Virmina는 <strong>로컬 우선(Local-First)</strong> 앱입니다. 습관 데이터와 기록은
+      기본적으로 사용자 기기에 저장됩니다. iCloud에 로그인한 경우, 멀티기기 동기화를 위해
+      Apple의 iCloud(CloudKit)에 암호화되어 저장될 수 있습니다.
+      당사 서버로는 어떠한 데이터도 전송되지 않습니다.
+    </div>
+    <p>
+      앱을 설치하거나 사용함으로써 본 방침에 동의하는 것으로 간주됩니다.
+      동의하지 않으시면 앱 사용을 중단해 주세요.
+    </p>
+  </section>
+
+  <!-- 2. 수집하는 정보 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. 수집하는 정보</h2>
+    </div>
+    <p>앱이 수집하거나 처리하는 정보는 다음과 같습니다.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>데이터 유형</th>
+          <th>목적</th>
+          <th>저장 위치</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>습관 데이터</strong><br>이름, 이모지, 색상, 빈도, 목표</td>
+          <td>앱 핵심 기능</td>
+          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>기록 데이터</strong><br>완료 여부, 날짜, 스트릭</td>
+          <td>진행 상황 추적</td>
+          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>광고 식별자</strong><br>IDFA (iOS), GAID (Android)</td>
+          <td>개인화 광고 제공 (동의 시)</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>기기 정보</strong><br>기기 유형, OS 버전, 언어</td>
+          <td>광고 최적화, 충돌 보고</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>앱 사용 패턴</strong><br>세션 시간, 기능 사용 빈도</td>
+          <td>광고 성과 측정</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>익명 사용 이벤트</strong><br>화면 전환, 습관 완료, 기능 탭 등</td>
+          <td>앱 품질 및 기능 개선</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>충돌 보고서</strong><br>기기 모델, OS 버전, 앱 버전, 충돌 스택</td>
+          <td>앱 안정성 개선</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>위치 정보</strong></td>
+          <td>수집하지 않음</td>
+          <td><span class="tag tag-no">미수집</span></td>
+        </tr>
+        <tr>
+          <td><strong>계정/로그인 정보</strong></td>
+          <td>수집하지 않음</td>
+          <td><span class="tag tag-no">미수집</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * iCloud 계정에 로그인된 경우에만 적용됩니다. iCloud를 사용하지 않으면 데이터는 기기에만 저장됩니다.
+    </p>
+  </section>
+
+  <!-- 3. 광고 및 Firebase 서비스 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📢</div>
+      <h2>3. 광고 및 Firebase 서비스</h2>
+    </div>
+    <p>
+      Virmina는 <strong>Google AdMob</strong>을 통해 광고를 제공합니다.
+      AdMob은 광고를 맞춤화하기 위해 다음 정보를 수집할 수 있습니다.
+    </p>
+    <ul>
+      <li>광고 식별자 (IDFA / GAID)</li>
+      <li>IP 주소 (대략적인 위치 파악 목적)</li>
+      <li>기기 및 브라우저 정보</li>
+      <li>앱 내 상호작용 데이터</li>
+    </ul>
+    <div class="highlight warn">
+      <strong>iOS 사용자:</strong> 앱 최초 실행 시 앱 추적 투명성(ATT) 동의 팝업이 표시됩니다.
+      동의를 거부하면 개인화되지 않은 광고가 표시됩니다.
+    </div>
+    <div class="highlight warn">
+      <strong>Android 사용자:</strong> 앱 설정에서 언제든지 광고 개인화를 해제할 수 있습니다.
+    </div>
+    <p>
+      Google의 광고 데이터 처리 방식에 대한 자세한 내용은
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및
+      <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob 파트너 정책</a>을 참고해 주세요.
+    </p>
+
+    <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+    <p>
+      Virmina는 앱 품질 개선 및 안정성 확보를 위해 <strong>Firebase Analytics</strong> 및
+      <strong>Firebase Crashlytics</strong>(Google LLC)를 사용합니다.
+    </p>
+    <p><strong>Firebase Analytics</strong>는 다음과 같은 익명 이벤트를 수집합니다.</p>
+    <ul>
+      <li>화면 전환 및 기능 탭 이벤트</li>
+      <li>습관 완료·실패, 그레이스 데이 사용 등 앱 내 상호작용</li>
+      <li>온보딩 완료 여부</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics는 <strong>개인 식별 정보를 수집하지 않습니다.</strong>
+      수집된 데이터는 개인과 연결되지 않으며, 앱 기능 개선 목적에만 사용됩니다.
+      제3자에게 판매되거나 마케팅 목적으로 사용되지 않습니다.
+    </div>
+    <p><strong>Firebase Crashlytics</strong>는 앱 충돌 발생 시 다음 정보를 수집합니다.</p>
+    <ul>
+      <li>기기 모델, OS 버전, 앱 버전</li>
+      <li>충돌 발생 위치(스택 트레이스)</li>
+      <li>충돌 발생 시각 (UTC)</li>
+    </ul>
+    <div class="highlight">
+      Crashlytics 데이터는 <strong>앱 안정성 개선에만 사용</strong>되며, 사용자를 개인 식별할 수 있는
+      정보는 포함되지 않습니다.
+    </div>
+    <p>
+      Firebase 데이터 처리 방식에 대한 자세한 내용은
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호</a>를 참고해 주세요.
+    </p>
+  </section>
+
+  <!-- 4. 정보 이용 목적 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>4. 정보 이용 목적</h2>
+    </div>
+    <p>수집된 정보는 다음 목적으로만 사용됩니다.</p>
+    <ul>
+      <li><strong>앱 서비스 제공:</strong> 습관 등록, 기록, 알림, 스트릭 계산</li>
+      <li><strong>광고 제공:</strong> Google AdMob을 통한 광고 표시 및 성과 측정</li>
+      <li><strong>앱 개선:</strong> Firebase Analytics를 통한 기능 사용 패턴 분석 (익명)</li>
+      <li><strong>안정성 향상:</strong> Firebase Crashlytics를 통한 충돌 분석 및 버그 수정</li>
+    </ul>
+    <p>당사는 사용자의 습관 데이터를 제3자에게 판매하거나 공유하지 않습니다.</p>
+  </section>
+
+  <!-- 5. 제3자 서비스 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. 제3자 서비스</h2>
+    </div>
+    <p>앱은 다음 제3자 서비스를 사용합니다.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>서비스</th>
+          <th>목적</th>
+          <th>개인정보처리방침</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>습관 데이터 멀티기기 동기화 (iOS, iCloud 로그인 시)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google AdMob</strong></td>
+          <td>광고 게재 및 수익화</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>익명 앱 사용 이벤트 수집 및 기능 개선</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>앱 충돌 보고 및 안정성 개선</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>앱 배포 및 결제 (iOS)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Store</strong></td>
+          <td>앱 배포 및 결제 (Android)</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. 데이터 보관 및 삭제 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. 데이터 보관 및 삭제</h2>
+    </div>
+    <ul>
+      <li><strong>습관·기록 데이터 (로컬):</strong> 사용자 기기에 보관되며, 앱 삭제 시 로컬 데이터는 즉시 삭제됩니다.</li>
+      <li><strong>습관·기록 데이터 (iCloud):</strong> iCloud를 사용하는 경우, 앱 삭제만으로는 iCloud 사본이 제거되지 않습니다. iCloud 데이터까지 완전히 삭제하려면 앱 삭제 전에 <em>설정 → 데이터 초기화</em>를 먼저 실행해 주세요.</li>
+      <li><strong>광고 데이터:</strong> Google의 데이터 보관 정책에 따릅니다.</li>
+      <li>
+        <strong>수동 삭제:</strong> 앱 내 <em>설정 → 데이터 초기화</em>에서 기기 및 iCloud의 모든 데이터를 즉시 삭제할 수 있습니다.
+      </li>
+    </ul>
+    <div class="highlight">
+      당사는 사용자 습관 데이터의 사본을 보유하지 않습니다. iCloud를 사용하지 않는 경우 앱 삭제만으로 데이터가 완전히 제거됩니다.
+    </div>
+  </section>
+
+  <!-- 7. 사용자 권리 (GDPR / CCPA) -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. 사용자 권리</h2>
+    </div>
+    <p>
+      거주 지역에 따라 다음 권리를 보유할 수 있습니다.
+    </p>
+    <ul>
+      <li><strong>열람권:</strong> 처리되는 개인정보의 확인</li>
+      <li><strong>정정권:</strong> 부정확한 데이터의 수정</li>
+      <li><strong>삭제권(잊힐 권리):</strong> 데이터 삭제 요청</li>
+      <li><strong>처리 제한권:</strong> 특정 목적의 처리 중단 요청</li>
+      <li><strong>광고 개인화 거부:</strong> ATT 팝업 거부 또는 기기 설정에서 언제든지 변경 가능</li>
+    </ul>
+    <p>권리 행사 또는 문의는 아래 연락처로 연락해 주세요.</p>
+
+    <div class="highlight warn">
+      <strong>캘리포니아 거주자(CCPA):</strong> 개인정보 판매 거부권을 보유합니다.
+      당사는 사용자의 습관 데이터를 판매하지 않습니다.
+    </div>
+  </section>
+
+  <!-- 8. 아동 개인정보 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>8. 아동 개인정보 보호</h2>
+    </div>
+    <p>
+      Virmina는 <strong>만 13세 미만</strong>(미국 기준) 또는 <strong>만 14세 미만</strong>(EU 기준)
+      아동을 대상으로 하지 않습니다.
+      당사는 아동의 개인정보를 의도적으로 수집하지 않습니다.
+    </p>
+    <p>
+      아동이 앱을 사용한 사실을 인지한 경우, 아래 연락처로 즉시 알려주시면
+      관련 데이터를 삭제 조치하겠습니다.
+    </p>
+  </section>
+
+  <!-- 9. 보안 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. 보안</h2>
+    </div>
+    <p>
+      습관 데이터는 iOS의 Core Data / Android의 Room Database에 저장되며,
+      기기의 파일 시스템 암호화로 보호됩니다.
+    </p>
+    <p>
+      iCloud 동기화를 사용하는 경우, 데이터는 전송 중 및 저장 중 모두 Apple의 암호화 정책에 따라 보호됩니다.
+      당사 서버로는 어떠한 데이터도 전송되지 않습니다.
+    </p>
+    <p>
+      광고 관련 데이터는 Google의 보안 인프라에 의해 보호됩니다.
+    </p>
+  </section>
+
+  <!-- 10. 방침 변경 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. 방침 변경</h2>
+    </div>
+    <p>
+      본 방침은 법률 변경, 서비스 업데이트, 또는 Google 정책 변경에 따라 수정될 수 있습니다.
+      중요한 변경 사항이 있을 경우 앱 내 알림 또는 본 페이지를 통해 공지합니다.
+    </p>
+    <p>
+      변경된 방침은 본 페이지에 게시된 시점부터 효력이 발생합니다.
+      계속 앱을 사용하면 변경된 방침에 동의한 것으로 간주됩니다.
+    </p>
+  </section>
+
+  <!-- 11. 문의 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. 문의</h2>
+    </div>
+    <p>개인정보 처리방침에 관한 문의 또는 권리 행사 요청은 아래로 연락해 주세요.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">이메일</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      문의 후 영업일 기준 5일 이내에 답변드립니다.
+    </p>
+  </section>
+
+</main>
+</div><!-- /content-ko -->
+
+<!-- ══════════════════════════════════════════════
+     ENGLISH VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="en" id="content-en">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    Last updated: March 28, 2026 &nbsp;·&nbsp; Effective: March 25, 2026
+  </div>
+
+  <!-- 1. Overview -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. Overview</h2>
+    </div>
+    <p>
+      <strong>Virmina</strong> ("the App") is a minimalist habit tracker designed to help you build healthy habits.
+      This Privacy Policy explains what information we collect, how we use it, and your rights.
+    </p>
+    <div class="highlight">
+      Virmina is a <strong>Local-First</strong> app. Your habit data and records are stored on your device by default.
+      If you are signed into iCloud, data may also be stored in Apple's iCloud (CloudKit) for multi-device sync.
+      Your data is never transmitted to our servers.
+    </div>
+    <p>
+      By installing or using the App, you agree to this Privacy Policy.
+      If you do not agree, please discontinue use of the App.
+    </p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>The following information is collected or processed by the App.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Habit Data</strong><br>Name, emoji, color, frequency, goals</td>
+          <td>Core app functionality</td>
+          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>Record Data</strong><br>Completions, dates, streaks</td>
+          <td>Progress tracking</td>
+          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>Advertising ID</strong><br>IDFA (iOS), GAID (Android)</td>
+          <td>Personalized ads (with consent)</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>Device Information</strong><br>Device type, OS version, language</td>
+          <td>Ad optimization, crash reporting</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>Usage Patterns</strong><br>Session duration, feature usage</td>
+          <td>Ad performance measurement</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>Anonymous Usage Events</strong><br>Screen transitions, habit completions, feature taps, etc.</td>
+          <td>App quality &amp; feature improvement</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace</td>
+          <td>App stability improvement</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Location Data</strong></td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+        <tr>
+          <td><strong>Account / Login</strong></td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * Applies only when signed into iCloud. Without iCloud, data is stored on your device only.
+    </p>
+  </section>
+
+  <!-- 3. Advertising & Firebase Services -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📢</div>
+      <h2>3. Advertising &amp; Firebase Services</h2>
+    </div>
+    <p>
+      Virmina uses <strong>Google AdMob</strong> to serve advertisements.
+      AdMob may collect the following information to personalize ads.
+    </p>
+    <ul>
+      <li>Advertising identifiers (IDFA / GAID)</li>
+      <li>IP address (for approximate location)</li>
+      <li>Device and browser information</li>
+      <li>In-app interaction data</li>
+    </ul>
+    <div class="highlight warn">
+      <strong>iOS users:</strong> On first launch, an App Tracking Transparency (ATT) prompt will appear.
+      If you decline, you will receive non-personalized ads.
+    </div>
+    <div class="highlight warn">
+      <strong>Android users:</strong> You can opt out of ad personalization at any time in your device settings.
+    </div>
+    <p>
+      For details on how Google processes advertising data, please refer to
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and
+      <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob Partner Policies</a>.
+    </p>
+
+    <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+    <p>
+      Virmina uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
+      (Google LLC) to improve app quality and stability.
+    </p>
+    <p><strong>Firebase Analytics</strong> collects the following anonymous events:</p>
+    <ul>
+      <li>Screen transitions and feature tap events</li>
+      <li>In-app interactions such as habit completions, failures, and grace day usage</li>
+      <li>Onboarding completion status</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics does <strong>not collect personally identifiable information.</strong>
+      All data is anonymous and used solely to improve app features.
+      It is never sold or used for marketing purposes.
+    </div>
+    <p><strong>Firebase Crashlytics</strong> collects the following information upon a crash:</p>
+    <ul>
+      <li>Device model, OS version, and app version</li>
+      <li>Crash location (stack trace)</li>
+      <li>Timestamp of the crash (UTC)</li>
+    </ul>
+    <div class="highlight">
+      Crashlytics data is used <strong>solely to improve app stability</strong> and does not include
+      any information that can personally identify you.
+    </div>
+    <p>
+      For details on how Firebase handles data, please refer to
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.
+    </p>
+  </section>
+
+  <!-- 4. How We Use Information -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>4. How We Use Information</h2>
+    </div>
+    <p>Collected information is used solely for the following purposes.</p>
+    <ul>
+      <li><strong>App Services:</strong> Habit registration, tracking, notifications, and streak calculation</li>
+      <li><strong>Advertising:</strong> Displaying and measuring ads via Google AdMob</li>
+      <li><strong>App Improvement:</strong> Anonymous feature usage analysis via Firebase Analytics</li>
+      <li><strong>Stability:</strong> Crash diagnosis and bug fixes via Firebase Crashlytics</li>
+    </ul>
+    <p>We do not sell or share your habit data with any third parties.</p>
+  </section>
+
+  <!-- 5. Third-Party Services -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <p>The App uses the following third-party services.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>Multi-device habit sync (iOS, when signed into iCloud)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google AdMob</strong></td>
+          <td>Ad serving and monetization</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>Anonymous app usage event collection and feature improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>Crash reporting and app stability improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>App distribution and billing (iOS)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Store</strong></td>
+          <td>App distribution and billing (Android)</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. Data Retention & Deletion -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. Data Retention &amp; Deletion</h2>
+    </div>
+    <ul>
+      <li><strong>Habit &amp; Record Data (Local):</strong> Stored on your device and permanently deleted when you uninstall the App.</li>
+      <li><strong>Habit &amp; Record Data (iCloud):</strong> If iCloud sync is in use, uninstalling the App alone does not remove your iCloud copy. To fully delete iCloud data, run <em>Settings → Reset All Data</em> before uninstalling.</li>
+      <li><strong>Advertising Data:</strong> Subject to Google's data retention policies.</li>
+      <li>
+        <strong>Manual Deletion:</strong> <em>Settings → Reset All Data</em> deletes all data from both your device and iCloud instantly.
+      </li>
+    </ul>
+    <div class="highlight">
+      We hold no copy of your habit data. If you do not use iCloud sync, uninstalling the App is sufficient to completely remove all data.
+    </div>
+  </section>
+
+  <!-- 7. Your Rights (GDPR / CCPA) -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. Your Rights</h2>
+    </div>
+    <p>Depending on your region, you may have the following rights.</p>
+    <ul>
+      <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
+      <li><strong>Right of Rectification:</strong> Correct inaccurate data</li>
+      <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
+      <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
+      <li><strong>Opt-out of Ad Personalization:</strong> Decline the ATT prompt or change your device settings at any time</li>
+    </ul>
+    <p>To exercise your rights or for inquiries, please contact us at the address below.</p>
+
+    <div class="highlight warn">
+      <strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information.
+      We do not sell your habit data.
+    </div>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>8. Children's Privacy</h2>
+    </div>
+    <p>
+      Virmina is not directed to children under the age of <strong>13</strong> (US) or
+      <strong>16</strong> (EU/EEA). We do not knowingly collect personal information from children.
+    </p>
+    <p>
+      If you become aware that a child has used the App, please contact us immediately
+      so we can take appropriate steps to delete the relevant data.
+    </p>
+  </section>
+
+  <!-- 9. Security -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. Security</h2>
+    </div>
+    <p>
+      Habit data is stored in iOS Core Data / Android Room Database and protected by the device's file system encryption.
+    </p>
+    <p>
+      When iCloud sync is enabled, data is transmitted to and stored in Apple's iCloud under Apple's encryption policy,
+      both in transit and at rest. Your data is never transmitted to our servers.
+    </p>
+    <p>
+      Advertising-related data is protected by Google's security infrastructure.
+    </p>
+  </section>
+
+  <!-- 10. Policy Changes -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. Changes to This Policy</h2>
+    </div>
+    <p>
+      This policy may be updated due to changes in law, service updates, or Google policy changes.
+      We will notify you of significant changes via in-app notifications or this page.
+    </p>
+    <p>
+      Changes take effect upon posting to this page.
+      Continued use of the App after changes constitutes acceptance of the updated policy.
+    </p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. Contact Us</h2>
+    </div>
+    <p>For questions about this Privacy Policy or to exercise your rights, please reach out.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">Email</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      We aim to respond within 5 business days.
+    </p>
+  </section>
+
+</main>
+</div><!-- /content-en -->
+
+<!-- ══════════════════════════════════════════════
+     JAPANESE VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="ja" id="content-ja">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    最終更新: 2026年3月28日 &nbsp;·&nbsp; 施行日: 2026年3月25日
+  </div>
+
+  <!-- 1. 概要 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. 概要</h2>
+    </div>
+    <p>
+      <strong>Virmina</strong>（以下「本アプリ」）は、健康的な習慣づくりを支援するミニマルな習慣トラッカーです。
+      本プライバシーポリシーでは、アプリが収集する情報、その利用方法、およびお客様の権利についてご説明します。
+    </p>
+    <div class="highlight">
+      Virminaは<strong>ローカルファースト</strong>のアプリです。習慣データや記録はデフォルトでお客様のデバイスに保存されます。
+      iCloudにサインインしている場合、複数デバイス間の同期のためにAppleのiCloud（CloudKit）にも暗号化して保存されることがあります。
+      お客様のデータが当社のサーバーに送信されることはありません。
+    </div>
+    <p>
+      本アプリをインストールまたは使用することで、本ポリシーに同意したものとみなされます。
+      同意いただけない場合は、本アプリの使用を中止してください。
+    </p>
+  </section>
+
+  <!-- 2. 収集する情報 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. 収集する情報</h2>
+    </div>
+    <p>本アプリが収集または処理する情報は以下のとおりです。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>データの種類</th>
+          <th>目的</th>
+          <th>保存場所</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>習慣データ</strong><br>名前、絵文字、色、頻度、目標</td>
+          <td>アプリの中核機能</td>
+          <td><span class="tag tag-local">端末のみ</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>記録データ</strong><br>完了状況、日付、ストリーク</td>
+          <td>進捗状況の追跡</td>
+          <td><span class="tag tag-local">端末のみ</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>広告識別子</strong><br>IDFA（iOS）、GAID（Android）</td>
+          <td>パーソナライズ広告の提供（同意時）</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>端末情報</strong><br>端末の種類、OSバージョン、言語</td>
+          <td>広告の最適化、クラッシュレポート</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>アプリ使用パターン</strong><br>セッション時間、機能の使用頻度</td>
+          <td>広告効果の測定</td>
+          <td><span class="tag tag-third">Google AdMob</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名の使用イベント</strong><br>画面遷移、習慣の完了、機能のタップなど</td>
+          <td>アプリの品質・機能改善</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>クラッシュレポート</strong><br>端末モデル、OSバージョン、アプリバージョン、スタックトレース</td>
+          <td>アプリの安定性向上</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>位置情報</strong></td>
+          <td>収集しない</td>
+          <td><span class="tag tag-no">未収集</span></td>
+        </tr>
+        <tr>
+          <td><strong>アカウント・ログイン情報</strong></td>
+          <td>収集しない</td>
+          <td><span class="tag tag-no">未収集</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * iCloudアカウントにサインインしている場合のみ適用されます。iCloudを使用しない場合、データは端末にのみ保存されます。
+    </p>
+  </section>
+
+  <!-- 3. 広告およびFirebaseサービス -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📢</div>
+      <h2>3. 広告およびFirebaseサービス</h2>
+    </div>
+    <p>
+      Virminaは<strong>Google AdMob</strong>を通じて広告を配信しています。
+      AdMobは広告をパーソナライズするために、以下の情報を収集する場合があります。
+    </p>
+    <ul>
+      <li>広告識別子（IDFA / GAID）</li>
+      <li>IPアドレス（おおよその位置情報の把握）</li>
+      <li>端末およびブラウザ情報</li>
+      <li>アプリ内のインタラクションデータ</li>
+    </ul>
+    <div class="highlight warn">
+      <strong>iOSユーザーの方へ：</strong>初回起動時にアプリトラッキングの透明性（ATT）に関する確認ダイアログが表示されます。
+      拒否した場合は、パーソナライズされていない広告が表示されます。
+    </div>
+    <div class="highlight warn">
+      <strong>Androidユーザーの方へ：</strong>端末の設定からいつでも広告のパーソナライズをオフにすることができます。
+    </div>
+    <p>
+      Googleによる広告データの処理方法の詳細については、
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a>および
+      <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMobパートナーポリシー</a>をご参照ください。
+    </p>
+
+    <hr style="border:none; border-top:1px solid var(--border); margin: 24px 0;">
+
+    <p>
+      Virminaはアプリの品質向上と安定性確保のために、<strong>Firebase Analytics</strong>および
+      <strong>Firebase Crashlytics</strong>（Google LLC）を使用しています。
+    </p>
+    <p><strong>Firebase Analytics</strong>は以下の匿名イベントを収集します。</p>
+    <ul>
+      <li>画面遷移および機能のタップイベント</li>
+      <li>習慣の完了・未完了、グレイスデーの使用などのアプリ内インタラクション</li>
+      <li>オンボーディングの完了状況</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analyticsは<strong>個人を特定できる情報を収集しません。</strong>
+      収集されたデータは個人と紐付けられず、アプリ機能の改善目的にのみ使用されます。
+      第三者への販売やマーケティング目的への使用は一切行いません。
+    </div>
+    <p><strong>Firebase Crashlytics</strong>はクラッシュ発生時に以下の情報を収集します。</p>
+    <ul>
+      <li>端末モデル、OSバージョン、アプリバージョン</li>
+      <li>クラッシュ発生箇所（スタックトレース）</li>
+      <li>クラッシュ発生時刻（UTC）</li>
+    </ul>
+    <div class="highlight">
+      Crashlyticsのデータは<strong>アプリの安定性向上にのみ使用</strong>され、
+      個人を特定できる情報は含まれません。
+    </div>
+    <p>
+      Firebaseのデータ処理方法の詳細については、
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシー</a>をご参照ください。
+    </p>
+  </section>
+
+  <!-- 4. 情報の利用目的 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>4. 情報の利用目的</h2>
+    </div>
+    <p>収集した情報は、以下の目的にのみ使用されます。</p>
+    <ul>
+      <li><strong>アプリサービスの提供：</strong>習慣の登録、記録、通知、ストリーク計算</li>
+      <li><strong>広告の配信：</strong>Google AdMobを通じた広告表示および効果測定</li>
+      <li><strong>アプリの改善：</strong>Firebase Analyticsによる匿名の機能使用パターン分析</li>
+      <li><strong>安定性の向上：</strong>Firebase Crashlyticsによるクラッシュ分析とバグ修正</li>
+    </ul>
+    <p>当社はお客様の習慣データを第三者に販売・共有することはありません。</p>
+  </section>
+
+  <!-- 5. 第三者サービス -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. 第三者サービス</h2>
+    </div>
+    <p>本アプリは以下の第三者サービスを使用しています。</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>サービス</th>
+          <th>目的</th>
+          <th>プライバシーポリシー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>習慣データの複数端末間同期（iOS、iCloudサインイン時）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google AdMob</strong></td>
+          <td>広告配信および収益化</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>匿名アプリ使用イベントの収集および機能改善</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>クラッシュレポートおよびアプリの安定性向上</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>アプリ配信および課金（iOS）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Play Store</strong></td>
+          <td>アプリ配信および課金（Android）</td>
+          <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. データの保持と削除 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. データの保持と削除</h2>
+    </div>
+    <ul>
+      <li><strong>習慣・記録データ（ローカル）：</strong>お客様の端末に保存され、アプリを削除すると即座に消去されます。</li>
+      <li><strong>習慣・記録データ（iCloud）：</strong>iCloud同期を使用している場合、アプリを削除するだけではiCloud上のデータは削除されません。iCloudのデータも完全に削除するには、アプリ削除前に<em>設定 → データをリセット</em>を実行してください。</li>
+      <li><strong>広告データ：</strong>Googleのデータ保持ポリシーに従います。</li>
+      <li>
+        <strong>手動での削除：</strong><em>設定 → データをリセット</em>から、端末とiCloud上のすべてのデータを即座に削除できます。
+      </li>
+    </ul>
+    <div class="highlight">
+      当社はお客様の習慣データのコピーを保持していません。iCloud同期を使用していない場合、アプリを削除するだけですべてのデータが完全に消去されます。
+    </div>
+  </section>
+
+  <!-- 7. お客様の権利 (GDPR / CCPA) -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. お客様の権利</h2>
+    </div>
+    <p>
+      お客様がお住まいの地域によって、以下の権利を有する場合があります。
+    </p>
+    <ul>
+      <li><strong>アクセス権：</strong>処理されている個人データの確認</li>
+      <li><strong>訂正権：</strong>不正確なデータの修正</li>
+      <li><strong>削除権（忘れられる権利）：</strong>データの削除請求</li>
+      <li><strong>処理制限権：</strong>特定目的での処理の停止請求</li>
+      <li><strong>広告パーソナライズのオプトアウト：</strong>ATTダイアログの拒否、または端末設定からいつでも変更可能</li>
+    </ul>
+    <p>権利の行使またはお問い合わせは、下記の連絡先までご連絡ください。</p>
+
+    <div class="highlight warn">
+      <strong>カリフォルニア州の居住者（CCPA）：</strong>個人情報の販売に対するオプトアウト権を有します。
+      当社はお客様の習慣データを販売しておりません。
+    </div>
+  </section>
+
+  <!-- 8. 子供のプライバシー -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>8. 子供のプライバシー保護</h2>
+    </div>
+    <p>
+      Virminaは<strong>13歳未満</strong>（米国基準）または<strong>16歳未満</strong>（EU/EEA基準）の子供を対象としていません。
+      当社は子供の個人情報を意図的に収集することはありません。
+    </p>
+    <p>
+      子供が本アプリを使用したことを知った場合は、下記の連絡先までお知らせください。
+      速やかに該当データを削除する措置を講じます。
+    </p>
+  </section>
+
+  <!-- 9. セキュリティ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. セキュリティ</h2>
+    </div>
+    <p>
+      習慣データはiOSのCore Data / AndroidのRoom Databaseに保存され、端末のファイルシステム暗号化によって保護されています。
+    </p>
+    <p>
+      iCloud同期を有効にしている場合、データの転送中および保存中はAppleの暗号化ポリシーに従い保護されます。
+      お客様のデータが当社のサーバーに送信されることはありません。
+    </p>
+    <p>
+      広告関連データはGoogleのセキュリティインフラによって保護されています。
+    </p>
+  </section>
+
+  <!-- 10. ポリシーの変更 -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. ポリシーの変更</h2>
+    </div>
+    <p>
+      本ポリシーは、法律の変更、サービスの更新、またはGoogleのポリシー変更に伴い改定されることがあります。
+      重要な変更がある場合は、アプリ内通知または本ページを通じてお知らせします。
+    </p>
+    <p>
+      変更されたポリシーは、本ページに掲載された時点から効力を持ちます。
+      変更後も引き続き本アプリをご利用の場合は、改定されたポリシーに同意したものとみなされます。
+    </p>
+  </section>
+
+  <!-- 11. お問い合わせ -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. お問い合わせ</h2>
+    </div>
+    <p>プライバシーポリシーに関するご質問や権利行使のご要望は、下記までご連絡ください。</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">メールアドレス</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      営業日5日以内にご返答いたします。
+    </p>
+  </section>
+
+</main>
+</div><!-- /content-ja -->
+
+<!-- ── Footer ─────────────────────────────────── -->
+<footer class="site-footer">
+  <p>© 2026 Virmina. All rights reserved.</p>
+  <p style="margin-top:6px;">
+    <span id="footer-ko">본 방침은 한국어, 영어, 일본어로 제공됩니다. 내용이 상충할 경우 한국어 버전이 우선합니다.</span>
+    <span id="footer-en" style="display:none;">This policy is provided in Korean, English, and Japanese. In case of conflict, the Korean version prevails.</span>
+    <span id="footer-ja" style="display:none;">本ポリシーは韓国語・英語・日本語で提供されています。内容に相違がある場合は、韓国語版が優先されます。</span>
+  </p>
 </footer>
 
 <script>
-  // 브라우저 언어에 따라 UI 언어 선택 (단순 표시 전용)
-  if (!navigator.language.startsWith('ko')) {
-    document.querySelector('header p').textContent = 'Privacy Policy';
-    document.querySelector('h2').textContent = 'Apps';
+  function setLang(lang) {
+    // blocks
+    document.querySelectorAll('[lang-block]').forEach(el => {
+      el.classList.toggle('visible', el.id.endsWith('-' + lang));
+    });
+    // buttons
+    document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-ja').classList.toggle('active', lang === 'ja');
+    // footer
+    document.getElementById('footer-ko').style.display = lang === 'ko' ? '' : 'none';
+    document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('footer-ja').style.display = lang === 'ja' ? '' : 'none';
+    // html lang attr
+    document.documentElement.lang = lang;
+    // persist
+    localStorage.setItem('virmina-lang', lang);
   }
+
+  // Init — 우선순위: URL param > localStorage > 브라우저 언어
+  (function () {
+    const params    = new URLSearchParams(window.location.search);
+    const urlLang   = params.get('lang');
+    if (['ko','en','ja'].includes(urlLang)) { setLang(urlLang); return; }
+
+    const saved = localStorage.getItem('virmina-lang');
+    if (['ko','en','ja'].includes(saved)) { setLang(saved); return; }
+
+    const nav = navigator.language;
+    if (nav.startsWith('ko')) { setLang('ko'); return; }
+    if (nav.startsWith('ja')) { setLang('ja'); return; }
+    setLang('en');
+  })();
 </script>
 
 </body>
