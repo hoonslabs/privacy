@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — OutVault: Private Camera</title>
+  <meta name="description" content="OutVault: Private Camera — Privacy Policy" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #0A0F1E;
+      --ink-soft:    #1C2333;
+      --steel:       #2E3A52;
+      --accent:      #4A90D9;
+      --accent-dark: #2F6DB5;
+      --teal:        #3DBFA8;
+      --amber:       #F0A500;
+      --cream:       #F4F6FA;
+      --surface:     #FFFFFF;
+      --charcoal:    #1A2035;
+      --muted:       #6B7A99;
+      --border:      #DDE3EF;
+      --radius:      12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream:   #0D1117;
+        --surface: #161B27;
+        --charcoal:#E8ECF4;
+        --border:  #252D3F;
+        --muted:   #6B7A99;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Header ─────────────────────────────────────────── */
+    .site-header {
+      background: linear-gradient(135deg, var(--ink) 0%, var(--steel) 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      background: rgba(74,144,217,0.2);
+      border-radius: 18px;
+      border: 1px solid rgba(74,144,217,0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .site-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .site-header .subtitle {
+      font-size: 14px;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+
+    /* ── Main Layout ─────────────────────────────────────── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Meta Badge ──────────────────────────────────────── */
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .meta-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    /* ── Section ─────────────────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Typography ──────────────────────────────────────── */
+    p { margin-bottom: 14px; color: var(--charcoal); }
+    p:last-child { margin-bottom: 0; }
+
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    li { margin-bottom: 6px; }
+
+    strong { color: var(--charcoal); font-weight: 600; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--accent); }
+
+    /* ── Highlight Box ───────────────────────────────────── */
+    .highlight {
+      background: color-mix(in srgb, var(--teal) 10%, var(--surface));
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight.warn {
+      background: color-mix(in srgb, var(--amber) 10%, var(--surface));
+      border-color: var(--amber);
+    }
+
+    /* ── Table ───────────────────────────────────────────── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+      color: var(--accent);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Tag Pills ───────────────────────────────────────── */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-local   { background: color-mix(in srgb, var(--teal) 15%, transparent);   color: #1a7a6e; }
+    .tag-third   { background: color-mix(in srgb, #FF8C42 20%, transparent);        color: #a0470d; }
+    .tag-no      { background: color-mix(in srgb, var(--muted) 15%, transparent);   color: var(--muted); }
+    .tag-icloud  { background: color-mix(in srgb, var(--accent) 12%, transparent);  color: var(--accent-dark); }
+
+    /* ── Contact Card ────────────────────────────────────── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--accent) 8%, var(--surface)),
+        color-mix(in srgb, var(--teal) 8%, var(--surface))
+      );
+      border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-card .icon { font-size: 28px; }
+
+    .contact-card .label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .contact-card .value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    .site-footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .site-footer a { color: var(--muted); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .site-header { padding: 40px 20px 36px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ─────────────────────────────────── -->
+<header class="site-header">
+  <div class="logo-mark">🔒</div>
+  <h1>OutVault: Private Camera</h1>
+  <p class="subtitle">Privacy Policy</p>
+</header>
+
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    Effective: June 1, 2026
+  </div>
+
+  <!-- 1. Overview -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. Overview</h2>
+    </div>
+    <p>
+      <strong>OutVault: Private Camera</strong> ("the App") is a professional-grade private camera app
+      built to keep your photos and videos completely isolated from the iOS Photos library.
+      This Privacy Policy explains what information we collect, how we use it, and your rights.
+    </p>
+    <div class="highlight">
+      OutVault is a <strong>sandbox-first</strong> app. Every photo and video you capture is stored
+      exclusively in the app's private sandbox — never written to iOS Photos. Your media never
+      leaves your device unless you explicitly share it.
+    </div>
+    <p>
+      By installing or using the App, you agree to this Privacy Policy.
+      If you do not agree, please discontinue use of the App.
+    </p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>The following information is collected or processed by the App.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Photos &amp; Videos</strong><br>Captured media files</td>
+          <td>Core app functionality</td>
+          <td><span class="tag tag-local">Device sandbox only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Asset Metadata</strong><br>Date, memo, author, optional location (user-entered)</td>
+          <td>Metadata editing feature</td>
+          <td><span class="tag tag-local">Device sandbox only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Anonymous Usage Events</strong><br>Screen transitions, feature taps, etc.</td>
+          <td>App quality &amp; feature improvement</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace</td>
+          <td>App stability improvement</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Purchase Status</strong><br>Lifetime Pro entitlement (anonymous)</td>
+          <td>Unlocking Pro features</td>
+          <td><span class="tag tag-third">RevenueCat</span></td>
+        </tr>
+        <tr>
+          <td><strong>Location Data</strong><br>(GPS / device sensor)</td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+        <tr>
+          <td><strong>Account / Login</strong></td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      Note: Location field in metadata is <em>manually entered text</em> by the user — the App
+      does not access GPS or device location sensors.
+    </p>
+  </section>
+
+  <!-- 3. How Your Media Is Stored -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗄️</div>
+      <h2>3. How Your Media Is Stored</h2>
+    </div>
+    <p>
+      All photos and videos captured by OutVault are written directly to the app's
+      <strong>Application Support/assets/</strong> directory — completely bypassing iOS Photos.
+      The App never calls any iOS Photos library API.
+    </p>
+    <ul>
+      <li>All files are protected with <strong>NSFileProtectionComplete</strong>, Apple's highest
+          level of on-device file encryption. Files are inaccessible while the device is locked.</li>
+      <li>Face ID / Passcode authentication is required to open the App.</li>
+      <li>Media is never transmitted to our servers.</li>
+      <li>When you share a file, data leaves the app only through the standard iOS share sheet
+          under your explicit control. Pro users may strip EXIF metadata before sharing.</li>
+    </ul>
+    <div class="highlight">
+      Your media exists <strong>only on your device</strong> (and optionally in iCloud — see
+      Section 5) until you choose to share it. We have no access to your photos or videos.
+    </div>
+  </section>
+
+  <!-- 4. Firebase Services -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <h2>4. Firebase Services</h2>
+    </div>
+    <p>
+      OutVault uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
+      (Google LLC) to improve app quality and stability.
+    </p>
+    <p><strong>Firebase Analytics</strong> collects the following anonymous events:</p>
+    <ul>
+      <li>Screen transitions and feature tap events</li>
+      <li>In-app interactions (e.g., photo capture, gallery view, share)</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics does <strong>not collect personally identifiable information</strong>
+      and never accesses your photos or videos.
+      All data is anonymous and used solely to improve the App.
+      It is never sold or used for marketing purposes.
+    </div>
+    <p><strong>Firebase Crashlytics</strong> collects the following upon a crash:</p>
+    <ul>
+      <li>Device model, OS version, and app version</li>
+      <li>Crash location (stack trace)</li>
+      <li>Timestamp of the crash (UTC)</li>
+    </ul>
+    <div class="highlight">
+      Crashlytics data is used <strong>solely to improve app stability</strong> and contains
+      no information that can personally identify you. Your media files are never included.
+    </div>
+    <p>
+      For details on how Firebase handles data, please refer to
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.
+    </p>
+  </section>
+
+  <!-- 5. Third-Party Services -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <p>The App uses the following third-party services.</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple CloudKit</strong></td>
+          <td>Pro: encrypted media sync across devices (future V2 feature)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>RevenueCat</strong></td>
+          <td>In-app purchase management for Lifetime Pro</td>
+          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>Anonymous app usage event collection and feature improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>Crash reporting and app stability improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>App distribution and billing</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 6. Data Retention & Deletion -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. Data Retention &amp; Deletion</h2>
+    </div>
+    <ul>
+      <li><strong>Photos &amp; Videos (local):</strong> Stored in the app sandbox on your device.
+          Permanently deleted when you delete individual assets from within the App,
+          or when you uninstall the App.</li>
+      <li><strong>Auto-Delete (Pro):</strong> Assets with an expiration date are automatically purged
+          by the App. You control the expiration window per asset.</li>
+      <li><strong>iCloud sync (future Pro feature):</strong> If CloudKit sync is enabled,
+          uninstalling the App alone does not remove your iCloud copy. Use
+          <em>Settings → Reset All Data</em> before uninstalling to fully remove iCloud data.</li>
+      <li><strong>Analytics &amp; crash data:</strong> Subject to Google's and RevenueCat's
+          respective data retention policies.</li>
+    </ul>
+    <div class="highlight">
+      We hold no copy of your photos or videos. Uninstalling the App (without iCloud sync)
+      is sufficient to completely remove all media data.
+    </div>
+  </section>
+
+  <!-- 7. Your Rights (GDPR / CCPA) -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. Your Rights</h2>
+    </div>
+    <p>Depending on your region, you may have the following rights.</p>
+    <ul>
+      <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
+      <li><strong>Right of Rectification:</strong> Correct inaccurate data</li>
+      <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
+      <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
+    </ul>
+    <p>To exercise your rights or for inquiries, please contact us at the address below.</p>
+
+    <div class="highlight warn">
+      <strong>California residents (CCPA):</strong> You have the right to opt out of the sale
+      of personal information. We do not sell your data.
+    </div>
+  </section>
+
+  <!-- 8. Children's Privacy -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>8. Children's Privacy</h2>
+    </div>
+    <p>
+      OutVault is not directed to children under the age of <strong>13</strong> (US) or
+      <strong>16</strong> (EU/EEA). We do not knowingly collect personal information from children.
+    </p>
+    <p>
+      If you become aware that a child has used the App, please contact us immediately
+      so we can take appropriate steps to delete the relevant data.
+    </p>
+  </section>
+
+  <!-- 9. Security -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. Security</h2>
+    </div>
+    <p>
+      OutVault is built around security as a first principle, not an afterthought:
+    </p>
+    <ul>
+      <li>All media is stored with <strong>NSFileProtectionComplete</strong> — files are encrypted
+          and inaccessible while the device is locked.</li>
+      <li><strong>Face ID / Passcode</strong> authentication is required on every app launch and
+          after the app is backgrounded.</li>
+      <li>The iOS Photos library API is <strong>never called</strong> — captured media is routed
+          directly into the app sandbox.</li>
+      <li>Pro users can strip all EXIF metadata before sharing a file.</li>
+      <li>Your media is never transmitted to our servers under any circumstance.</li>
+    </ul>
+  </section>
+
+  <!-- 10. Changes to This Policy -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. Changes to This Policy</h2>
+    </div>
+    <p>
+      This policy may be updated due to changes in law, service updates, or third-party
+      policy changes. We will notify you of significant changes via in-app notifications
+      or this page.
+    </p>
+    <p>
+      Changes take effect upon posting to this page. Continued use of the App after
+      changes constitutes acceptance of the updated policy.
+    </p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. Contact Us</h2>
+    </div>
+    <p>For questions about this Privacy Policy or to exercise your rights, please reach out.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">Email</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      We aim to respond within 5 business days.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Hoon's Labs &nbsp;·&nbsp; OutVault: Private Camera</p>
+  <p style="margin-top:6px;">
+    <a href="../outvault/">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="../../support/outvault/">Support</a>
+  </p>
+</footer>
+
+</body>
+</html>
