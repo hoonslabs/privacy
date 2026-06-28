@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Tookly</title>
-  <meta name="description" content="Tookly Privacy Policy / 개인정보 처리방침" />
+  <meta name="description" content="Tookly Privacy Policy / 개인정보 처리방침 / プライバシーポリシー / 隱私權政策" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -161,6 +161,8 @@
     [lang-block].visible { display: block; }
 
     @media (max-width: 600px) {
+      .lang-bar { gap: 4px; padding: 8px 12px; }
+      .lang-btn { padding: 4px 10px; font-size: 12px; }
       .section { padding: 24px 18px; }
       .site-header { padding: 40px 20px 36px; }
       .data-table { font-size: 13px; }
@@ -172,15 +174,19 @@
 <body>
 
 <div class="lang-bar">
-  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
-  <button class="lang-btn"        onclick="setLang('ko')" id="btn-ko">한국어</button>
+  <button class="lang-btn active" onclick="setLang('en')"      id="btn-en">English</button>
+  <button class="lang-btn"        onclick="setLang('ko')"      id="btn-ko">한국어</button>
+  <button class="lang-btn"        onclick="setLang('ja')"      id="btn-ja">日本語</button>
+  <button class="lang-btn"        onclick="setLang('zh-hant')" id="btn-zh-hant">繁體中文</button>
 </div>
 
 <header class="site-header">
   <div class="logo-mark">💊</div>
   <h1>Tookly</h1>
-  <p class="subtitle" lang-block="en" id="hd-en">Privacy Policy</p>
-  <p class="subtitle" lang-block="ko" id="hd-ko">개인정보 처리방침</p>
+  <p class="subtitle" lang-block="en"      id="hd-en">Privacy Policy</p>
+  <p class="subtitle" lang-block="ko"      id="hd-ko">개인정보 처리방침</p>
+  <p class="subtitle" lang-block="ja"      id="hd-ja">プライバシーポリシー</p>
+  <p class="subtitle" lang-block="zh-hant" id="hd-zh-hant">隱私權政策</p>
 </header>
 
 <!-- ══ ENGLISH ══ -->
@@ -248,7 +254,6 @@
     <ul>
       <li>Onboarding completion</li>
       <li>Notification permission grant/deny</li>
-      <li>HealthKit permission grant/deny</li>
       <li>Medication added (no medication name or dose is sent)</li>
       <li>Dose taken / skipped / snoozed</li>
       <li>CSV export started</li>
@@ -264,7 +269,6 @@
     <div class="section-header"><div class="section-icon">🎯</div><h2>4. How We Use Information</h2></div>
     <ul>
       <li><strong>App Services:</strong> Medication scheduling, reminders, streak tracking, stock management</li>
-      <li><strong>HealthKit:</strong> Logging taken doses to Apple Health (write-only, with your permission)</li>
       <li><strong>App Improvement:</strong> Anonymous feature usage analysis via Firebase Analytics</li>
       <li><strong>Stability:</strong> Crash diagnosis via Firebase Crashlytics</li>
     </ul>
@@ -279,11 +283,6 @@
         <tr>
           <td><strong>Apple iCloud (CloudKit)</strong></td>
           <td>Multi-device medication sync (when signed into iCloud)</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
-          <td><strong>Apple HealthKit</strong></td>
-          <td>Write dose logs to Apple Health (optional, with permission)</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
         </tr>
         <tr>
@@ -433,7 +432,6 @@
     <ul>
       <li>온보딩 완료</li>
       <li>알림 권한 허용/거부</li>
-      <li>HealthKit 권한 허용/거부</li>
       <li>약 추가 (약 이름, 용량은 전송되지 않음)</li>
       <li>복약 완료 / 건너뜀 / 스누즈</li>
       <li>CSV 내보내기 시작</li>
@@ -449,7 +447,6 @@
     <div class="section-header"><div class="section-icon">🎯</div><h2>4. 정보 이용 목적</h2></div>
     <ul>
       <li><strong>앱 서비스 제공:</strong> 복약 스케줄링, 알림, 스트릭 추적, 재고 관리</li>
-      <li><strong>HealthKit 연동:</strong> 복약 완료 기록을 Apple 건강 앱에 기록 (쓰기 전용, 권한 허용 시)</li>
       <li><strong>앱 개선:</strong> Firebase Analytics를 통한 익명 기능 사용 패턴 분석</li>
       <li><strong>안정성 향상:</strong> Firebase Crashlytics를 통한 충돌 분석</li>
     </ul>
@@ -464,11 +461,6 @@
         <tr>
           <td><strong>Apple iCloud (CloudKit)</strong></td>
           <td>복약 데이터 멀티기기 동기화 (iCloud 로그인 시)</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
-        </tr>
-        <tr>
-          <td><strong>Apple HealthKit</strong></td>
-          <td>복약 기록을 Apple 건강 앱에 기록 (선택, 권한 허용 시)</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
         </tr>
         <tr>
@@ -553,34 +545,399 @@
 </main>
 </div>
 
+<!-- ══ JAPANESE ══ -->
+<div lang-block="ja" id="content-ja">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    施行日: 2026年5月25日
+  </div>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📋</div><h2>1. 概要</h2></div>
+    <p><strong>Tookly</strong>（以下「本アプリ」）は、ADHDおよび慢性疾患を管理する方々のためのプレミアム服薬トラッカーです。本プライバシーポリシーでは、収集する情報、その使用方法、およびお客様の権利についてご説明します。</p>
+    <div class="highlight">
+      Tooklyは<strong>ローカルファースト</strong>アプリです。服薬データはデフォルトでデバイスに保存されます。アカウントや登録は不要です。iCloudにサインインしている場合、Apple iCloud（CloudKit）を通じて同期される場合があります。当社のサーバーにデータが送信されることはありません。
+    </div>
+    <p>本アプリをインストールまたは使用することで、本ポリシーに同意したものとみなされます。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📊</div><h2>2. 収集する情報</h2></div>
+    <table class="data-table">
+      <thead><tr><th>データの種類</th><th>目的</th><th>保存場所</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>服薬データ</strong><br>薬名、用量、スケジュール、服用記録</td>
+          <td>アプリの主要機能</td>
+          <td><span class="tag tag-local">デバイスのみ</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>アプリ設定</strong><br>通知スタイル、ニックネーム、生体認証ロック</td>
+          <td>ユーザー設定</td>
+          <td><span class="tag tag-local">デバイスのみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名使用イベント</strong><br>機能タップ、オンボーディング完了、服薬完了/スキップイベント</td>
+          <td>アプリ品質向上</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>クラッシュレポート</strong><br>デバイスモデル、OSバージョン、アプリバージョン、スタックトレース</td>
+          <td>アプリ安定性</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>薬名・健康データ</strong></td>
+          <td>Analyticsによる収集なし</td>
+          <td><span class="tag tag-no">収集しない</span></td>
+        </tr>
+        <tr>
+          <td><strong>位置情報・アカウント・ログイン情報</strong></td>
+          <td>収集しない</td>
+          <td><span class="tag tag-no">収集しない</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:13px;color:var(--muted);">* iCloudにサインインしている場合のみ適用されます。iCloudを使用しない場合、すべてのデータはデバイスに保存されます。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebaseサービス</h2></div>
+    <p>Tooklyはアプリの安定性と機能向上のため、<strong>Firebase Analytics</strong>および<strong>Firebase Crashlytics</strong>（Google LLC）を使用しています。</p>
+    <p><strong>Firebase Analytics</strong>が収集する匿名イベント：</p>
+    <ul>
+      <li>オンボーディング完了</li>
+      <li>通知権限の許可/拒否</li>
+      <li>薬の追加（薬名や用量は送信されません）</li>
+      <li>服薬完了 / スキップ / スヌーズ</li>
+      <li>CSVエクスポート開始</li>
+    </ul>
+    <div class="highlight">
+      <strong>薬名、用量、疾患タグ、健康記録はFirebaseに送信されません。</strong>すべての分析イベントは匿名であり、個人を特定することはできません。
+    </div>
+    <p><strong>Firebase Crashlytics</strong>はクラッシュ発生時に、デバイスモデル、OSバージョン、アプリバージョン、スタックトレースを収集します。健康データは含まれません。</p>
+    <p>詳細は<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシー</a>をご覧ください。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🎯</div><h2>4. 情報の利用目的</h2></div>
+    <ul>
+      <li><strong>アプリサービス提供：</strong>服薬スケジューリング、リマインダー、ストリーク追跡、在庫管理</li>
+      <li><strong>アプリ改善：</strong>Firebase Analyticsによる匿名機能使用パターン分析</li>
+      <li><strong>安定性向上：</strong>Firebase Crashlyticsによるクラッシュ分析</li>
+    </ul>
+    <p>服薬データを第三者に販売、賃貸、または共有することはありません。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔗</div><h2>5. 第三者サービス</h2></div>
+    <table class="data-table">
+      <thead><tr><th>サービス</th><th>目的</th><th>プライバシーポリシー</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>服薬データのマルチデバイス同期（iCloudサインイン時）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">表示 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>匿名アプリ使用イベント（健康データなし）</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">表示 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>クラッシュレポートと安定性向上</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">表示 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>RevenueCat</strong></td>
+          <td>アプリ内購入とサブスクリプション管理</td>
+          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">表示 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>アプリ配信と課金</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">表示 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🗂️</div><h2>6. データの保持と削除</h2></div>
+    <ul>
+      <li><strong>ローカルデータ：</strong>デバイスに保存され、アプリをアンインストールすると削除されます。</li>
+      <li><strong>iCloudデータ：</strong>iCloud同期が有効な場合、アプリのアンインストールのみではiCloudのコピーは削除されません。iPhoneの<em>設定 → [お名前] → iCloud → アカウントのストレージを管理</em>から、Tooklyのデータを手動で削除してください。</li>
+      <li><strong>Analyticsデータ：</strong>Googleのデータ保持ポリシーに従います。</li>
+    </ul>
+    <div class="highlight">
+      当社は服薬データのコピーを保持していません。iCloudを使用しない場合、アプリをアンインストールするだけですべてのデータが完全に削除されます。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">⚖️</div><h2>7. お客様の権利</h2></div>
+    <p>お住まいの地域によって、以下の権利をお持ちの場合があります：</p>
+    <ul>
+      <li><strong>アクセス権：</strong>個人データのコピーを請求する権利</li>
+      <li><strong>訂正権：</strong>不正確なデータを訂正する権利</li>
+      <li><strong>消去権（忘れられる権利）：</strong>データの削除を請求する権利</li>
+      <li><strong>制限権：</strong>処理の制限を請求する権利</li>
+    </ul>
+    <div class="highlight warn">
+      <strong>カリフォルニア州在住者（CCPA）：</strong>個人情報の販売をオプトアウトする権利があります。当社はお客様のデータを販売していません。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">👶</div><h2>8. 子どものプライバシー</h2></div>
+    <p>Tooklyは<strong>13歳未満</strong>（米国基準）または<strong>16歳未満</strong>（EU基準）の子どもを対象としていません。お子様がアプリを使用したと思われる場合はご連絡ください。関連データを速やかに削除いたします。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔒</div><h2>9. セキュリティ</h2></div>
+    <p>服薬データはSwiftData（iOS）に保存され、デバイスのファイルシステム暗号化によって保護されています。アプリ内のFace ID / Touch IDロック機能もご利用いただけます。</p>
+    <p>iCloud同期が有効な場合、データはAppleのエンドツーエンド暗号化ポリシーにより、転送中および保存中の両方で保護されます。当社のサーバーにデータが送信されることはありません。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔄</div><h2>10. ポリシーの変更</h2></div>
+    <p>本ポリシーは、法律の変更またはサービスのアップデートにより改訂される場合があります。重要な変更はアプリ内通知またはこのページでお知らせします。変更後もアプリを継続してご利用いただく場合は、変更に同意したものとみなされます。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">✉️</div><h2>11. お問い合わせ</h2></div>
+    <p>本プライバシーポリシーに関するご質問や権利の行使については、以下までご連絡ください。</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">メール</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:14px;color:var(--muted);">5営業日以内にご返答いたします。</p>
+  </section>
+
+</main>
+</div>
+
+<!-- ══ TRADITIONAL CHINESE ══ -->
+<div lang-block="zh-hant" id="content-zh-hant">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    生效日期：2026年5月25日
+  </div>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📋</div><h2>1. 概述</h2></div>
+    <p><strong>Tookly</strong>（以下簡稱「本應用程式」）是專為 ADHD 及慢性病患者打造的優質服藥追蹤應用程式。本隱私權政策說明我們收集的資訊、使用方式，以及您的相關權利。</p>
+    <div class="highlight">
+      Tookly 是一款<strong>本地優先（Local-First）</strong>應用程式。您的服藥資料預設儲存於裝置上，無需帳號或註冊。若您已登入 iCloud，資料可能透過 Apple iCloud（CloudKit）進行同步。您的資料絕不會傳送至我們的伺服器。
+    </div>
+    <p>安裝或使用本應用程式，即表示您同意本隱私權政策。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📊</div><h2>2. 我們收集的資訊</h2></div>
+    <table class="data-table">
+      <thead><tr><th>資料類型</th><th>目的</th><th>儲存位置</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>服藥資料</strong><br>藥名、劑量、時程、服藥記錄</td>
+          <td>應用程式核心功能</td>
+          <td><span class="tag tag-local">僅限裝置</span> <span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>應用程式設定</strong><br>通知樣式、暱稱、生物辨識鎖定</td>
+          <td>使用者偏好設定</td>
+          <td><span class="tag tag-local">僅限裝置</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名使用事件</strong><br>功能點選、上線引導完成、服藥完成/跳過事件</td>
+          <td>應用程式品質改善</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>當機報告</strong><br>裝置型號、系統版本、應用程式版本、堆疊追蹤</td>
+          <td>應用程式穩定性</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>藥物名稱或健康資料</strong></td>
+          <td>不由 Analytics 收集</td>
+          <td><span class="tag tag-no">不收集</span></td>
+        </tr>
+        <tr>
+          <td><strong>位置/帳號/登入資訊</strong></td>
+          <td>不收集</td>
+          <td><span class="tag tag-no">不收集</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px;font-size:13px;color:var(--muted);">* 僅在登入 iCloud 時適用。未使用 iCloud 時，所有資料均留存於裝置上。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase 服務</h2></div>
+    <p>Tookly 使用 <strong>Firebase Analytics</strong> 和 <strong>Firebase Crashlytics</strong>（Google LLC）來改善應用程式的穩定性與功能。</p>
+    <p><strong>Firebase Analytics</strong> 收集的匿名事件包括：</p>
+    <ul>
+      <li>上線引導完成</li>
+      <li>通知權限允許/拒絕</li>
+      <li>新增藥物（不傳送藥名或劑量）</li>
+      <li>服藥完成 / 跳過 / 延後提醒</li>
+      <li>開始匯出 CSV</li>
+    </ul>
+    <div class="highlight">
+      <strong>藥物名稱、劑量、病症標籤或健康記錄絕不會傳送至 Firebase。</strong>所有分析事件均為匿名，無法連結至特定個人。
+    </div>
+    <p><strong>Firebase Crashlytics</strong> 在當機時收集：裝置型號、系統版本、應用程式版本及堆疊追蹤。不含健康資料。</p>
+    <p>詳情請參閱 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權</a>。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🎯</div><h2>4. 資訊使用方式</h2></div>
+    <ul>
+      <li><strong>應用程式服務：</strong>服藥排程、提醒、連續天數追蹤、庫存管理</li>
+      <li><strong>應用程式改善：</strong>透過 Firebase Analytics 進行匿名功能使用分析</li>
+      <li><strong>穩定性維護：</strong>透過 Firebase Crashlytics 進行當機診斷</li>
+    </ul>
+    <p>我們不會向任何第三方出售、出租或分享您的服藥資料。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔗</div><h2>5. 第三方服務</h2></div>
+    <table class="data-table">
+      <thead><tr><th>服務</th><th>目的</th><th>隱私權政策</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>服藥資料跨裝置同步（登入 iCloud 時）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>匿名應用程式使用事件（無健康資料）</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>當機報告與穩定性改善</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>RevenueCat</strong></td>
+          <td>應用程式內購買與訂閱管理</td>
+          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>應用程式發佈與付款</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🗂️</div><h2>6. 資料保留與刪除</h2></div>
+    <ul>
+      <li><strong>本機資料：</strong>儲存於裝置上，解除安裝應用程式時即予刪除。</li>
+      <li><strong>iCloud 資料：</strong>若啟用 iCloud 同步，僅解除安裝應用程式並不會刪除 iCloud 的備份。請前往 iPhone 的<em>設定 → [您的姓名] → iCloud → 管理帳號儲存空間</em>，手動刪除 Tookly 的資料。</li>
+      <li><strong>Analytics 資料：</strong>依 Google 的資料保留政策處理。</li>
+    </ul>
+    <div class="highlight">
+      我們不持有任何您的服藥資料副本。若未使用 iCloud，解除安裝應用程式即可完全移除所有資料。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">⚖️</div><h2>7. 您的權利</h2></div>
+    <p>依據您所在地區，您可能享有以下權利：</p>
+    <ul>
+      <li><strong>存取權：</strong>要求取得您個人資料的副本</li>
+      <li><strong>更正權：</strong>更正不正確的資料</li>
+      <li><strong>刪除權（被遺忘權）：</strong>要求刪除您的資料</li>
+      <li><strong>限制處理權：</strong>要求限制資料處理</li>
+    </ul>
+    <div class="highlight warn">
+      <strong>加州居民（CCPA）：</strong>您有權拒絕出售個人資訊。我們不出售您的資料。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">👶</div><h2>8. 兒童隱私</h2></div>
+    <p>Tookly 不針對 <strong>13 歲以下</strong>（美國標準）或 <strong>16 歲以下</strong>（EU 標準）的兒童提供服務。若您認為兒童曾使用本應用程式，請與我們聯繫，我們將立即刪除相關資料。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔒</div><h2>9. 安全性</h2></div>
+    <p>服藥資料儲存於 iOS 的 SwiftData 中，並受裝置檔案系統加密保護。應用程式內亦提供 Face ID / Touch ID 鎖定功能。</p>
+    <p>啟用 iCloud 同步後，資料將依 Apple 的端對端加密政策在傳輸中及儲存時均受到保護。您的資料絕不會傳送至我們的伺服器。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔄</div><h2>10. 政策變更</h2></div>
+    <p>本政策可能因法律變更或服務更新而修訂。重大變更將透過應用程式內通知或本頁面告知。繼續使用本應用程式即視為接受變更後的政策。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">✉️</div><h2>11. 聯絡我們</h2></div>
+    <p>如對本隱私權政策有任何疑問，或欲行使您的相關權利，請透過以下方式聯繫我們。</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">電子郵件</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;font-size:14px;color:var(--muted);">我們將盡力在 5 個工作日內回覆。</p>
+  </section>
+
+</main>
+</div>
+
 <footer class="site-footer">
   <p>© 2026 Tookly by Hoon's Labs. All rights reserved.</p>
   <p style="margin-top:6px;">
-    <span id="footer-en">This policy is provided in English and Korean. In case of conflict, the English version prevails.</span>
-    <span id="footer-ko" style="display:none;">본 방침은 영어와 한국어로 제공됩니다. 내용이 상충할 경우 영어 버전이 우선합니다.</span>
+    <span id="footer-en">This policy is provided in English, Korean, Japanese, and Traditional Chinese. In case of conflict, the English version prevails.</span>
+    <span id="footer-ko" style="display:none;">본 방침은 영어, 한국어, 일본어, 번체 중국어로 제공됩니다. 내용이 상충할 경우 영어 버전이 우선합니다.</span>
+    <span id="footer-ja" style="display:none;">本ポリシーは英語、韓国語、日本語、繁体字中国語で提供されます。内容が相反する場合、英語版が優先されます。</span>
+    <span id="footer-zh-hant" style="display:none;">本政策以英文、韓文、日文及繁體中文提供。如有衝突，以英文版本為準。</span>
   </p>
 </footer>
 
 <script>
+  const LANGS = ['en', 'ko', 'ja', 'zh-hant'];
+
   function setLang(lang) {
     document.querySelectorAll('[lang-block]').forEach(el => {
       el.classList.toggle('visible', el.id.endsWith('-' + lang));
     });
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-    document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
-    document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
-    document.getElementById('footer-ko').style.display = lang === 'ko' ? '' : 'none';
-    document.documentElement.lang = lang;
+    LANGS.forEach(l => {
+      document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+      const footer = document.getElementById('footer-' + l);
+      if (footer) footer.style.display = l === lang ? '' : 'none';
+    });
+    document.documentElement.lang = lang === 'zh-hant' ? 'zh-Hant' : lang;
     localStorage.setItem('tookly-lang', lang);
   }
 
   (function () {
     const params  = new URLSearchParams(window.location.search);
     const urlLang = params.get('lang');
-    if (['en','ko'].includes(urlLang)) { setLang(urlLang); return; }
+    if (LANGS.includes(urlLang)) { setLang(urlLang); return; }
     const saved = localStorage.getItem('tookly-lang');
-    if (['en','ko'].includes(saved)) { setLang(saved); return; }
-    setLang(navigator.language.startsWith('ko') ? 'ko' : 'en');
+    if (LANGS.includes(saved)) { setLang(saved); return; }
+    const nav = navigator.language || '';
+    if (nav.startsWith('ko')) { setLang('ko'); return; }
+    if (nav.startsWith('ja')) { setLang('ja'); return; }
+    if (nav === 'zh-TW' || nav === 'zh-HK' || nav.startsWith('zh-Hant')) { setLang('zh-hant'); return; }
+    setLang('en');
   })();
 </script>
 
