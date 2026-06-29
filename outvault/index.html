@@ -44,7 +44,6 @@
       font-size: 16px;
     }
 
-    /* ── Header ─────────────────────────────────────────── */
     .site-header {
       background: linear-gradient(135deg, var(--ink) 0%, var(--steel) 100%);
       color: #fff;
@@ -53,213 +52,94 @@
     }
 
     .logo-mark {
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: rgba(74,144,217,0.2);
       border-radius: 18px;
       border: 1px solid rgba(74,144,217,0.4);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      margin-bottom: 16px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 32px; margin-bottom: 16px;
       backdrop-filter: blur(8px);
     }
 
-    .site-header h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
+    .site-header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .site-header .subtitle { font-size: 14px; opacity: 0.7; font-weight: 400; }
 
-    .site-header .subtitle {
-      font-size: 14px;
-      opacity: 0.7;
-      font-weight: 400;
+    .lang-switcher { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+    .lang-btn {
+      padding: 4px 12px; border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: transparent; color: rgba(255,255,255,0.65);
+      font-size: 12px; font-weight: 500; cursor: pointer;
+      transition: all 0.15s; font-family: inherit;
     }
+    .lang-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    .lang-btn.active { background: rgba(255,255,255,0.18); color: #fff; border-color: rgba(255,255,255,0.5); }
 
-    /* ── Main Layout ─────────────────────────────────────── */
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    /* ── Meta Badge ──────────────────────────────────────── */
     .meta-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 40px;
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 13px; color: var(--muted); margin-bottom: 40px;
     }
+    .meta-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
 
-    .meta-badge .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--teal);
-    }
-
-    /* ── Section ─────────────────────────────────────────── */
     .section {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 32px;
-      margin-bottom: 20px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px; margin-bottom: 20px;
     }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .section-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
+      width: 40px; height: 40px; border-radius: 10px;
       background: color-mix(in srgb, var(--accent) 12%, transparent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
     }
+    .section h2 { font-size: 18px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.3px; }
 
-    .section h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--charcoal);
-      letter-spacing: -0.3px;
-    }
-
-    /* ── Typography ──────────────────────────────────────── */
     p { margin-bottom: 14px; color: var(--charcoal); }
     p:last-child { margin-bottom: 0; }
-
-    ul, ol {
-      padding-left: 20px;
-      margin-bottom: 14px;
-    }
-
+    ul, ol { padding-left: 20px; margin-bottom: 14px; }
     li { margin-bottom: 6px; }
-
     strong { color: var(--charcoal); font-weight: 600; }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-      transition: border-color 0.2s;
-    }
-
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); transition: border-color 0.2s; }
     a:hover { border-color: var(--accent); }
 
-    /* ── Highlight Box ───────────────────────────────────── */
     .highlight {
       background: color-mix(in srgb, var(--teal) 10%, var(--surface));
       border-left: 3px solid var(--teal);
-      border-radius: 0 8px 8px 0;
-      padding: 14px 18px;
-      margin: 16px 0;
-      font-size: 15px;
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 15px;
     }
+    .highlight.warn { background: color-mix(in srgb, var(--amber) 10%, var(--surface)); border-color: var(--amber); }
 
-    .highlight.warn {
-      background: color-mix(in srgb, var(--amber) 10%, var(--surface));
-      border-color: var(--amber);
-    }
-
-    /* ── Table ───────────────────────────────────────────── */
-    .data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 14px;
-    }
-
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
     .data-table th {
       background: color-mix(in srgb, var(--accent) 10%, var(--surface));
-      color: var(--accent);
-      font-weight: 600;
-      text-align: left;
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
+      color: var(--accent); font-weight: 600; text-align: left;
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
     }
-
-    .data-table td {
-      padding: 10px 14px;
-      border-bottom: 1px solid var(--border);
-      vertical-align: top;
-    }
-
+    .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
     .data-table tr:last-child td { border-bottom: none; }
 
-    /* ── Tag Pills ───────────────────────────────────────── */
-    .tag {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-    }
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .tag-local { background: color-mix(in srgb, var(--teal) 15%, transparent); color: #1a7a6e; }
+    .tag-third { background: color-mix(in srgb, #FF8C42 20%, transparent); color: #a0470d; }
+    .tag-no    { background: color-mix(in srgb, var(--muted) 15%, transparent); color: var(--muted); }
 
-    .tag-local   { background: color-mix(in srgb, var(--teal) 15%, transparent);   color: #1a7a6e; }
-    .tag-third   { background: color-mix(in srgb, #FF8C42 20%, transparent);        color: #a0470d; }
-    .tag-no      { background: color-mix(in srgb, var(--muted) 15%, transparent);   color: var(--muted); }
-    .tag-icloud  { background: color-mix(in srgb, var(--accent) 12%, transparent);  color: var(--accent-dark); }
-
-    /* ── Contact Card ────────────────────────────────────── */
     .contact-card {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      background: linear-gradient(135deg,
-        color-mix(in srgb, var(--accent) 8%, var(--surface)),
-        color-mix(in srgb, var(--teal) 8%, var(--surface))
-      );
+      display: flex; align-items: center; gap: 16px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, var(--surface)), color-mix(in srgb, var(--teal) 8%, var(--surface)));
       border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
-      border-radius: var(--radius);
-      padding: 20px 24px;
-      margin-top: 16px;
+      border-radius: var(--radius); padding: 20px 24px; margin-top: 16px;
     }
-
     .contact-card .icon { font-size: 28px; }
+    .contact-card .label { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 2px; }
+    .contact-card .value { font-size: 15px; font-weight: 600; color: var(--accent); }
 
-    .contact-card .label {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .contact-card .value {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    /* ── Footer ──────────────────────────────────────────── */
-    .site-footer {
-      text-align: center;
-      padding: 32px 24px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--muted);
-    }
-
+    .site-footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
     .site-footer a { color: var(--muted); }
 
-    /* ── Responsive ──────────────────────────────────────── */
     @media (max-width: 600px) {
       .section { padding: 24px 18px; }
       .site-header { padding: 40px 20px 36px; }
@@ -271,337 +151,732 @@
 </head>
 <body>
 
-<!-- ── Header ─────────────────────────────────── -->
 <header class="site-header">
   <div class="logo-mark">🔒</div>
   <h1>OutVault: Private Camera</h1>
-  <p class="subtitle">Privacy Policy</p>
+  <p class="subtitle" data-i18n="subtitle">Privacy Policy</p>
+  <div class="lang-switcher">
+    <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+    <button class="lang-btn" data-lang="de" onclick="applyLang('de')">DE</button>
+    <button class="lang-btn" data-lang="ja" onclick="applyLang('ja')">日本語</button>
+    <button class="lang-btn" data-lang="fr" onclick="applyLang('fr')">FR</button>
+    <button class="lang-btn" data-lang="ko" onclick="applyLang('ko')">한국어</button>
+  </div>
 </header>
 
 <main class="container">
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Effective: June 1, 2026
+    <span data-i18n="meta-badge">Effective: June 1, 2026</span>
   </div>
 
-  <!-- 1. Overview -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">📋</div>
-      <h2>1. Overview</h2>
-    </div>
-    <p>
-      <strong>OutVault: Private Camera</strong> ("the App") is a professional-grade private camera app
-      built to keep your photos and videos completely isolated from the iOS Photos library.
-      This Privacy Policy explains what information we collect, how we use it, and your rights.
-    </p>
-    <div class="highlight">
-      OutVault is a <strong>sandbox-first</strong> app. Every photo and video you capture is stored
-      exclusively in the app's private sandbox — never written to iOS Photos. Your media never
-      leaves your device unless you explicitly share it.
-    </div>
-    <p>
-      By installing or using the App, you agree to this Privacy Policy.
-      If you do not agree, please discontinue use of the App.
-    </p>
+    <div class="section-header"><div class="section-icon">📋</div><h2 data-i18n="s1-title">1. Overview</h2></div>
+    <p data-i18n-html="s1-p1"></p>
+    <div class="highlight" data-i18n-html="s1-hl"></div>
+    <p data-i18n-html="s1-p2"></p>
   </section>
 
-  <!-- 2. Information We Collect -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">📊</div>
-      <h2>2. Information We Collect</h2>
-    </div>
-    <p>The following information is collected or processed by the App.</p>
-
+    <div class="section-header"><div class="section-icon">📊</div><h2 data-i18n="s2-title">2. Information We Collect</h2></div>
+    <p data-i18n="s2-intro"></p>
     <table class="data-table">
-      <thead>
-        <tr>
-          <th>Data Type</th>
-          <th>Purpose</th>
-          <th>Storage</th>
-        </tr>
-      </thead>
+      <thead><tr>
+        <th data-i18n="s2-th1">Data Type</th>
+        <th data-i18n="s2-th2">Purpose</th>
+        <th data-i18n="s2-th3">Storage</th>
+      </tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Photos &amp; Videos</strong><br>Captured media files</td>
-          <td>Core app functionality</td>
-          <td><span class="tag tag-local">Device sandbox only</span></td>
-        </tr>
-        <tr>
-          <td><strong>Asset Metadata</strong><br>Date, memo, author, optional location (user-entered)</td>
-          <td>Metadata editing feature</td>
-          <td><span class="tag tag-local">Device sandbox only</span></td>
-        </tr>
-        <tr>
-          <td><strong>Anonymous Usage Events</strong><br>Screen transitions, feature taps, etc.</td>
-          <td>App quality &amp; feature improvement</td>
-          <td><span class="tag tag-third">Firebase Analytics</span></td>
-        </tr>
-        <tr>
-          <td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace</td>
-          <td>App stability improvement</td>
-          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
-        </tr>
-        <tr>
-          <td><strong>Purchase Status</strong><br>Lifetime Pro entitlement (anonymous)</td>
-          <td>Unlocking Pro features</td>
-          <td><span class="tag tag-third">RevenueCat</span></td>
-        </tr>
-        <tr>
-          <td><strong>Location Data</strong><br>(GPS / device sensor)</td>
-          <td>Not collected</td>
-          <td><span class="tag tag-no">Not collected</span></td>
-        </tr>
-        <tr>
-          <td><strong>Account / Login</strong></td>
-          <td>Not collected</td>
-          <td><span class="tag tag-no">Not collected</span></td>
-        </tr>
+        <tr><td data-i18n-html="s2-r1c1"></td><td data-i18n-html="s2-r1c2"></td><td data-i18n-html="s2-r1c3"></td></tr>
+        <tr><td data-i18n-html="s2-r2c1"></td><td data-i18n-html="s2-r2c2"></td><td data-i18n-html="s2-r2c3"></td></tr>
+        <tr><td data-i18n-html="s2-r3c1"></td><td data-i18n-html="s2-r3c2"></td><td data-i18n-html="s2-r3c3"></td></tr>
+        <tr><td data-i18n-html="s2-r4c1"></td><td data-i18n-html="s2-r4c2"></td><td data-i18n-html="s2-r4c3"></td></tr>
+        <tr><td data-i18n-html="s2-r5c1"></td><td data-i18n-html="s2-r5c2"></td><td data-i18n-html="s2-r5c3"></td></tr>
+        <tr><td data-i18n-html="s2-r6c1"></td><td data-i18n-html="s2-r6c2"></td><td data-i18n-html="s2-r6c3"></td></tr>
+        <tr><td data-i18n-html="s2-r7c1"></td><td data-i18n-html="s2-r7c2"></td><td data-i18n-html="s2-r7c3"></td></tr>
       </tbody>
     </table>
-    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
-      Note: Location field in metadata is <em>manually entered text</em> by the user — the App
-      does not access GPS or device location sensors.
-    </p>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);" data-i18n-html="s2-note"></p>
   </section>
 
-  <!-- 3. How Your Media Is Stored -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🗄️</div>
-      <h2>3. How Your Media Is Stored</h2>
-    </div>
-    <p>
-      All photos and videos captured by OutVault are written directly to the app's
-      <strong>Application Support/assets/</strong> directory — completely bypassing iOS Photos.
-      The App never calls any iOS Photos library API.
-    </p>
+    <div class="section-header"><div class="section-icon">🗄️</div><h2 data-i18n="s3-title">3. How Your Media Is Stored</h2></div>
+    <p data-i18n-html="s3-p1"></p>
     <ul>
-      <li>All files are protected with <strong>NSFileProtectionComplete</strong>, Apple's highest
-          level of on-device file encryption. Files are inaccessible while the device is locked.</li>
-      <li>Face ID / Passcode authentication is required to open the App.</li>
-      <li>Media is never transmitted to our servers.</li>
-      <li>When you share a file, data leaves the app only through the standard iOS share sheet
-          under your explicit control. Pro users may strip EXIF metadata before sharing.</li>
+      <li data-i18n-html="s3-li1"></li>
+      <li data-i18n-html="s3-li2"></li>
+      <li data-i18n-html="s3-li3"></li>
+      <li data-i18n-html="s3-li4"></li>
     </ul>
-    <div class="highlight">
-      Your media exists <strong>only on your device</strong> (and optionally in iCloud — see
-      Section 5) until you choose to share it. We have no access to your photos or videos.
-    </div>
+    <div class="highlight" data-i18n-html="s3-hl"></div>
   </section>
 
-  <!-- 4. Firebase Services -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🔥</div>
-      <h2>4. Firebase Services</h2>
-    </div>
-    <p>
-      OutVault uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong>
-      (Google LLC) to improve app quality and stability.
-    </p>
-    <p><strong>Firebase Analytics</strong> collects the following anonymous events:</p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2 data-i18n="s4-title">4. Firebase Services</h2></div>
+    <p data-i18n-html="s4-p1"></p>
+    <p data-i18n-html="s4-p2"></p>
     <ul>
-      <li>Screen transitions and feature tap events</li>
-      <li>In-app interactions (e.g., photo capture, gallery view, share)</li>
+      <li data-i18n-html="s4-li1"></li>
+      <li data-i18n-html="s4-li2"></li>
     </ul>
-    <div class="highlight">
-      Firebase Analytics does <strong>not collect personally identifiable information</strong>
-      and never accesses your photos or videos.
-      All data is anonymous and used solely to improve the App.
-      It is never sold or used for marketing purposes.
-    </div>
-    <p><strong>Firebase Crashlytics</strong> collects the following upon a crash:</p>
+    <div class="highlight" data-i18n-html="s4-hl1"></div>
+    <p data-i18n-html="s4-p3"></p>
     <ul>
-      <li>Device model, OS version, and app version</li>
-      <li>Crash location (stack trace)</li>
-      <li>Timestamp of the crash (UTC)</li>
+      <li data-i18n-html="s4-li3"></li>
+      <li data-i18n-html="s4-li4"></li>
+      <li data-i18n-html="s4-li5"></li>
     </ul>
-    <div class="highlight">
-      Crashlytics data is used <strong>solely to improve app stability</strong> and contains
-      no information that can personally identify you. Your media files are never included.
-    </div>
-    <p>
-      For details on how Firebase handles data, please refer to
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.
-    </p>
+    <div class="highlight" data-i18n-html="s4-hl2"></div>
+    <p data-i18n-html="s4-p4"></p>
   </section>
 
-  <!-- 5. Third-Party Services -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🔗</div>
-      <h2>5. Third-Party Services</h2>
-    </div>
-    <p>The App uses the following third-party services.</p>
+    <div class="section-header"><div class="section-icon">🔗</div><h2 data-i18n="s5-title">5. Third-Party Services</h2></div>
+    <p data-i18n="s5-intro"></p>
     <table class="data-table">
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Purpose</th>
-          <th>Privacy Policy</th>
-        </tr>
-      </thead>
+      <thead><tr>
+        <th data-i18n="s5-th1">Service</th>
+        <th data-i18n="s5-th2">Purpose</th>
+        <th data-i18n="s5-th3">Privacy Policy</th>
+      </tr></thead>
       <tbody>
-        <tr>
-          <td><strong>Apple CloudKit</strong></td>
-          <td>Pro: encrypted media sync across devices (future V2 feature)</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
-          <td><strong>RevenueCat</strong></td>
-          <td>In-app purchase management for Lifetime Pro</td>
-          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
-          <td><strong>Firebase Analytics</strong></td>
-          <td>Anonymous app usage event collection and feature improvement</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
-          <td><strong>Firebase Crashlytics</strong></td>
-          <td>Crash reporting and app stability improvement</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
-          <td><strong>Apple App Store</strong></td>
-          <td>App distribution and billing</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
-        </tr>
+        <tr><td data-i18n-html="s5-r1c1"></td><td data-i18n-html="s5-r1c2"></td><td data-i18n-html="s5-r1c3"></td></tr>
+        <tr><td data-i18n-html="s5-r2c1"></td><td data-i18n-html="s5-r2c2"></td><td data-i18n-html="s5-r2c3"></td></tr>
+        <tr><td data-i18n-html="s5-r3c1"></td><td data-i18n-html="s5-r3c2"></td><td data-i18n-html="s5-r3c3"></td></tr>
+        <tr><td data-i18n-html="s5-r4c1"></td><td data-i18n-html="s5-r4c2"></td><td data-i18n-html="s5-r4c3"></td></tr>
+        <tr><td data-i18n-html="s5-r5c1"></td><td data-i18n-html="s5-r5c2"></td><td data-i18n-html="s5-r5c3"></td></tr>
       </tbody>
     </table>
   </section>
 
-  <!-- 6. Data Retention & Deletion -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🗂️</div>
-      <h2>6. Data Retention &amp; Deletion</h2>
-    </div>
+    <div class="section-header"><div class="section-icon">🗂️</div><h2 data-i18n="s6-title">6. Data Retention &amp; Deletion</h2></div>
     <ul>
-      <li><strong>Photos &amp; Videos (local):</strong> Stored in the app sandbox on your device.
-          Permanently deleted when you delete individual assets from within the App,
-          or when you uninstall the App.</li>
-      <li><strong>Auto-Delete (Pro):</strong> Assets with an expiration date are automatically purged
-          by the App. You control the expiration window per asset.</li>
-      <li><strong>iCloud sync (future Pro feature):</strong> If CloudKit sync is enabled,
-          uninstalling the App alone does not remove your iCloud copy. Use
-          <em>Settings → Reset All Data</em> before uninstalling to fully remove iCloud data.</li>
-      <li><strong>Analytics &amp; crash data:</strong> Subject to Google's and RevenueCat's
-          respective data retention policies.</li>
+      <li data-i18n-html="s6-li1"></li>
+      <li data-i18n-html="s6-li2"></li>
+      <li data-i18n-html="s6-li3"></li>
+      <li data-i18n-html="s6-li4"></li>
     </ul>
-    <div class="highlight">
-      We hold no copy of your photos or videos. Uninstalling the App (without iCloud sync)
-      is sufficient to completely remove all media data.
-    </div>
+    <div class="highlight" data-i18n-html="s6-hl"></div>
   </section>
 
-  <!-- 7. Your Rights (GDPR / CCPA) -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">⚖️</div>
-      <h2>7. Your Rights</h2>
-    </div>
-    <p>Depending on your region, you may have the following rights.</p>
+    <div class="section-header"><div class="section-icon">⚖️</div><h2 data-i18n="s7-title">7. Your Rights</h2></div>
+    <p data-i18n="s7-intro"></p>
     <ul>
-      <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
-      <li><strong>Right of Rectification:</strong> Correct inaccurate data</li>
-      <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
-      <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
+      <li data-i18n-html="s7-li1"></li>
+      <li data-i18n-html="s7-li2"></li>
+      <li data-i18n-html="s7-li3"></li>
+      <li data-i18n-html="s7-li4"></li>
     </ul>
-    <p>To exercise your rights or for inquiries, please contact us at the address below.</p>
-
-    <div class="highlight warn">
-      <strong>California residents (CCPA):</strong> You have the right to opt out of the sale
-      of personal information. We do not sell your data.
-    </div>
+    <p data-i18n="s7-contact"></p>
+    <div class="highlight warn" data-i18n-html="s7-warn"></div>
   </section>
 
-  <!-- 8. Children's Privacy -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">👶</div>
-      <h2>8. Children's Privacy</h2>
-    </div>
-    <p>
-      OutVault is not directed to children under the age of <strong>13</strong> (US) or
-      <strong>16</strong> (EU/EEA). We do not knowingly collect personal information from children.
-    </p>
-    <p>
-      If you become aware that a child has used the App, please contact us immediately
-      so we can take appropriate steps to delete the relevant data.
-    </p>
+    <div class="section-header"><div class="section-icon">👶</div><h2 data-i18n="s8-title">8. Children's Privacy</h2></div>
+    <p data-i18n-html="s8-p1"></p>
+    <p data-i18n-html="s8-p2"></p>
   </section>
 
-  <!-- 9. Security -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🔒</div>
-      <h2>9. Security</h2>
-    </div>
-    <p>
-      OutVault is built around security as a first principle, not an afterthought:
-    </p>
+    <div class="section-header"><div class="section-icon">🔒</div><h2 data-i18n="s9-title">9. Security</h2></div>
+    <p data-i18n="s9-intro"></p>
     <ul>
-      <li>All media is stored with <strong>NSFileProtectionComplete</strong> — files are encrypted
-          and inaccessible while the device is locked.</li>
-      <li><strong>Face ID / Passcode</strong> authentication is required on every app launch and
-          after the app is backgrounded.</li>
-      <li>The iOS Photos library API is <strong>never called</strong> — captured media is routed
-          directly into the app sandbox.</li>
-      <li>Pro users can strip all EXIF metadata before sharing a file.</li>
-      <li>Your media is never transmitted to our servers under any circumstance.</li>
+      <li data-i18n-html="s9-li1"></li>
+      <li data-i18n-html="s9-li2"></li>
+      <li data-i18n-html="s9-li3"></li>
+      <li data-i18n-html="s9-li4"></li>
+      <li data-i18n-html="s9-li5"></li>
     </ul>
   </section>
 
-  <!-- 10. Changes to This Policy -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">🔄</div>
-      <h2>10. Changes to This Policy</h2>
-    </div>
-    <p>
-      This policy may be updated due to changes in law, service updates, or third-party
-      policy changes. We will notify you of significant changes via in-app notifications
-      or this page.
-    </p>
-    <p>
-      Changes take effect upon posting to this page. Continued use of the App after
-      changes constitutes acceptance of the updated policy.
-    </p>
+    <div class="section-header"><div class="section-icon">🔄</div><h2 data-i18n="s10-title">10. Changes to This Policy</h2></div>
+    <p data-i18n-html="s10-p1"></p>
+    <p data-i18n-html="s10-p2"></p>
   </section>
 
-  <!-- 11. Contact -->
   <section class="section">
-    <div class="section-header">
-      <div class="section-icon">✉️</div>
-      <h2>11. Contact Us</h2>
-    </div>
-    <p>For questions about this Privacy Policy or to exercise your rights, please reach out.</p>
+    <div class="section-header"><div class="section-icon">✉️</div><h2 data-i18n="s11-title">11. Contact Us</h2></div>
+    <p data-i18n="s11-intro"></p>
     <div class="contact-card">
       <span class="icon">📧</span>
       <div>
-        <div class="label">Email</div>
+        <div class="label" data-i18n="s11-label">Email</div>
         <div class="value">hoons.labs@gmail.com</div>
       </div>
     </div>
-    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
-      We aim to respond within 5 business days.
-    </p>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);" data-i18n="s11-response"></p>
   </section>
 
 </main>
 
 <footer class="site-footer">
-  <p>© 2026 Hoon's Labs &nbsp;·&nbsp; OutVault: Private Camera</p>
+  <p data-i18n="footer-copy">© 2026 Hoon's Labs · OutVault: Private Camera</p>
   <p style="margin-top:6px;">
-    <a href="../outvault/">Privacy Policy</a>
+    <a href="../outvault/" data-i18n="footer-privacy">Privacy Policy</a>
     &nbsp;·&nbsp;
-    <a href="../../support/outvault/">Support</a>
+    <a href="../../support/outvault/" data-i18n="footer-support">Support</a>
   </p>
 </footer>
 
+<script>
+const T = {
+  en: {
+    'subtitle': 'Privacy Policy',
+    'meta-badge': 'Effective: June 1, 2026',
+    's1-title': '1. Overview',
+    's1-p1': '<strong>OutVault: Private Camera</strong> ("the App") is a professional-grade private camera app built to keep your photos and videos completely isolated from the iOS Photos library. This Privacy Policy explains what information we collect, how we use it, and your rights.',
+    's1-hl': 'OutVault is a <strong>sandbox-first</strong> app. Every photo and video you capture is stored exclusively in the app\'s private sandbox — never written to iOS Photos. Your media never leaves your device unless you explicitly share it.',
+    's1-p2': 'By installing or using the App, you agree to this Privacy Policy. If you do not agree, please discontinue use of the App.',
+    's2-title': '2. Information We Collect',
+    's2-intro': 'The following information is collected or processed by the App.',
+    's2-th1': 'Data Type', 's2-th2': 'Purpose', 's2-th3': 'Storage',
+    's2-r1c1': '<strong>Photos &amp; Videos</strong><br>Captured media files',
+    's2-r1c2': 'Core app functionality',
+    's2-r1c3': '<span class="tag tag-local">Device sandbox only</span>',
+    's2-r2c1': '<strong>Asset Metadata</strong><br>Date, memo, author, optional location (user-entered)',
+    's2-r2c2': 'Metadata editing feature',
+    's2-r2c3': '<span class="tag tag-local">Device sandbox only</span>',
+    's2-r3c1': '<strong>Anonymous Usage Events</strong><br>Screen transitions, feature taps, etc.',
+    's2-r3c2': 'App quality &amp; feature improvement',
+    's2-r3c3': '<span class="tag tag-third">Firebase Analytics</span>',
+    's2-r4c1': '<strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace',
+    's2-r4c2': 'App stability improvement',
+    's2-r4c3': '<span class="tag tag-third">Firebase Crashlytics</span>',
+    's2-r5c1': '<strong>Purchase Status</strong><br>Lifetime Pro entitlement (anonymous)',
+    's2-r5c2': 'Unlocking Pro features',
+    's2-r5c3': '<span class="tag tag-third">RevenueCat</span>',
+    's2-r6c1': '<strong>Location Data</strong><br>(GPS / device sensor)',
+    's2-r6c2': 'Not collected',
+    's2-r6c3': '<span class="tag tag-no">Not collected</span>',
+    's2-r7c1': '<strong>Account / Login</strong>',
+    's2-r7c2': 'Not collected',
+    's2-r7c3': '<span class="tag tag-no">Not collected</span>',
+    's2-note': 'Note: Location field in metadata is <em>manually entered text</em> by the user — the App does not access GPS or device location sensors.',
+    's3-title': '3. How Your Media Is Stored',
+    's3-p1': 'All photos and videos captured by OutVault are written directly to the app\'s <strong>Application Support/assets/</strong> directory — completely bypassing iOS Photos. The App never calls any iOS Photos library API.',
+    's3-li1': 'All files are protected with <strong>NSFileProtectionComplete</strong>, Apple\'s highest level of on-device file encryption. Files are inaccessible while the device is locked.',
+    's3-li2': 'Face ID / Passcode authentication is required to open the App.',
+    's3-li3': 'Media is never transmitted to our servers.',
+    's3-li4': 'When you share a file, data leaves the app only through the standard iOS share sheet under your explicit control. Pro users may strip EXIF metadata before sharing.',
+    's3-hl': 'Your media exists <strong>only on your device</strong> (and optionally in iCloud — see Section 5) until you choose to share it. We have no access to your photos or videos.',
+    's4-title': '4. Firebase Services',
+    's4-p1': 'OutVault uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC) to improve app quality and stability.',
+    's4-p2': '<strong>Firebase Analytics</strong> collects the following anonymous events:',
+    's4-li1': 'Screen transitions and feature tap events',
+    's4-li2': 'In-app interactions (e.g., photo capture, gallery view, share)',
+    's4-hl1': 'Firebase Analytics does <strong>not collect personally identifiable information</strong> and never accesses your photos or videos. All data is anonymous and used solely to improve the App. It is never sold or used for marketing purposes.',
+    's4-p3': '<strong>Firebase Crashlytics</strong> collects the following upon a crash:',
+    's4-li3': 'Device model, OS version, and app version',
+    's4-li4': 'Crash location (stack trace)',
+    's4-li5': 'Timestamp of the crash (UTC)',
+    's4-hl2': 'Crashlytics data is used <strong>solely to improve app stability</strong> and contains no information that can personally identify you. Your media files are never included.',
+    's4-p4': 'For details on how Firebase handles data, please refer to <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.',
+    's5-title': '5. Third-Party Services',
+    's5-intro': 'The App uses the following third-party services.',
+    's5-th1': 'Service', 's5-th2': 'Purpose', 's5-th3': 'Privacy Policy',
+    's5-r1c1': '<strong>Apple CloudKit</strong>',
+    's5-r1c2': 'Pro: encrypted media sync across devices (future V2 feature)',
+    's5-r1c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a>',
+    's5-r2c1': '<strong>RevenueCat</strong>',
+    's5-r2c2': 'In-app purchase management for Lifetime Pro',
+    's5-r2c3': '<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">View →</a>',
+    's5-r3c1': '<strong>Firebase Analytics</strong>',
+    's5-r3c2': 'Anonymous app usage event collection and feature improvement',
+    's5-r3c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a>',
+    's5-r4c1': '<strong>Firebase Crashlytics</strong>',
+    's5-r4c2': 'Crash reporting and app stability improvement',
+    's5-r4c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a>',
+    's5-r5c1': '<strong>Apple App Store</strong>',
+    's5-r5c2': 'App distribution and billing',
+    's5-r5c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a>',
+    's6-title': '6. Data Retention &amp; Deletion',
+    's6-li1': '<strong>Photos &amp; Videos (local):</strong> Stored in the app sandbox on your device. Permanently deleted when you delete individual assets from within the App, or when you uninstall the App.',
+    's6-li2': '<strong>Auto-Delete (Pro):</strong> Assets with an expiration date are automatically purged by the App. You control the expiration window per asset.',
+    's6-li3': '<strong>iCloud sync (future Pro feature):</strong> If CloudKit sync is enabled, uninstalling the App alone does not remove your iCloud copy. Use <em>Settings → Reset All Data</em> before uninstalling to fully remove iCloud data.',
+    's6-li4': '<strong>Analytics &amp; crash data:</strong> Subject to Google\'s and RevenueCat\'s respective data retention policies.',
+    's6-hl': 'We hold no copy of your photos or videos. Uninstalling the App (without iCloud sync) is sufficient to completely remove all media data.',
+    's7-title': '7. Your Rights',
+    's7-intro': 'Depending on your region, you may have the following rights.',
+    's7-li1': '<strong>Right of Access:</strong> Request a copy of your personal data',
+    's7-li2': '<strong>Right of Rectification:</strong> Correct inaccurate data',
+    's7-li3': '<strong>Right to Erasure:</strong> Request deletion of your data',
+    's7-li4': '<strong>Right to Restriction:</strong> Request limitation of processing',
+    's7-contact': 'To exercise your rights or for inquiries, please contact us at the address below.',
+    's7-warn': '<strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information. We do not sell your data.',
+    's8-title': '8. Children\'s Privacy',
+    's8-p1': 'OutVault is not directed to children under the age of <strong>13</strong> (US) or <strong>16</strong> (EU/EEA). We do not knowingly collect personal information from children.',
+    's8-p2': 'If you become aware that a child has used the App, please contact us immediately so we can take appropriate steps to delete the relevant data.',
+    's9-title': '9. Security',
+    's9-intro': 'OutVault is built around security as a first principle, not an afterthought:',
+    's9-li1': 'All media is stored with <strong>NSFileProtectionComplete</strong> — files are encrypted and inaccessible while the device is locked.',
+    's9-li2': '<strong>Face ID / Passcode</strong> authentication is required on every app launch and after the app is backgrounded.',
+    's9-li3': 'The iOS Photos library API is <strong>never called</strong> — captured media is routed directly into the app sandbox.',
+    's9-li4': 'Pro users can strip all EXIF metadata before sharing a file.',
+    's9-li5': 'Your media is never transmitted to our servers under any circumstance.',
+    's10-title': '10. Changes to This Policy',
+    's10-p1': 'This policy may be updated due to changes in law, service updates, or third-party policy changes. We will notify you of significant changes via in-app notifications or this page.',
+    's10-p2': 'Changes take effect upon posting to this page. Continued use of the App after changes constitutes acceptance of the updated policy.',
+    's11-title': '11. Contact Us',
+    's11-intro': 'For questions about this Privacy Policy or to exercise your rights, please reach out.',
+    's11-label': 'Email',
+    's11-response': 'We aim to respond within 5 business days.',
+    'footer-copy': '© 2026 Hoon\'s Labs · OutVault: Private Camera',
+    'footer-privacy': 'Privacy Policy',
+    'footer-support': 'Support',
+  },
+
+  de: {
+    'subtitle': 'Datenschutzerklärung',
+    'meta-badge': 'Gültig ab: 1. Juni 2026',
+    's1-title': '1. Überblick',
+    's1-p1': '<strong>OutVault: Private Camera</strong> („die App") ist eine professionelle private Kamera-App, die Ihre Fotos und Videos vollständig von der iOS-Fotomediathek isoliert. Diese Datenschutzerklärung erläutert, welche Informationen wir erheben, wie wir sie verwenden und welche Rechte Sie haben.',
+    's1-hl': 'OutVault ist eine <strong>Sandbox-First</strong>-App. Jedes Foto und Video, das Sie aufnehmen, wird ausschließlich in der privaten Sandbox der App gespeichert — niemals in iOS-Fotos. Ihre Medien verlassen Ihr Gerät nicht, es sei denn, Sie teilen sie ausdrücklich.',
+    's1-p2': 'Mit der Installation oder Nutzung der App stimmen Sie dieser Datenschutzerklärung zu. Wenn Sie nicht zustimmen, beenden Sie bitte die Nutzung der App.',
+    's2-title': '2. Erhobene Informationen',
+    's2-intro': 'Die folgenden Informationen werden von der App erhoben oder verarbeitet.',
+    's2-th1': 'Datentyp', 's2-th2': 'Zweck', 's2-th3': 'Speicherung',
+    's2-r1c1': '<strong>Fotos &amp; Videos</strong><br>Aufgenommene Mediendateien',
+    's2-r1c2': 'Kernfunktion der App',
+    's2-r1c3': '<span class="tag tag-local">Nur Gerätesandbox</span>',
+    's2-r2c1': '<strong>Asset-Metadaten</strong><br>Datum, Notiz, Autor, optionaler Ort (vom Nutzer eingegeben)',
+    's2-r2c2': 'Metadaten-Bearbeitungsfunktion',
+    's2-r2c3': '<span class="tag tag-local">Nur Gerätesandbox</span>',
+    's2-r3c1': '<strong>Anonyme Nutzungsereignisse</strong><br>Bildschirmwechsel, Feature-Klicks usw.',
+    's2-r3c2': 'App-Qualität &amp; Feature-Verbesserung',
+    's2-r3c3': '<span class="tag tag-third">Firebase Analytics</span>',
+    's2-r4c1': '<strong>Absturzberichte</strong><br>Gerätemodell, OS-Version, App-Version, Absturz-Stack-Trace',
+    's2-r4c2': 'Verbesserung der App-Stabilität',
+    's2-r4c3': '<span class="tag tag-third">Firebase Crashlytics</span>',
+    's2-r5c1': '<strong>Kaufstatus</strong><br>Lebenslange Pro-Berechtigung (anonym)',
+    's2-r5c2': 'Freischalten von Pro-Funktionen',
+    's2-r5c3': '<span class="tag tag-third">RevenueCat</span>',
+    's2-r6c1': '<strong>Standortdaten</strong><br>(GPS / Gerätesensor)',
+    's2-r6c2': 'Nicht erhoben',
+    's2-r6c3': '<span class="tag tag-no">Nicht erhoben</span>',
+    's2-r7c1': '<strong>Konto / Anmeldung</strong>',
+    's2-r7c2': 'Nicht erhoben',
+    's2-r7c3': '<span class="tag tag-no">Nicht erhoben</span>',
+    's2-note': 'Hinweis: Das Standortfeld in den Metadaten ist <em>vom Nutzer manuell eingegebener Text</em> — die App greift nicht auf GPS oder Standortsensoren zu.',
+    's3-title': '3. Speicherung Ihrer Medien',
+    's3-p1': 'Alle von OutVault aufgenommenen Fotos und Videos werden direkt in das Verzeichnis <strong>Application Support/assets/</strong> der App geschrieben — iOS-Fotos wird vollständig umgangen. Die App ruft nie eine iOS-Fotomediathek-API auf.',
+    's3-li1': 'Alle Dateien sind mit <strong>NSFileProtectionComplete</strong> geschützt, Apples höchstem Standard für On-Device-Dateiverschlüsselung. Dateien sind gesperrt, solange das Gerät gesperrt ist.',
+    's3-li2': 'Face ID / Passcode-Authentifizierung ist zum Öffnen der App erforderlich.',
+    's3-li3': 'Medien werden niemals an unsere Server übertragen.',
+    's3-li4': 'Beim Teilen einer Datei verlässt die Datei die App nur über das Standard-iOS-Share-Sheet unter Ihrer ausdrücklichen Kontrolle. Pro-Nutzer können EXIF-Metadaten vor dem Teilen entfernen.',
+    's3-hl': 'Ihre Medien befinden sich <strong>nur auf Ihrem Gerät</strong> (und optional in iCloud — siehe Abschnitt 5), bis Sie sich zum Teilen entscheiden. Wir haben keinen Zugriff auf Ihre Fotos oder Videos.',
+    's4-title': '4. Firebase-Dienste',
+    's4-p1': 'OutVault verwendet <strong>Firebase Analytics</strong> und <strong>Firebase Crashlytics</strong> (Google LLC), um App-Qualität und Stabilität zu verbessern.',
+    's4-p2': '<strong>Firebase Analytics</strong> erfasst folgende anonyme Ereignisse:',
+    's4-li1': 'Bildschirmwechsel und Feature-Klick-Ereignisse',
+    's4-li2': 'In-App-Interaktionen (z. B. Fotoaufnahme, Galerieansicht, Teilen)',
+    's4-hl1': 'Firebase Analytics erfasst <strong>keine personenbezogenen Daten</strong> und greift nie auf Ihre Fotos oder Videos zu. Alle Daten sind anonym und dienen ausschließlich der App-Verbesserung. Sie werden nie verkauft oder für Marketingzwecke genutzt.',
+    's4-p3': '<strong>Firebase Crashlytics</strong> erfasst bei einem Absturz Folgendes:',
+    's4-li3': 'Gerätemodell, OS-Version und App-Version',
+    's4-li4': 'Absturzort (Stack-Trace)',
+    's4-li5': 'Zeitstempel des Absturzes (UTC)',
+    's4-hl2': 'Crashlytics-Daten werden <strong>ausschließlich zur Verbesserung der App-Stabilität</strong> verwendet und enthalten keine Informationen, die Sie persönlich identifizieren können. Ihre Mediendateien sind niemals enthalten.',
+    's4-p4': 'Details zur Datenverarbeitung durch Firebase finden Sie unter <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.',
+    's5-title': '5. Drittanbieterdienste',
+    's5-intro': 'Die App verwendet folgende Drittanbieterdienste.',
+    's5-th1': 'Dienst', 's5-th2': 'Zweck', 's5-th3': 'Datenschutzrichtlinie',
+    's5-r1c1': '<strong>Apple CloudKit</strong>',
+    's5-r1c2': 'Pro: verschlüsselte Mediensynchronisierung zwischen Geräten (zukünftiges V2-Feature)',
+    's5-r1c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Ansehen →</a>',
+    's5-r2c1': '<strong>RevenueCat</strong>',
+    's5-r2c2': 'In-App-Kauf-Verwaltung für Lifetime Pro',
+    's5-r2c3': '<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Ansehen →</a>',
+    's5-r3c1': '<strong>Firebase Analytics</strong>',
+    's5-r3c2': 'Anonyme Erfassung von App-Nutzungsereignissen und Feature-Verbesserung',
+    's5-r3c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ansehen →</a>',
+    's5-r4c1': '<strong>Firebase Crashlytics</strong>',
+    's5-r4c2': 'Absturzberichterstattung und Verbesserung der App-Stabilität',
+    's5-r4c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ansehen →</a>',
+    's5-r5c1': '<strong>Apple App Store</strong>',
+    's5-r5c2': 'App-Vertrieb und Abrechnung',
+    's5-r5c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Ansehen →</a>',
+    's6-title': '6. Datenspeicherung &amp; Löschung',
+    's6-li1': '<strong>Fotos &amp; Videos (lokal):</strong> In der App-Sandbox auf Ihrem Gerät gespeichert. Dauerhaft gelöscht, wenn Sie einzelne Assets in der App löschen oder die App deinstallieren.',
+    's6-li2': '<strong>Auto-Löschen (Pro):</strong> Assets mit Ablaufdatum werden automatisch von der App bereinigt. Sie steuern das Ablaufintervall pro Asset.',
+    's6-li3': '<strong>iCloud-Synchronisierung (zukünftiges Pro-Feature):</strong> Falls CloudKit-Synchronisierung aktiviert ist, entfernt die Deinstallation der App allein nicht Ihre iCloud-Kopie. Verwenden Sie <em>Einstellungen → Alle Daten zurücksetzen</em> vor der Deinstallation.',
+    's6-li4': '<strong>Analyse- &amp; Absturzdaten:</strong> Unterliegen den jeweiligen Datenaufbewahrungsrichtlinien von Google und RevenueCat.',
+    's6-hl': 'Wir besitzen keine Kopie Ihrer Fotos oder Videos. Die Deinstallation der App (ohne iCloud-Synchronisierung) reicht aus, um alle Mediendaten vollständig zu entfernen.',
+    's7-title': '7. Ihre Rechte',
+    's7-intro': 'Je nach Region können Sie folgende Rechte haben.',
+    's7-li1': '<strong>Auskunftsrecht:</strong> Kopie Ihrer personenbezogenen Daten anfordern',
+    's7-li2': '<strong>Berichtigungsrecht:</strong> Unrichtige Daten korrigieren',
+    's7-li3': '<strong>Recht auf Löschung:</strong> Löschung Ihrer Daten beantragen',
+    's7-li4': '<strong>Recht auf Einschränkung:</strong> Einschränkung der Verarbeitung beantragen',
+    's7-contact': 'Um Ihre Rechte auszuüben oder bei Fragen wenden Sie sich bitte an die untenstehende Adresse.',
+    's7-warn': '<strong>Einwohner Kaliforniens (CCPA):</strong> Sie haben das Recht, dem Verkauf personenbezogener Daten zu widersprechen. Wir verkaufen Ihre Daten nicht.',
+    's8-title': '8. Datenschutz für Kinder',
+    's8-p1': 'OutVault richtet sich nicht an Kinder unter <strong>13</strong> Jahren (USA) oder <strong>16</strong> Jahren (EU/EWR). Wir erheben wissentlich keine personenbezogenen Daten von Kindern.',
+    's8-p2': 'Falls Sie feststellen, dass ein Kind die App genutzt hat, kontaktieren Sie uns bitte sofort, damit wir geeignete Maßnahmen zur Löschung der betreffenden Daten ergreifen können.',
+    's9-title': '9. Sicherheit',
+    's9-intro': 'OutVault wurde mit Sicherheit als Grundprinzip entwickelt, nicht als Nachgedanke:',
+    's9-li1': 'Alle Medien werden mit <strong>NSFileProtectionComplete</strong> gespeichert — Dateien sind verschlüsselt und gesperrt, solange das Gerät gesperrt ist.',
+    's9-li2': '<strong>Face ID / Passcode</strong>-Authentifizierung ist bei jedem App-Start und nach dem Hintergrundwechsel erforderlich.',
+    's9-li3': 'Die iOS-Fotomediathek-API wird <strong>niemals aufgerufen</strong> — aufgenommene Medien werden direkt in die App-Sandbox geleitet.',
+    's9-li4': 'Pro-Nutzer können alle EXIF-Metadaten vor dem Teilen einer Datei entfernen.',
+    's9-li5': 'Ihre Medien werden unter keinen Umständen an unsere Server übertragen.',
+    's10-title': '10. Änderungen dieser Richtlinie',
+    's10-p1': 'Diese Richtlinie kann aufgrund von Gesetzesänderungen, Dienstaktualisierungen oder Änderungen der Drittanbieterrichtlinien aktualisiert werden. Wir informieren Sie über wesentliche Änderungen per In-App-Benachrichtigung oder auf dieser Seite.',
+    's10-p2': 'Änderungen treten mit der Veröffentlichung auf dieser Seite in Kraft. Die weitere Nutzung der App nach Änderungen gilt als Zustimmung zur aktualisierten Richtlinie.',
+    's11-title': '11. Kontakt',
+    's11-intro': 'Bei Fragen zu dieser Datenschutzerklärung oder zur Ausübung Ihrer Rechte kontaktieren Sie uns bitte.',
+    's11-label': 'E-Mail',
+    's11-response': 'Wir antworten in der Regel innerhalb von 5 Werktagen.',
+    'footer-copy': '© 2026 Hoon\'s Labs · OutVault: Private Camera',
+    'footer-privacy': 'Datenschutzerklärung',
+    'footer-support': 'Support',
+  },
+
+  ja: {
+    'subtitle': 'プライバシーポリシー',
+    'meta-badge': '発効日：2026年6月1日',
+    's1-title': '1. 概要',
+    's1-p1': '<strong>OutVault: Private Camera</strong>（「本アプリ」）は、写真と動画をiOSフォトライブラリから完全に隔離するプロフェッショナル向けプライベートカメラアプリです。本プライバシーポリシーでは、収集する情報、その利用方法、およびお客様の権利について説明します。',
+    's1-hl': 'OutVaultは<strong>サンドボックス優先</strong>のアプリです。撮影したすべての写真と動画は、アプリのプライベートサンドボックスにのみ保存され、iOSフォトには書き込まれません。お客様が明示的に共有しない限り、メディアがデバイスを離れることはありません。',
+    's1-p2': '本アプリをインストールまたは使用することにより、本プライバシーポリシーに同意したものとみなします。同意しない場合は、本アプリの使用を中止してください。',
+    's2-title': '2. 収集する情報',
+    's2-intro': '本アプリが収集または処理する情報は以下のとおりです。',
+    's2-th1': 'データの種類', 's2-th2': '目的', 's2-th3': '保存場所',
+    's2-r1c1': '<strong>写真・動画</strong><br>撮影したメディアファイル',
+    's2-r1c2': 'アプリの中核機能',
+    's2-r1c3': '<span class="tag tag-local">デバイスのサンドボックスのみ</span>',
+    's2-r2c1': '<strong>アセットメタデータ</strong><br>日付、メモ、作成者、任意の場所（ユーザー入力）',
+    's2-r2c2': 'メタデータ編集機能',
+    's2-r2c3': '<span class="tag tag-local">デバイスのサンドボックスのみ</span>',
+    's2-r3c1': '<strong>匿名使用イベント</strong><br>画面遷移、機能タップなど',
+    's2-r3c2': 'アプリ品質・機能改善',
+    's2-r3c3': '<span class="tag tag-third">Firebase Analytics</span>',
+    's2-r4c1': '<strong>クラッシュレポート</strong><br>デバイスモデル、OSバージョン、アプリバージョン、スタックトレース',
+    's2-r4c2': 'アプリの安定性向上',
+    's2-r4c3': '<span class="tag tag-third">Firebase Crashlytics</span>',
+    's2-r5c1': '<strong>購入状況</strong><br>生涯Proライセンス（匿名）',
+    's2-r5c2': 'Pro機能のアンロック',
+    's2-r5c3': '<span class="tag tag-third">RevenueCat</span>',
+    's2-r6c1': '<strong>位置情報</strong><br>（GPS・デバイスセンサー）',
+    's2-r6c2': '収集しない',
+    's2-r6c3': '<span class="tag tag-no">収集しない</span>',
+    's2-r7c1': '<strong>アカウント・ログイン</strong>',
+    's2-r7c2': '収集しない',
+    's2-r7c3': '<span class="tag tag-no">収集しない</span>',
+    's2-note': '注：メタデータの場所フィールドはユーザーが<em>手動で入力するテキスト</em>です。アプリはGPSやデバイスの位置センサーにアクセスしません。',
+    's3-title': '3. メディアの保存方法',
+    's3-p1': 'OutVaultが撮影したすべての写真と動画は、アプリの<strong>Application Support/assets/</strong>ディレクトリに直接書き込まれます。iOSフォトは完全にバイパスされ、アプリはiOSフォトライブラリAPIを一切呼び出しません。',
+    's3-li1': 'すべてのファイルはAppleの最高レベルのデバイス内ファイル暗号化である<strong>NSFileProtectionComplete</strong>で保護されています。デバイスがロックされている間、ファイルにはアクセスできません。',
+    's3-li2': 'アプリを開くにはFace ID / パスコード認証が必要です。',
+    's3-li3': 'メディアは当社のサーバーに送信されることはありません。',
+    's3-li4': 'ファイルを共有する場合、データはお客様の明示的な操作のもと、標準のiOS共有シートを通じてのみアプリを離れます。Proユーザーは共有前にEXIFメタデータを削除できます。',
+    's3-hl': 'お客様のメディアは、共有を選択するまで<strong>お客様のデバイスにのみ</strong>存在します（任意でiCloudにも — セクション5参照）。当社はお客様の写真や動画にアクセスできません。',
+    's4-title': '4. Firebaseサービス',
+    's4-p1': 'OutVaultはアプリの品質と安定性を向上させるために、<strong>Firebase Analytics</strong>および<strong>Firebase Crashlytics</strong>（Google LLC）を使用しています。',
+    's4-p2': '<strong>Firebase Analytics</strong>は以下の匿名イベントを収集します：',
+    's4-li1': '画面遷移と機能タップイベント',
+    's4-li2': 'アプリ内インタラクション（例：写真撮影、ギャラリー表示、共有）',
+    's4-hl1': 'Firebase Analyticsは<strong>個人を特定できる情報を収集しません</strong>。また、写真や動画にアクセスすることもありません。すべてのデータは匿名であり、アプリの改善のみに使用されます。販売やマーケティング目的には使用されません。',
+    's4-p3': '<strong>Firebase Crashlytics</strong>はクラッシュ発生時に以下を収集します：',
+    's4-li3': 'デバイスモデル、OSバージョン、アプリバージョン',
+    's4-li4': 'クラッシュ箇所（スタックトレース）',
+    's4-li5': 'クラッシュのタイムスタンプ（UTC）',
+    's4-hl2': 'Crashlyticsのデータは<strong>アプリの安定性向上のみ</strong>に使用され、個人を特定できる情報は含まれません。お客様のメディアファイルが含まれることはありません。',
+    's4-p4': 'Firebaseのデータ処理方法の詳細については、<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシー</a>をご参照ください。',
+    's5-title': '5. サードパーティサービス',
+    's5-intro': '本アプリは以下のサードパーティサービスを使用しています。',
+    's5-th1': 'サービス', 's5-th2': '目的', 's5-th3': 'プライバシーポリシー',
+    's5-r1c1': '<strong>Apple CloudKit</strong>',
+    's5-r1c2': 'Pro：デバイス間の暗号化メディア同期（将来のV2機能）',
+    's5-r1c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認 →</a>',
+    's5-r2c1': '<strong>RevenueCat</strong>',
+    's5-r2c2': 'Lifetime Proのアプリ内購入管理',
+    's5-r2c3': '<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">確認 →</a>',
+    's5-r3c1': '<strong>Firebase Analytics</strong>',
+    's5-r3c2': '匿名アプリ使用イベントの収集と機能改善',
+    's5-r3c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認 →</a>',
+    's5-r4c1': '<strong>Firebase Crashlytics</strong>',
+    's5-r4c2': 'クラッシュレポートとアプリ安定性の向上',
+    's5-r4c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認 →</a>',
+    's5-r5c1': '<strong>Apple App Store</strong>',
+    's5-r5c2': 'アプリ配信と決済',
+    's5-r5c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認 →</a>',
+    's6-title': '6. データの保持と削除',
+    's6-li1': '<strong>写真・動画（ローカル）：</strong>デバイスのアプリサンドボックスに保存されます。アプリ内で個別のアセットを削除した場合、またはアプリをアンインストールした場合に完全に削除されます。',
+    's6-li2': '<strong>自動削除（Pro）：</strong>有効期限が設定されたアセットはアプリによって自動的に削除されます。有効期限はアセットごとに設定できます。',
+    's6-li3': '<strong>iCloud同期（将来のPro機能）：</strong>CloudKit同期が有効な場合、アプリをアンインストールするだけではiCloudのコピーは削除されません。iCloudデータを完全に削除するには、アンインストール前に<em>設定 → すべてのデータをリセット</em>を実行してください。',
+    's6-li4': '<strong>分析・クラッシュデータ：</strong>GoogleおよびRevenueCatの各データ保持ポリシーに従います。',
+    's6-hl': '当社はお客様の写真や動画のコピーを保持していません。アプリのアンインストール（iCloud同期なし）で、すべてのメディアデータを完全に削除できます。',
+    's7-title': '7. お客様の権利',
+    's7-intro': 'お住まいの地域によって、以下の権利を有する場合があります。',
+    's7-li1': '<strong>アクセス権：</strong>個人データのコピーの請求',
+    's7-li2': '<strong>訂正権：</strong>不正確なデータの修正',
+    's7-li3': '<strong>消去権：</strong>データの削除の請求',
+    's7-li4': '<strong>処理制限権：</strong>処理の制限の請求',
+    's7-contact': '権利の行使またはお問い合わせは、下記の連絡先までご連絡ください。',
+    's7-warn': '<strong>カリフォルニア州在住の方（CCPA）：</strong>個人情報の販売をオプトアウトする権利があります。当社はお客様のデータを販売しません。',
+    's8-title': '8. 子どものプライバシー',
+    's8-p1': 'OutVaultは、<strong>13</strong>歳未満（米国）または<strong>16</strong>歳未満（EU/EEA）の子どもを対象としていません。当社は子どもから意図的に個人情報を収集しません。',
+    's8-p2': '子どもが本アプリを使用したことが判明した場合は、直ちにご連絡ください。関連データを削除するための適切な措置を講じます。',
+    's9-title': '9. セキュリティ',
+    's9-intro': 'OutVaultはセキュリティを付け足しではなく、第一原則として構築されています：',
+    's9-li1': 'すべてのメディアは<strong>NSFileProtectionComplete</strong>で保存されます。デバイスがロックされている間、ファイルは暗号化されアクセス不能です。',
+    's9-li2': '<strong>Face ID / パスコード</strong>認証は、アプリの起動時とバックグラウンドへの移行後に毎回必要です。',
+    's9-li3': 'iOSフォトライブラリAPIは<strong>一切呼び出されません</strong>。撮影したメディアはアプリサンドボックスに直接格納されます。',
+    's9-li4': 'Proユーザーはファイルを共有する前にすべてのEXIFメタデータを削除できます。',
+    's9-li5': 'いかなる状況においても、お客様のメディアが当社のサーバーに送信されることはありません。',
+    's10-title': '10. ポリシーの変更',
+    's10-p1': '本ポリシーは、法律の変更、サービスの更新、またはサードパーティポリシーの変更により更新される場合があります。重要な変更はアプリ内通知またはこのページでお知らせします。',
+    's10-p2': '変更はこのページへの掲載をもって発効します。変更後も引き続きアプリを使用することで、更新されたポリシーへの同意とみなします。',
+    's11-title': '11. お問い合わせ',
+    's11-intro': '本プライバシーポリシーに関するご質問や権利の行使については、下記までお問い合わせください。',
+    's11-label': 'メール',
+    's11-response': '5営業日以内にご返信いたします。',
+    'footer-copy': '© 2026 Hoon\'s Labs · OutVault: Private Camera',
+    'footer-privacy': 'プライバシーポリシー',
+    'footer-support': 'サポート',
+  },
+
+  fr: {
+    'subtitle': 'Politique de confidentialité',
+    'meta-badge': 'En vigueur depuis le 1ᵉʳ juin 2026',
+    's1-title': '1. Aperçu',
+    's1-p1': '<strong>OutVault: Private Camera</strong> (« l\'Application ») est une application de caméra privée professionnelle conçue pour garder vos photos et vidéos complètement isolées de la photothèque iOS. Cette politique de confidentialité explique les informations que nous collectons, comment nous les utilisons et vos droits.',
+    's1-hl': 'OutVault est une application <strong>sandbox-first</strong>. Chaque photo et vidéo que vous capturez est stockée exclusivement dans le bac à sable privé de l\'application — jamais écrite dans iOS Photos. Vos médias ne quittent jamais votre appareil sauf si vous les partagez explicitement.',
+    's1-p2': 'En installant ou en utilisant l\'Application, vous acceptez cette politique de confidentialité. Si vous n\'acceptez pas, veuillez cesser d\'utiliser l\'Application.',
+    's2-title': '2. Informations collectées',
+    's2-intro': 'Les informations suivantes sont collectées ou traitées par l\'Application.',
+    's2-th1': 'Type de données', 's2-th2': 'Finalité', 's2-th3': 'Stockage',
+    's2-r1c1': '<strong>Photos &amp; Vidéos</strong><br>Fichiers médias capturés',
+    's2-r1c2': 'Fonctionnalité principale de l\'application',
+    's2-r1c3': '<span class="tag tag-local">Sandbox de l\'appareil uniquement</span>',
+    's2-r2c1': '<strong>Métadonnées des ressources</strong><br>Date, note, auteur, lieu optionnel (saisi par l\'utilisateur)',
+    's2-r2c2': 'Fonctionnalité de modification des métadonnées',
+    's2-r2c3': '<span class="tag tag-local">Sandbox de l\'appareil uniquement</span>',
+    's2-r3c1': '<strong>Événements d\'utilisation anonymes</strong><br>Transitions d\'écran, appuis sur les fonctionnalités, etc.',
+    's2-r3c2': 'Qualité de l\'app &amp; amélioration des fonctionnalités',
+    's2-r3c3': '<span class="tag tag-third">Firebase Analytics</span>',
+    's2-r4c1': '<strong>Rapports de plantage</strong><br>Modèle d\'appareil, version OS, version app, trace de pile',
+    's2-r4c2': 'Amélioration de la stabilité de l\'application',
+    's2-r4c3': '<span class="tag tag-third">Firebase Crashlytics</span>',
+    's2-r5c1': '<strong>Statut d\'achat</strong><br>Droit Pro à vie (anonyme)',
+    's2-r5c2': 'Déverrouillage des fonctionnalités Pro',
+    's2-r5c3': '<span class="tag tag-third">RevenueCat</span>',
+    's2-r6c1': '<strong>Données de localisation</strong><br>(GPS / capteur de l\'appareil)',
+    's2-r6c2': 'Non collecté',
+    's2-r6c3': '<span class="tag tag-no">Non collecté</span>',
+    's2-r7c1': '<strong>Compte / Connexion</strong>',
+    's2-r7c2': 'Non collecté',
+    's2-r7c3': '<span class="tag tag-no">Non collecté</span>',
+    's2-note': 'Note : le champ lieu dans les métadonnées est un <em>texte saisi manuellement</em> par l\'utilisateur — l\'Application n\'accède pas au GPS ni aux capteurs de localisation.',
+    's3-title': '3. Stockage de vos médias',
+    's3-p1': 'Toutes les photos et vidéos capturées par OutVault sont écrites directement dans le répertoire <strong>Application Support/assets/</strong> de l\'application — en contournant complètement iOS Photos. L\'Application n\'appelle jamais aucune API de la photothèque iOS.',
+    's3-li1': 'Tous les fichiers sont protégés par <strong>NSFileProtectionComplete</strong>, le niveau de chiffrement de fichiers sur appareil le plus élevé d\'Apple. Les fichiers sont inaccessibles lorsque l\'appareil est verrouillé.',
+    's3-li2': 'L\'authentification Face ID / code d\'accès est requise pour ouvrir l\'Application.',
+    's3-li3': 'Les médias ne sont jamais transmis à nos serveurs.',
+    's3-li4': 'Lorsque vous partagez un fichier, les données quittent l\'application uniquement via la feuille de partage iOS standard sous votre contrôle explicite. Les utilisateurs Pro peuvent supprimer les métadonnées EXIF avant le partage.',
+    's3-hl': 'Vos médias existent <strong>uniquement sur votre appareil</strong> (et optionnellement dans iCloud — voir Section 5) jusqu\'à ce que vous choisissiez de les partager. Nous n\'avons pas accès à vos photos ou vidéos.',
+    's4-title': '4. Services Firebase',
+    's4-p1': 'OutVault utilise <strong>Firebase Analytics</strong> et <strong>Firebase Crashlytics</strong> (Google LLC) pour améliorer la qualité et la stabilité de l\'application.',
+    's4-p2': '<strong>Firebase Analytics</strong> collecte les événements anonymes suivants :',
+    's4-li1': 'Transitions d\'écran et événements d\'appui sur les fonctionnalités',
+    's4-li2': 'Interactions dans l\'application (p. ex. capture photo, vue galerie, partage)',
+    's4-hl1': 'Firebase Analytics ne collecte <strong>aucune information personnellement identifiable</strong> et n\'accède jamais à vos photos ou vidéos. Toutes les données sont anonymes et utilisées uniquement pour améliorer l\'Application. Elles ne sont jamais vendues ni utilisées à des fins marketing.',
+    's4-p3': '<strong>Firebase Crashlytics</strong> collecte les éléments suivants lors d\'un plantage :',
+    's4-li3': 'Modèle d\'appareil, version OS et version de l\'application',
+    's4-li4': 'Emplacement du plantage (trace de pile)',
+    's4-li5': 'Horodatage du plantage (UTC)',
+    's4-hl2': 'Les données Crashlytics sont utilisées <strong>uniquement pour améliorer la stabilité de l\'application</strong> et ne contiennent aucune information permettant de vous identifier personnellement. Vos fichiers médias ne sont jamais inclus.',
+    's4-p4': 'Pour plus de détails sur la gestion des données par Firebase, consultez <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.',
+    's5-title': '5. Services tiers',
+    's5-intro': 'L\'Application utilise les services tiers suivants.',
+    's5-th1': 'Service', 's5-th2': 'Finalité', 's5-th3': 'Politique de confidentialité',
+    's5-r1c1': '<strong>Apple CloudKit</strong>',
+    's5-r1c2': 'Pro : synchronisation chiffrée des médias entre appareils (future fonctionnalité V2)',
+    's5-r1c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Voir →</a>',
+    's5-r2c1': '<strong>RevenueCat</strong>',
+    's5-r2c2': 'Gestion des achats intégrés pour Lifetime Pro',
+    's5-r2c3': '<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Voir →</a>',
+    's5-r3c1': '<strong>Firebase Analytics</strong>',
+    's5-r3c2': 'Collecte anonyme des événements d\'utilisation et amélioration des fonctionnalités',
+    's5-r3c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Voir →</a>',
+    's5-r4c1': '<strong>Firebase Crashlytics</strong>',
+    's5-r4c2': 'Rapports de plantage et amélioration de la stabilité',
+    's5-r4c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Voir →</a>',
+    's5-r5c1': '<strong>Apple App Store</strong>',
+    's5-r5c2': 'Distribution et facturation de l\'application',
+    's5-r5c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Voir →</a>',
+    's6-title': '6. Conservation et suppression des données',
+    's6-li1': '<strong>Photos &amp; Vidéos (locales) :</strong> Stockées dans le bac à sable de l\'application sur votre appareil. Supprimées définitivement lorsque vous supprimez des ressources individuelles dans l\'Application, ou lorsque vous la désinstallez.',
+    's6-li2': '<strong>Suppression automatique (Pro) :</strong> Les ressources avec une date d\'expiration sont automatiquement purgées par l\'Application. Vous contrôlez la fenêtre d\'expiration par ressource.',
+    's6-li3': '<strong>Synchronisation iCloud (future fonctionnalité Pro) :</strong> Si la synchronisation CloudKit est activée, la désinstallation de l\'Application seule ne supprime pas votre copie iCloud. Utilisez <em>Réglages → Réinitialiser toutes les données</em> avant la désinstallation.',
+    's6-li4': '<strong>Données analytiques et de plantage :</strong> Soumises aux politiques de conservation des données respectives de Google et RevenueCat.',
+    's6-hl': 'Nous ne détenons aucune copie de vos photos ou vidéos. La désinstallation de l\'Application (sans synchronisation iCloud) suffit à supprimer complètement toutes les données médias.',
+    's7-title': '7. Vos droits',
+    's7-intro': 'Selon votre région, vous pouvez disposer des droits suivants.',
+    's7-li1': '<strong>Droit d\'accès :</strong> Demander une copie de vos données personnelles',
+    's7-li2': '<strong>Droit de rectification :</strong> Corriger des données inexactes',
+    's7-li3': '<strong>Droit à l\'effacement :</strong> Demander la suppression de vos données',
+    's7-li4': '<strong>Droit à la limitation :</strong> Demander la limitation du traitement',
+    's7-contact': 'Pour exercer vos droits ou pour toute question, veuillez nous contacter à l\'adresse ci-dessous.',
+    's7-warn': '<strong>Résidents de Californie (CCPA) :</strong> Vous avez le droit de vous opposer à la vente de vos informations personnelles. Nous ne vendons pas vos données.',
+    's8-title': '8. Confidentialité des mineurs',
+    's8-p1': 'OutVault n\'est pas destiné aux enfants de moins de <strong>13</strong> ans (États-Unis) ou de <strong>16</strong> ans (UE/EEE). Nous ne collectons pas sciemment d\'informations personnelles auprès d\'enfants.',
+    's8-p2': 'Si vous constatez qu\'un enfant a utilisé l\'Application, veuillez nous contacter immédiatement afin que nous puissions prendre les mesures appropriées pour supprimer les données concernées.',
+    's9-title': '9. Sécurité',
+    's9-intro': 'OutVault est construit autour de la sécurité comme principe fondamental, et non comme réflexion secondaire :',
+    's9-li1': 'Tous les médias sont stockés avec <strong>NSFileProtectionComplete</strong> — les fichiers sont chiffrés et inaccessibles lorsque l\'appareil est verrouillé.',
+    's9-li2': 'L\'authentification <strong>Face ID / code d\'accès</strong> est requise à chaque lancement de l\'application et après sa mise en arrière-plan.',
+    's9-li3': 'L\'API de la photothèque iOS n\'est <strong>jamais appelée</strong> — les médias capturés sont acheminés directement vers le bac à sable de l\'application.',
+    's9-li4': 'Les utilisateurs Pro peuvent supprimer toutes les métadonnées EXIF avant de partager un fichier.',
+    's9-li5': 'Vos médias ne sont jamais transmis à nos serveurs en aucune circonstance.',
+    's10-title': '10. Modifications de cette politique',
+    's10-p1': 'Cette politique peut être mise à jour en raison de changements législatifs, de mises à jour de services ou de modifications des politiques des tiers. Nous vous informerons des changements importants via des notifications dans l\'application ou sur cette page.',
+    's10-p2': 'Les modifications prennent effet dès leur publication sur cette page. L\'utilisation continue de l\'Application après des modifications constitue une acceptation de la politique mise à jour.',
+    's11-title': '11. Nous contacter',
+    's11-intro': 'Pour toute question concernant cette politique de confidentialité ou pour exercer vos droits, veuillez nous contacter.',
+    's11-label': 'E-mail',
+    's11-response': 'Nous nous efforçons de répondre dans un délai de 5 jours ouvrables.',
+    'footer-copy': '© 2026 Hoon\'s Labs · OutVault: Private Camera',
+    'footer-privacy': 'Politique de confidentialité',
+    'footer-support': 'Assistance',
+  },
+
+  ko: {
+    'subtitle': '개인정보 처리방침',
+    'meta-badge': '시행일: 2026년 6월 1일',
+    's1-title': '1. 개요',
+    's1-p1': '<strong>OutVault: Private Camera</strong>(이하 "앱")는 사진과 동영상을 iOS 사진 라이브러리로부터 완전히 격리하는 전문가용 프라이빗 카메라 앱입니다. 본 개인정보 처리방침은 수집하는 정보, 그 사용 방법 및 귀하의 권리를 설명합니다.',
+    's1-hl': 'OutVault는 <strong>샌드박스 우선</strong> 앱입니다. 촬영한 모든 사진과 동영상은 앱의 프라이빗 샌드박스에만 저장되며, iOS 사진에는 절대 기록되지 않습니다. 귀하가 명시적으로 공유하지 않는 한 미디어는 기기를 벗어나지 않습니다.',
+    's1-p2': '앱을 설치하거나 사용함으로써 본 개인정보 처리방침에 동의하는 것으로 간주됩니다. 동의하지 않는 경우 앱 사용을 중단해 주세요.',
+    's2-title': '2. 수집하는 정보',
+    's2-intro': '앱이 수집하거나 처리하는 정보는 다음과 같습니다.',
+    's2-th1': '데이터 유형', 's2-th2': '목적', 's2-th3': '저장',
+    's2-r1c1': '<strong>사진 &amp; 동영상</strong><br>촬영된 미디어 파일',
+    's2-r1c2': '앱 핵심 기능',
+    's2-r1c3': '<span class="tag tag-local">기기 샌드박스만</span>',
+    's2-r2c1': '<strong>에셋 메타데이터</strong><br>날짜, 메모, 작성자, 선택적 장소(사용자 직접 입력)',
+    's2-r2c2': '메타데이터 편집 기능',
+    's2-r2c3': '<span class="tag tag-local">기기 샌드박스만</span>',
+    's2-r3c1': '<strong>익명 사용 이벤트</strong><br>화면 전환, 기능 탭 등',
+    's2-r3c2': '앱 품질 &amp; 기능 개선',
+    's2-r3c3': '<span class="tag tag-third">Firebase Analytics</span>',
+    's2-r4c1': '<strong>충돌 보고서</strong><br>기기 모델, OS 버전, 앱 버전, 충돌 스택 트레이스',
+    's2-r4c2': '앱 안정성 개선',
+    's2-r4c3': '<span class="tag tag-third">Firebase Crashlytics</span>',
+    's2-r5c1': '<strong>구매 상태</strong><br>평생 Pro 이용권(익명)',
+    's2-r5c2': 'Pro 기능 잠금 해제',
+    's2-r5c3': '<span class="tag tag-third">RevenueCat</span>',
+    's2-r6c1': '<strong>위치 정보</strong><br>(GPS / 기기 센서)',
+    's2-r6c2': '미수집',
+    's2-r6c3': '<span class="tag tag-no">미수집</span>',
+    's2-r7c1': '<strong>계정 / 로그인</strong>',
+    's2-r7c2': '미수집',
+    's2-r7c3': '<span class="tag tag-no">미수집</span>',
+    's2-note': '참고: 메타데이터의 장소 필드는 사용자가 <em>직접 입력하는 텍스트</em>입니다. 앱은 GPS나 기기 위치 센서에 접근하지 않습니다.',
+    's3-title': '3. 미디어 저장 방식',
+    's3-p1': 'OutVault로 촬영한 모든 사진과 동영상은 앱의 <strong>Application Support/assets/</strong> 디렉토리에 직접 기록됩니다. iOS 사진을 완전히 우회하며, 앱은 iOS 사진 라이브러리 API를 전혀 호출하지 않습니다.',
+    's3-li1': '모든 파일은 Apple의 최고 수준 기기 내 파일 암호화인 <strong>NSFileProtectionComplete</strong>로 보호됩니다. 기기가 잠긴 상태에서는 파일에 접근할 수 없습니다.',
+    's3-li2': '앱을 열려면 Face ID / 암호 인증이 필요합니다.',
+    's3-li3': '미디어는 당사 서버로 전송되지 않습니다.',
+    's3-li4': '파일을 공유할 때 데이터는 귀하의 명시적 제어 하에 표준 iOS 공유 시트를 통해서만 앱을 벗어납니다. Pro 사용자는 공유 전 EXIF 메타데이터를 제거할 수 있습니다.',
+    's3-hl': '귀하의 미디어는 공유를 선택하기 전까지 <strong>귀하의 기기에만</strong> 존재합니다(선택적으로 iCloud에도 — 섹션 5 참조). 당사는 귀하의 사진이나 동영상에 접근할 수 없습니다.',
+    's4-title': '4. Firebase 서비스',
+    's4-p1': 'OutVault는 앱 품질과 안정성 향상을 위해 <strong>Firebase Analytics</strong> 및 <strong>Firebase Crashlytics</strong>(Google LLC)를 사용합니다.',
+    's4-p2': '<strong>Firebase Analytics</strong>는 다음과 같은 익명 이벤트를 수집합니다:',
+    's4-li1': '화면 전환 및 기능 탭 이벤트',
+    's4-li2': '앱 내 상호작용(예: 사진 촬영, 갤러리 보기, 공유)',
+    's4-hl1': 'Firebase Analytics는 <strong>개인 식별 정보를 수집하지 않으며</strong> 귀하의 사진이나 동영상에 접근하지 않습니다. 모든 데이터는 익명이며 앱 개선에만 사용됩니다. 판매하거나 마케팅 목적으로 사용하지 않습니다.',
+    's4-p3': '<strong>Firebase Crashlytics</strong>는 충돌 발생 시 다음을 수집합니다:',
+    's4-li3': '기기 모델, OS 버전, 앱 버전',
+    's4-li4': '충돌 위치(스택 트레이스)',
+    's4-li5': '충돌 타임스탬프(UTC)',
+    's4-hl2': 'Crashlytics 데이터는 <strong>앱 안정성 향상에만</strong> 사용되며 개인을 식별할 수 있는 정보는 포함되지 않습니다. 귀하의 미디어 파일은 절대 포함되지 않습니다.',
+    's4-p4': 'Firebase의 데이터 처리 방식에 대한 자세한 내용은 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보보호</a>를 참조하세요.',
+    's5-title': '5. 제3자 서비스',
+    's5-intro': '앱은 다음 제3자 서비스를 사용합니다.',
+    's5-th1': '서비스', 's5-th2': '목적', 's5-th3': '개인정보 처리방침',
+    's5-r1c1': '<strong>Apple CloudKit</strong>',
+    's5-r1c2': 'Pro: 기기 간 암호화 미디어 동기화(향후 V2 기능)',
+    's5-r1c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">보기 →</a>',
+    's5-r2c1': '<strong>RevenueCat</strong>',
+    's5-r2c2': 'Lifetime Pro 인앱 구매 관리',
+    's5-r2c3': '<a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">보기 →</a>',
+    's5-r3c1': '<strong>Firebase Analytics</strong>',
+    's5-r3c2': '익명 앱 사용 이벤트 수집 및 기능 개선',
+    's5-r3c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">보기 →</a>',
+    's5-r4c1': '<strong>Firebase Crashlytics</strong>',
+    's5-r4c2': '충돌 보고 및 앱 안정성 개선',
+    's5-r4c3': '<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">보기 →</a>',
+    's5-r5c1': '<strong>Apple App Store</strong>',
+    's5-r5c2': '앱 배포 및 결제',
+    's5-r5c3': '<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">보기 →</a>',
+    's6-title': '6. 데이터 보존 및 삭제',
+    's6-li1': '<strong>사진 &amp; 동영상(로컬):</strong> 기기의 앱 샌드박스에 저장됩니다. 앱 내에서 개별 에셋을 삭제하거나 앱을 삭제할 때 영구 삭제됩니다.',
+    's6-li2': '<strong>자동 삭제(Pro):</strong> 만료일이 설정된 에셋은 앱에 의해 자동으로 삭제됩니다. 만료 기간은 에셋별로 설정할 수 있습니다.',
+    's6-li3': '<strong>iCloud 동기화(향후 Pro 기능):</strong> CloudKit 동기화가 활성화된 경우 앱을 삭제해도 iCloud 사본은 제거되지 않습니다. iCloud 데이터를 완전히 제거하려면 삭제 전 <em>설정 → 모든 데이터 초기화</em>를 사용하세요.',
+    's6-li4': '<strong>분석 및 충돌 데이터:</strong> Google과 RevenueCat의 각 데이터 보존 정책에 따릅니다.',
+    's6-hl': '당사는 귀하의 사진이나 동영상 사본을 보유하지 않습니다. iCloud 동기화 없이 앱을 삭제하면 모든 미디어 데이터가 완전히 삭제됩니다.',
+    's7-title': '7. 귀하의 권리',
+    's7-intro': '거주 지역에 따라 다음과 같은 권리를 가질 수 있습니다.',
+    's7-li1': '<strong>열람권:</strong> 개인정보 사본 요청',
+    's7-li2': '<strong>정정권:</strong> 부정확한 정보 수정',
+    's7-li3': '<strong>삭제권:</strong> 데이터 삭제 요청',
+    's7-li4': '<strong>처리 제한권:</strong> 처리 제한 요청',
+    's7-contact': '권리 행사 또는 문의 사항은 아래 주소로 연락해 주세요.',
+    's7-warn': '<strong>캘리포니아 거주자(CCPA):</strong> 개인정보 판매를 거부할 권리가 있습니다. 당사는 귀하의 데이터를 판매하지 않습니다.',
+    's8-title': '8. 아동 개인정보 보호',
+    's8-p1': 'OutVault는 <strong>13</strong>세 미만(미국) 또는 <strong>16</strong>세 미만(EU/EEA) 아동을 대상으로 하지 않습니다. 당사는 아동으로부터 의도적으로 개인정보를 수집하지 않습니다.',
+    's8-p2': '아동이 앱을 사용한 것을 알게 된 경우 즉시 연락해 주시면 관련 데이터를 삭제하기 위한 적절한 조치를 취하겠습니다.',
+    's9-title': '9. 보안',
+    's9-intro': 'OutVault는 보안을 후속 조치가 아닌 핵심 원칙으로 구축되었습니다:',
+    's9-li1': '모든 미디어는 <strong>NSFileProtectionComplete</strong>로 저장됩니다. 기기가 잠긴 상태에서 파일은 암호화되어 접근할 수 없습니다.',
+    's9-li2': '<strong>Face ID / 암호</strong> 인증은 매번 앱을 실행할 때와 백그라운드 전환 후에 필요합니다.',
+    's9-li3': 'iOS 사진 라이브러리 API는 <strong>절대 호출되지 않습니다</strong>. 촬영된 미디어는 앱 샌드박스에 직접 저장됩니다.',
+    's9-li4': 'Pro 사용자는 파일 공유 전 모든 EXIF 메타데이터를 제거할 수 있습니다.',
+    's9-li5': '어떠한 상황에서도 귀하의 미디어는 당사 서버로 전송되지 않습니다.',
+    's10-title': '10. 방침 변경',
+    's10-p1': '법률 변경, 서비스 업데이트 또는 제3자 정책 변경으로 인해 본 방침이 업데이트될 수 있습니다. 중요한 변경 사항은 앱 내 알림 또는 본 페이지를 통해 공지합니다.',
+    's10-p2': '변경 사항은 본 페이지에 게시됨과 동시에 효력이 발생합니다. 변경 후 앱을 계속 사용하면 업데이트된 방침에 동의한 것으로 간주됩니다.',
+    's11-title': '11. 문의하기',
+    's11-intro': '본 개인정보 처리방침에 관한 질문이나 권리 행사를 원하시면 연락해 주세요.',
+    's11-label': '이메일',
+    's11-response': '영업일 기준 5일 이내에 답변 드립니다.',
+    'footer-copy': '© 2026 Hoon\'s Labs · OutVault: Private Camera',
+    'footer-privacy': '개인정보 처리방침',
+    'footer-support': '지원',
+  },
+};
+
+function applyLang(lang) {
+  const t = T[lang] || T.en;
+  document.title = t['doc-title'] || (t['subtitle'] + ' — OutVault: Private Camera');
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  try { localStorage.setItem('ov-lang', lang); } catch(e) {}
+}
+
+(function() {
+  var lang = 'en';
+  try { lang = localStorage.getItem('ov-lang') || lang; } catch(e) {}
+  if (!T[lang]) {
+    var nav = (navigator.language || '').split('-')[0];
+    lang = T[nav] ? nav : 'en';
+  }
+  applyLang(lang);
+})();
+</script>
 </body>
 </html>
