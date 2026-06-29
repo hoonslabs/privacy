@@ -870,10 +870,15 @@ function applyLang(lang) {
 
 (function() {
   var lang = 'en';
-  try { lang = localStorage.getItem('ov-lang') || lang; } catch(e) {}
-  if (!T[lang]) {
-    var nav = (navigator.language || '').split('-')[0];
-    lang = T[nav] ? nav : 'en';
+  var paramLang = new URLSearchParams(window.location.search).get('lang');
+  if (paramLang && T[paramLang]) {
+    lang = paramLang;
+  } else {
+    try { lang = localStorage.getItem('ov-lang') || lang; } catch(e) {}
+    if (!T[lang]) {
+      var nav = (navigator.language || '').split('-')[0];
+      lang = T[nav] ? nav : 'en';
+    }
   }
   applyLang(lang);
 })();
