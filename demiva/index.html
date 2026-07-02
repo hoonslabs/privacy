@@ -193,7 +193,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-en">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>Last updated: May 15, 2026 &nbsp;·&nbsp; Effective: May 15, 2026</div>
+  <div class="meta-badge"><span class="dot"></span>Last updated: July 2, 2026 &nbsp;·&nbsp; Effective: July 2, 2026</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. Overview</h2></div>
@@ -210,21 +210,24 @@
       <tbody>
         <tr><td><strong>Task &amp; Log Data</strong><br>Item title, icon, color, cycle settings, completion history, notes</td><td>Core app functionality</td><td><span class="tag tag-local">Device only</span></td></tr>
         <tr><td><strong>Notification Settings</strong><br>Scheduled reminder times and lead-day preferences</td><td>Local reminders</td><td><span class="tag tag-local">Device only</span></td></tr>
-        <tr><td><strong>Purchase Status</strong><br>Anonymous receipt token from Apple</td><td>Premium feature access</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash trace</td><td>App stability (pending activation)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>Purchase History</strong><br>Anonymous receipt token and purchase/restore records</td><td>Premium feature access</td><td><span class="tag tag-third">Apple App Store, RevenueCat</span></td></tr>
+        <tr><td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash trace</td><td>App stability</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>Usage Analytics</strong><br>Anonymous app instance ID, feature-usage events (no task titles or notes)</td><td>Product improvement</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>Location Data</strong></td><td>Not collected</td><td><span class="tag tag-no">Not collected</span></td></tr>
         <tr><td><strong>Account / Login</strong></td><td>Not collected</td><td><span class="tag tag-no">Not collected</span></td></tr>
-        <tr><td><strong>Analytics / Advertising</strong></td><td>Not collected</td><td><span class="tag tag-no">Not collected</span></td></tr>
+        <tr><td><strong>Advertising Data</strong></td><td>Not collected</td><td><span class="tag tag-no">Not collected</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva integrates <strong>Firebase Crashlytics</strong> (Google LLC) for crash detection and diagnostics. This feature is currently inactive and will be enabled in an upcoming update. Firebase Analytics is explicitly disabled — only crash reporting will be active.</p>
-    <p>When active, Firebase Crashlytics collects upon a crash: device model, OS version, app version, crash location (stack trace), and timestamp (UTC).</p>
-    <div class="highlight">Crashlytics data is used <strong>solely to improve app stability</strong>. It contains no personally identifiable information and is never sold or used for marketing.</div>
-    <p>For details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Analytics, Crashlytics &amp; In-App Purchases</h2></div>
+    <p>Demiva integrates three third-party SDKs: <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC), and <strong>RevenueCat</strong> (RevenueCat, Inc.) for in-app purchase management.</p>
+    <p><strong>Firebase Analytics</strong> collects anonymous usage events (e.g. which features you tap, whether an item was created or a reminder was snoozed) and a randomly-generated app instance ID. It never collects your task titles, notes, or any other content you type into the App. Ad-related data collection (ad storage, ad personalization) is explicitly disabled — Analytics is used only to understand feature usage, never for advertising.</p>
+    <p><strong>Firebase Crashlytics</strong> collects, only when the App crashes: device model, OS version, app version, crash location (stack trace), and timestamp (UTC).</p>
+    <p><strong>RevenueCat</strong> manages the Demiva Premium in-app purchase. It generates an anonymous purchaser ID (not linked to your Apple ID, name, or email) and processes your purchase and restore transactions with Apple to determine whether Premium is unlocked on your device.</p>
+    <div class="highlight">This data is used <strong>solely to improve app stability, understand feature usage, and manage your Premium purchase</strong>. None of it contains personally identifiable information, and none of it is sold or used for advertising.</div>
+    <p>For details: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy →</a></p>
   </section>
 
   <section class="section">
@@ -232,8 +235,9 @@
     <ul>
       <li><strong>App Services:</strong> Item tracking, cycle calculations, completion history, snooze scheduling</li>
       <li><strong>Notifications:</strong> Scheduling local reminders based on your settings</li>
-      <li><strong>Premium Access:</strong> Validating your in-app purchase via Apple</li>
-      <li><strong>Stability:</strong> Crash diagnosis and bug fixes via Firebase Crashlytics (when active)</li>
+      <li><strong>Premium Access:</strong> Validating and restoring your in-app purchase via Apple and RevenueCat</li>
+      <li><strong>Stability:</strong> Crash diagnosis and bug fixes via Firebase Crashlytics</li>
+      <li><strong>Product Improvement:</strong> Understanding feature usage via Firebase Analytics (anonymous, never for advertising)</li>
     </ul>
     <p>We do not sell or share your task and log data with any third parties. We do not use your data for advertising or marketing.</p>
   </section>
@@ -244,7 +248,9 @@
       <thead><tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr></thead>
       <tbody>
         <tr><td><strong>Apple App Store</strong></td><td>App distribution and in-app purchases</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td></tr>
-        <tr><td><strong>Firebase Crashlytics</strong></td><td>Crash reporting (pending activation; Analytics disabled)</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td></tr>
+        <tr><td><strong>Firebase Crashlytics</strong></td><td>Crash reporting</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td></tr>
+        <tr><td><strong>Firebase Analytics</strong></td><td>Anonymous feature-usage analytics</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td></tr>
+        <tr><td><strong>RevenueCat</strong></td><td>In-app purchase management (Premium unlock, restore)</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">View →</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -253,8 +259,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>6. Data Retention &amp; Deletion</h2></div>
     <ul>
       <li><strong>Task &amp; Log Data:</strong> Stored on your device. Permanently deleted when you uninstall the App.</li>
-      <li><strong>Purchase Data:</strong> Anonymous receipt tokens are governed by Apple's retention policy.</li>
+      <li><strong>Purchase Data:</strong> Anonymous receipt tokens and RevenueCat purchaser records are governed by Apple's and RevenueCat's retention policies.</li>
       <li><strong>Crash Reports:</strong> Firebase Crashlytics retains crash data for 90 days per Google's policy.</li>
+      <li><strong>Usage Analytics:</strong> Firebase Analytics retains anonymous event data per Google's default retention policy.</li>
     </ul>
     <div class="highlight">We hold <strong>no copy</strong> of your task or log data. Uninstalling the App is sufficient to completely remove all data.</div>
   </section>
@@ -294,7 +301,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-ko">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>최종 업데이트: 2026년 5월 15일 &nbsp;·&nbsp; 시행일: 2026년 5월 15일</div>
+  <div class="meta-badge"><span class="dot"></span>최종 업데이트: 2026년 7월 2일 &nbsp;·&nbsp; 시행일: 2026년 7월 2일</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. 개요</h2></div>
@@ -311,21 +318,24 @@
       <tbody>
         <tr><td><strong>항목 및 기록 데이터</strong><br>제목, 아이콘, 색상, 주기 설정, 완료 이력, 메모</td><td>앱 핵심 기능</td><td><span class="tag tag-local">기기 전용</span></td></tr>
         <tr><td><strong>알림 설정</strong><br>예약된 알림 시간 및 선행 알람 설정</td><td>로컬 알림</td><td><span class="tag tag-local">기기 전용</span></td></tr>
-        <tr><td><strong>구매 상태</strong><br>Apple이 발급한 익명 영수증 토큰</td><td>프리미엄 기능 접근</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>충돌 보고서</strong><br>기기 모델, OS 버전, 앱 버전, 충돌 스택 트레이스</td><td>앱 안정성 (활성화 예정)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>구매 내역</strong><br>익명 영수증 토큰 및 구매·복원 기록</td><td>프리미엄 기능 접근</td><td><span class="tag tag-third">Apple App Store, RevenueCat</span></td></tr>
+        <tr><td><strong>충돌 보고서</strong><br>기기 모델, OS 버전, 앱 버전, 충돌 스택 트레이스</td><td>앱 안정성</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>사용 분석 데이터</strong><br>익명 앱 인스턴스 ID, 기능 사용 이벤트(항목 제목·메모 내용은 포함되지 않음)</td><td>제품 개선</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>위치 정보</strong></td><td>수집하지 않음</td><td><span class="tag tag-no">미수집</span></td></tr>
         <tr><td><strong>계정 / 로그인</strong></td><td>수집하지 않음</td><td><span class="tag tag-no">미수집</span></td></tr>
-        <tr><td><strong>분석 / 광고 데이터</strong></td><td>수집하지 않음</td><td><span class="tag tag-no">미수집</span></td></tr>
+        <tr><td><strong>광고 데이터</strong></td><td>수집하지 않음</td><td><span class="tag tag-no">미수집</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva는 앱 충돌 감지 및 진단을 위해 <strong>Firebase Crashlytics</strong>(Google LLC)를 통합하고 있습니다. 해당 기능은 현재 비활성 상태이며 향후 업데이트에서 활성화될 예정입니다. Firebase Analytics는 명시적으로 비활성화되어 있으며, 충돌 보고 기능만 사용됩니다.</p>
-    <p>활성화 시 충돌 발생 시 수집되는 정보: 기기 모델, OS 버전, 앱 버전, 충돌 위치(스택 트레이스), 타임스탬프(UTC).</p>
-    <div class="highlight">Crashlytics 데이터는 <strong>앱 안정성 개선에만 사용</strong>되며, 개인 식별 정보는 포함되지 않습니다. 제3자에게 판매되거나 마케팅 목적으로 사용되지 않습니다.</div>
-    <p>자세한 내용: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호정책 →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. 분석, 충돌 진단 및 인앱 결제</h2></div>
+    <p>Demiva는 세 가지 제3자 SDK를 통합하고 있습니다: <strong>Firebase Analytics</strong> 및 <strong>Firebase Crashlytics</strong>(Google LLC), 그리고 인앱 결제 관리를 위한 <strong>RevenueCat</strong>(RevenueCat, Inc.).</p>
+    <p><strong>Firebase Analytics</strong>는 익명 사용 이벤트(예: 어떤 기능을 탭했는지, 항목을 생성했는지, 알림을 미뤘는지 등)와 임의로 생성된 앱 인스턴스 ID를 수집합니다. 사용자가 입력한 항목 제목, 메모 등의 콘텐츠는 수집하지 않습니다. 광고 관련 데이터 수집(광고 저장소, 광고 개인화)은 명시적으로 비활성화되어 있으며, Analytics는 오직 기능 사용 현황 파악에만 사용되고 광고 목적으로는 사용되지 않습니다.</p>
+    <p><strong>Firebase Crashlytics</strong>는 앱 충돌 발생 시에만 다음 정보를 수집합니다: 기기 모델, OS 버전, 앱 버전, 충돌 위치(스택 트레이스), 타임스탬프(UTC).</p>
+    <p><strong>RevenueCat</strong>은 Demiva Premium 인앱 결제를 관리합니다. Apple ID, 이름, 이메일과 연결되지 않는 익명 구매자 ID를 생성하고, Apple과의 구매·복원 트랜잭션을 처리하여 기기에서 프리미엄 잠금 해제 여부를 판단합니다.</p>
+    <div class="highlight">이 데이터는 <strong>앱 안정성 개선, 기능 사용 현황 파악, 프리미엄 구매 관리에만 사용</strong>되며, 개인 식별 정보는 포함되지 않습니다. 제3자에게 판매되거나 광고 목적으로 사용되지 않습니다.</div>
+    <p>자세한 내용: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호정책 →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat 개인정보 보호정책 →</a></p>
   </section>
 
   <section class="section">
@@ -333,8 +343,9 @@
     <ul>
       <li><strong>앱 서비스:</strong> 항목 추적, 주기 계산, 완료 이력, 스누즈 일정 관리</li>
       <li><strong>알림:</strong> 사용자 설정에 따른 로컬 알림 예약</li>
-      <li><strong>프리미엄 접근:</strong> Apple을 통한 인앱 구매 검증</li>
-      <li><strong>안정성:</strong> Firebase Crashlytics를 통한 충돌 분석 및 버그 수정 (활성화 시)</li>
+      <li><strong>프리미엄 접근:</strong> Apple 및 RevenueCat을 통한 인앱 구매 검증 및 복원</li>
+      <li><strong>안정성:</strong> Firebase Crashlytics를 통한 충돌 분석 및 버그 수정</li>
+      <li><strong>제품 개선:</strong> Firebase Analytics를 통한 기능 사용 현황 파악 (익명, 광고 목적 아님)</li>
     </ul>
     <p>당사는 사용자의 항목 및 기록 데이터를 제3자에게 판매하거나 공유하지 않습니다. 데이터는 광고 또는 마케팅 목적으로 사용되지 않습니다.</p>
   </section>
@@ -345,7 +356,9 @@
       <thead><tr><th>서비스</th><th>목적</th><th>개인정보처리방침</th></tr></thead>
       <tbody>
         <tr><td><strong>Apple App Store</strong></td><td>앱 배포 및 인앱 결제</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td></tr>
-        <tr><td><strong>Firebase Crashlytics</strong></td><td>충돌 보고 (활성화 예정, Analytics 비활성화)</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td></tr>
+        <tr><td><strong>Firebase Crashlytics</strong></td><td>충돌 보고</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td></tr>
+        <tr><td><strong>Firebase Analytics</strong></td><td>익명 기능 사용 분석</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td></tr>
+        <tr><td><strong>RevenueCat</strong></td><td>인앱 결제 관리 (프리미엄 잠금 해제, 복원)</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -354,8 +367,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>6. 데이터 보관 및 삭제</h2></div>
     <ul>
       <li><strong>항목 및 기록 데이터:</strong> 기기에 저장되며, 앱 삭제 시 즉시 삭제됩니다.</li>
-      <li><strong>구매 데이터:</strong> 익명 영수증 토큰은 Apple의 데이터 보관 정책에 따릅니다.</li>
+      <li><strong>구매 데이터:</strong> 익명 영수증 토큰 및 RevenueCat 구매자 기록은 Apple 및 RevenueCat의 데이터 보관 정책에 따릅니다.</li>
       <li><strong>충돌 보고서:</strong> Firebase Crashlytics는 Google 정책에 따라 90일간 보관합니다.</li>
+      <li><strong>사용 분석 데이터:</strong> Firebase Analytics는 Google의 기본 보관 정책에 따라 익명 이벤트 데이터를 보관합니다.</li>
     </ul>
     <div class="highlight">당사는 사용자의 항목 및 기록 데이터의 <strong>사본을 보유하지 않습니다</strong>. 앱 삭제만으로 모든 데이터가 완전히 제거됩니다.</div>
   </section>
@@ -395,7 +409,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-ja">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>最終更新: 2026年5月15日 &nbsp;·&nbsp; 施行日: 2026年5月15日</div>
+  <div class="meta-badge"><span class="dot"></span>最終更新: 2026年7月2日 &nbsp;·&nbsp; 施行日: 2026年7月2日</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. 概要</h2></div>
@@ -412,21 +426,24 @@
       <tbody>
         <tr><td><strong>タスク・ログデータ</strong><br>タイトル、アイコン、色、周期設定、完了履歴、メモ</td><td>アプリの中核機能</td><td><span class="tag tag-local">端末のみ</span></td></tr>
         <tr><td><strong>通知設定</strong><br>リマインダー時刻・事前通知設定</td><td>ローカル通知</td><td><span class="tag tag-local">端末のみ</span></td></tr>
-        <tr><td><strong>購入状態</strong><br>Appleが発行する匿名レシートトークン</td><td>プレミアム機能アクセス</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>クラッシュレポート</strong><br>端末モデル、OSバージョン、アプリバージョン、スタックトレース</td><td>アプリ安定性（有効化予定）</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>購入履歴</strong><br>匿名の領収書トークンおよび購入・復元記録</td><td>プレミアム機能アクセス</td><td><span class="tag tag-third">Apple App Store, RevenueCat</span></td></tr>
+        <tr><td><strong>クラッシュレポート</strong><br>端末モデル、OSバージョン、アプリバージョン、スタックトレース</td><td>アプリ安定性</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>利用状況分析データ</strong><br>匿名のアプリインスタンスID、機能利用イベント（タイトルやメモの内容は含まれません）</td><td>製品改善</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>位置情報</strong></td><td>収集しない</td><td><span class="tag tag-no">未収集</span></td></tr>
         <tr><td><strong>アカウント・ログイン情報</strong></td><td>収集しない</td><td><span class="tag tag-no">未収集</span></td></tr>
-        <tr><td><strong>分析・広告データ</strong></td><td>収集しない</td><td><span class="tag tag-no">未収集</span></td></tr>
+        <tr><td><strong>広告データ</strong></td><td>収集しない</td><td><span class="tag tag-no">未収集</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demivaはクラッシュ検出・診断のために<strong>Firebase Crashlytics</strong>（Google LLC）を統合しています。この機能は現在無効で、今後のアップデートで有効化される予定です。Firebase Analyticsは明示的に無効化されており、クラッシュレポートのみが使用されます。</p>
-    <p>有効化後にクラッシュ発生時収集される情報：端末モデル、OSバージョン、アプリバージョン、クラッシュ箇所（スタックトレース）、タイムスタンプ（UTC）。</p>
-    <div class="highlight">Crashlyticsデータは<strong>アプリ安定性の向上にのみ使用</strong>されます。個人を特定できる情報は含まれず、第三者への販売やマーケティング利用は一切行いません。</div>
-    <p>詳細: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシーポリシー →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. 分析、クラッシュ診断とアプリ内課金</h2></div>
+    <p>Demivaは3つの第三者SDKを統合しています：<strong>Firebase Analytics</strong>および<strong>Firebase Crashlytics</strong>（Google LLC）、そしてアプリ内課金管理のための<strong>RevenueCat</strong>（RevenueCat, Inc.）です。</p>
+    <p><strong>Firebase Analytics</strong>は、匿名の利用イベント（どの機能をタップしたか、項目を作成したか、リマインダーをスヌーズしたかなど）とランダムに生成されたアプリインスタンスIDを収集します。お客様が入力したタスクのタイトルやメモなどのコンテンツを収集することはありません。広告関連のデータ収集（広告ストレージ、広告パーソナライゼーション）は明示的に無効化されており、Analyticsは機能利用状況の把握にのみ使用され、広告目的では使用されません。</p>
+    <p><strong>Firebase Crashlytics</strong>は、アプリがクラッシュした場合にのみ、次の情報を収集します：端末モデル、OSバージョン、アプリバージョン、クラッシュ箇所（スタックトレース）、タイムスタンプ（UTC）。</p>
+    <p><strong>RevenueCat</strong>はDemiva Premiumのアプリ内課金を管理します。Apple ID、氏名、メールアドレスに紐付かない匿名の購入者IDを生成し、Appleとの購入・復元トランザクションを処理して、お使いの端末でプレミアムが解除されているかどうかを判定します。</p>
+    <div class="highlight">これらのデータは<strong>アプリ安定性の向上、機能利用状況の把握、プレミアム購入の管理にのみ使用</strong>されます。個人を特定できる情報は含まれず、第三者への販売や広告目的での利用は一切行いません。</div>
+    <p>詳細: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシーポリシー →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCatプライバシーポリシー →</a></p>
   </section>
 
   <section class="section">
@@ -434,8 +451,9 @@
     <ul>
       <li><strong>アプリサービス:</strong> タスク追跡、周期計算、完了履歴、スヌーズスケジュール管理</li>
       <li><strong>通知:</strong> お客様の設定に基づくローカルリマインダーのスケジューリング</li>
-      <li><strong>プレミアムアクセス:</strong> Appleを通じたアプリ内購入の確認</li>
-      <li><strong>安定性:</strong> Firebase Crashlyticsによるクラッシュ分析とバグ修正（有効化後）</li>
+      <li><strong>プレミアムアクセス:</strong> AppleおよびRevenueCatを通じたアプリ内購入の確認と復元</li>
+      <li><strong>安定性:</strong> Firebase Crashlyticsによるクラッシュ分析とバグ修正</li>
+      <li><strong>製品改善:</strong> Firebase Analyticsによる機能利用状況の把握（匿名、広告目的ではありません）</li>
     </ul>
     <p>お客様のタスク・ログデータを第三者に販売・共有することはありません。広告・マーケティング目的で使用することもありません。</p>
   </section>
@@ -446,7 +464,9 @@
       <thead><tr><th>サービス</th><th>目的</th><th>プライバシーポリシー</th></tr></thead>
       <tbody>
         <tr><td><strong>Apple App Store</strong></td><td>アプリ配信およびアプリ内課金</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td></tr>
-        <tr><td><strong>Firebase Crashlytics</strong></td><td>クラッシュレポート（有効化予定、Analytics無効）</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td></tr>
+        <tr><td><strong>Firebase Crashlytics</strong></td><td>クラッシュレポート</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td></tr>
+        <tr><td><strong>Firebase Analytics</strong></td><td>匿名の機能利用分析</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td></tr>
+        <tr><td><strong>RevenueCat</strong></td><td>アプリ内課金管理（プレミアム解除、復元）</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">確認する →</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -455,8 +475,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>6. データの保持と削除</h2></div>
     <ul>
       <li><strong>タスク・ログデータ:</strong> お客様の端末に保存され、アプリ削除時に即座に消去されます。</li>
-      <li><strong>購入データ:</strong> 匿名レシートトークンはAppleのデータ保持ポリシーに従います。</li>
+      <li><strong>購入データ:</strong> 匿名レシートトークンおよびRevenueCatの購入者記録は、Appleおよび RevenueCatのデータ保持ポリシーに従います。</li>
       <li><strong>クラッシュレポート:</strong> Firebase CrashlyticsはGoogleのポリシーに従い90日間保持します。</li>
+      <li><strong>利用状況分析データ:</strong> Firebase AnalyticsはGoogleの標準保持ポリシーに従い匿名イベントデータを保持します。</li>
     </ul>
     <div class="highlight">当社はお客様のタスク・ログデータの<strong>コピーを保持していません</strong>。アプリを削除するだけですべてのデータが完全に消去されます。</div>
   </section>
@@ -496,7 +517,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-zh-hans">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>最后更新：2026年5月15日 &nbsp;·&nbsp; 生效日期：2026年5月15日</div>
+  <div class="meta-badge"><span class="dot"></span>最后更新：2026年7月2日 &nbsp;·&nbsp; 生效日期：2026年7月2日</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. 概述</h2></div>
@@ -512,20 +533,24 @@
       <tbody>
         <tr><td><strong>任务与记录数据</strong><br>标题、图标、颜色、周期设置、完成历史、备注</td><td>核心应用功能</td><td><span class="tag tag-local">仅设备</span></td></tr>
         <tr><td><strong>通知设置</strong><br>提醒时间及提前提醒偏好</td><td>本地提醒</td><td><span class="tag tag-local">仅设备</span></td></tr>
-        <tr><td><strong>购买状态</strong><br>Apple 提供的匿名收据令牌</td><td>高级功能访问</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>崩溃报告</strong><br>设备型号、系统版本、应用版本、崩溃堆栈</td><td>应用稳定性（待激活）</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>购买记录</strong><br>匿名收据令牌及购买/恢复记录</td><td>高级功能访问</td><td><span class="tag tag-third">Apple App Store、RevenueCat</span></td></tr>
+        <tr><td><strong>崩溃报告</strong><br>设备型号、系统版本、应用版本、崩溃堆栈</td><td>应用稳定性</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>使用分析数据</strong><br>匿名应用实例 ID、功能使用事件（不含项目标题或备注内容）</td><td>产品改进</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>位置数据</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
         <tr><td><strong>账户 / 登录</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
-        <tr><td><strong>分析 / 广告数据</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
+        <tr><td><strong>广告数据</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva 集成了 <strong>Firebase Crashlytics</strong>（Google LLC）用于崩溃检测和诊断。该功能目前尚未激活，将在后续更新中启用。Firebase Analytics 已明确禁用，仅使用崩溃报告功能。</p>
-    <div class="highlight">Crashlytics 数据<strong>仅用于提升应用稳定性</strong>，不包含任何可识别个人身份的信息，不会出售或用于营销目的。</div>
-    <p>详情请参阅：<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隐私政策 →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. 分析、崩溃诊断与应用内购买</h2></div>
+    <p>Demiva 集成了三个第三方 SDK：<strong>Firebase Analytics</strong> 与 <strong>Firebase Crashlytics</strong>（Google LLC），以及用于应用内购买管理的 <strong>RevenueCat</strong>（RevenueCat, Inc.）。</p>
+    <p><strong>Firebase Analytics</strong> 收集匿名使用事件（例如您点击了哪些功能、是否创建了项目、是否推迟了提醒）以及随机生成的应用实例 ID。它绝不会收集您输入的项目标题、备注等内容。广告相关数据收集（广告存储、广告个性化）已明确禁用——Analytics 仅用于了解功能使用情况，绝不用于广告。</p>
+    <p><strong>Firebase Crashlytics</strong> 仅在应用崩溃时收集：设备型号、系统版本、应用版本、崩溃位置（堆栈跟踪）及时间戳（UTC）。</p>
+    <p><strong>RevenueCat</strong> 管理 Demiva Premium 的应用内购买。它会生成一个与您的 Apple ID、姓名或邮箱无关的匿名购买者 ID，并通过 Apple 处理您的购买与恢复交易，以判断您的设备上是否已解锁高级版。</p>
+    <div class="highlight">这些数据<strong>仅用于提升应用稳定性、了解功能使用情况以及管理您的高级版购买</strong>，不包含任何可识别个人身份的信息，不会出售或用于广告目的。</div>
+    <p>详情请参阅：<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隐私政策 →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat 隐私政策 →</a></p>
   </section>
 
   <section class="section">
@@ -533,8 +558,9 @@
     <ul>
       <li><strong>应用服务：</strong>任务追踪、周期计算、完成历史、推迟安排</li>
       <li><strong>通知：</strong>根据您的设置安排本地提醒</li>
-      <li><strong>高级访问：</strong>通过 Apple 验证应用内购买</li>
-      <li><strong>稳定性：</strong>通过 Firebase Crashlytics 分析崩溃和修复错误（激活后）</li>
+      <li><strong>高级访问：</strong>通过 Apple 和 RevenueCat 验证并恢复应用内购买</li>
+      <li><strong>稳定性：</strong>通过 Firebase Crashlytics 分析崩溃和修复错误</li>
+      <li><strong>产品改进：</strong>通过 Firebase Analytics 了解功能使用情况（匿名，绝不用于广告）</li>
     </ul>
     <p>我们不会向第三方出售或共享您的任务和记录数据，也不会将数据用于广告或营销目的。</p>
   </section>
@@ -545,7 +571,9 @@
       <thead><tr><th>服务</th><th>用途</th><th>隐私政策</th></tr></thead>
       <tbody>
         <tr><td><strong>Apple App Store</strong></td><td>应用分发和应用内购买</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td></tr>
-        <tr><td><strong>Firebase Crashlytics</strong></td><td>崩溃报告（待激活；Analytics 已禁用）</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>Firebase Crashlytics</strong></td><td>崩溃报告</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>Firebase Analytics</strong></td><td>匿名功能使用分析</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>RevenueCat</strong></td><td>应用内购买管理（高级版解锁、恢复购买）</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -554,8 +582,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>6. 数据保留与删除</h2></div>
     <ul>
       <li><strong>任务与记录数据：</strong>存储在您的设备上，卸载应用后立即删除。</li>
-      <li><strong>购买数据：</strong>匿名收据令牌遵循 Apple 的数据保留政策。</li>
+      <li><strong>购买数据：</strong>匿名收据令牌及 RevenueCat 购买者记录遵循 Apple 与 RevenueCat 的数据保留政策。</li>
       <li><strong>崩溃报告：</strong>Firebase Crashlytics 根据 Google 政策保留 90 天。</li>
+      <li><strong>使用分析数据：</strong>Firebase Analytics 根据 Google 的默认政策保留匿名事件数据。</li>
     </ul>
     <div class="highlight">我们<strong>不保留</strong>您任务或记录数据的任何副本。卸载应用即可完全删除所有数据。</div>
   </section>
@@ -595,7 +624,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-zh-hant">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>最後更新：2026年5月15日 &nbsp;·&nbsp; 生效日期：2026年5月15日</div>
+  <div class="meta-badge"><span class="dot"></span>最後更新：2026年7月2日 &nbsp;·&nbsp; 生效日期：2026年7月2日</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. 概述</h2></div>
@@ -611,20 +640,24 @@
       <tbody>
         <tr><td><strong>任務與記錄資料</strong><br>標題、圖示、顏色、週期設定、完成歷史、備註</td><td>核心應用功能</td><td><span class="tag tag-local">僅裝置</span></td></tr>
         <tr><td><strong>通知設定</strong><br>提醒時間及提前提醒偏好</td><td>本地提醒</td><td><span class="tag tag-local">僅裝置</span></td></tr>
-        <tr><td><strong>購買狀態</strong><br>Apple 提供的匿名收據令牌</td><td>進階功能存取</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>當機報告</strong><br>裝置型號、系統版本、應用版本、當機堆疊</td><td>應用穩定性（待啟用）</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>購買記錄</strong><br>匿名收據令牌及購買/復原記錄</td><td>進階功能存取</td><td><span class="tag tag-third">Apple App Store、RevenueCat</span></td></tr>
+        <tr><td><strong>當機報告</strong><br>裝置型號、系統版本、應用版本、當機堆疊</td><td>應用穩定性</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>使用分析資料</strong><br>匿名應用實例 ID、功能使用事件（不含項目標題或備註內容）</td><td>產品改善</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>位置資料</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
         <tr><td><strong>帳號 / 登入</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
-        <tr><td><strong>分析 / 廣告資料</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
+        <tr><td><strong>廣告資料</strong></td><td>不收集</td><td><span class="tag tag-no">不收集</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva 整合了 <strong>Firebase Crashlytics</strong>（Google LLC）用於當機偵測和診斷。該功能目前尚未啟用，將在後續更新中開啟。Firebase Analytics 已明確停用，僅使用當機報告功能。</p>
-    <div class="highlight">Crashlytics 資料<strong>僅用於提升應用穩定性</strong>，不包含任何可識別個人身分的資訊，不會出售或用於行銷目的。</div>
-    <p>詳情請參閱：<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私政策 →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. 分析、當機診斷與應用程式內購買</h2></div>
+    <p>Demiva 整合了三個第三方 SDK：<strong>Firebase Analytics</strong> 與 <strong>Firebase Crashlytics</strong>（Google LLC），以及用於應用程式內購買管理的 <strong>RevenueCat</strong>（RevenueCat, Inc.）。</p>
+    <p><strong>Firebase Analytics</strong> 收集匿名使用事件（例如您點擊了哪些功能、是否建立了項目、是否延後了提醒）以及隨機產生的應用程式執行個體 ID。它絕不會收集您輸入的項目標題、備註等內容。廣告相關資料收集（廣告儲存、廣告個人化）已明確停用——Analytics 僅用於了解功能使用狀況，絕不用於廣告。</p>
+    <p><strong>Firebase Crashlytics</strong> 僅在應用程式當機時收集：裝置型號、系統版本、應用程式版本、當機位置（堆疊追蹤）及時間戳記（UTC）。</p>
+    <p><strong>RevenueCat</strong> 管理 Demiva Premium 的應用程式內購買。它會產生一個與您的 Apple ID、姓名或電子郵件無關的匿名購買者 ID，並透過 Apple 處理您的購買與復原交易，以判斷您的裝置上是否已解鎖進階版。</p>
+    <div class="highlight">這些資料<strong>僅用於提升應用穩定性、了解功能使用狀況以及管理您的進階版購買</strong>，不包含任何可識別個人身分的資訊，不會出售或用於行銷目的。</div>
+    <p>詳情請參閱：<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私政策 →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat 隱私政策 →</a></p>
   </section>
 
   <section class="section">
@@ -632,8 +665,9 @@
     <ul>
       <li><strong>應用服務：</strong>任務追蹤、週期計算、完成歷史、延後安排</li>
       <li><strong>通知：</strong>根據您的設定安排本地提醒</li>
-      <li><strong>進階存取：</strong>透過 Apple 驗證應用程式內購買</li>
-      <li><strong>穩定性：</strong>透過 Firebase Crashlytics 分析當機和修復錯誤（啟用後）</li>
+      <li><strong>進階存取：</strong>透過 Apple 與 RevenueCat 驗證並復原應用程式內購買</li>
+      <li><strong>穩定性：</strong>透過 Firebase Crashlytics 分析當機和修復錯誤</li>
+      <li><strong>產品改善：</strong>透過 Firebase Analytics 了解功能使用狀況（匿名，絕不用於廣告）</li>
     </ul>
     <p>我們不會向第三方出售或共享您的任務和記錄資料，也不會將資料用於廣告或行銷目的。</p>
   </section>
@@ -644,7 +678,9 @@
       <thead><tr><th>服務</th><th>用途</th><th>隱私政策</th></tr></thead>
       <tbody>
         <tr><td><strong>Apple App Store</strong></td><td>應用分發和應用程式內購買</td><td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td></tr>
-        <tr><td><strong>Firebase Crashlytics</strong></td><td>當機報告（待啟用；Analytics 已停用）</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>Firebase Crashlytics</strong></td><td>當機報告</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>Firebase Analytics</strong></td><td>匿名功能使用分析</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
+        <tr><td><strong>RevenueCat</strong></td><td>應用程式內購買管理（進階版解鎖、復原購買）</td><td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">查看 →</a></td></tr>
       </tbody>
     </table>
   </section>
@@ -653,8 +689,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>6. 資料保留與刪除</h2></div>
     <ul>
       <li><strong>任務與記錄資料：</strong>儲存在您的裝置上，解除安裝應用程式後立即刪除。</li>
-      <li><strong>購買資料：</strong>匿名收據令牌遵循 Apple 的資料保留政策。</li>
+      <li><strong>購買資料：</strong>匿名收據令牌及 RevenueCat 購買者記錄遵循 Apple 與 RevenueCat 的資料保留政策。</li>
       <li><strong>當機報告：</strong>Firebase Crashlytics 根據 Google 政策保留 90 天。</li>
+      <li><strong>使用分析資料：</strong>Firebase Analytics 根據 Google 的預設政策保留匿名事件資料。</li>
     </ul>
     <div class="highlight">我們<strong>不保留</strong>您任務或記錄資料的任何副本。解除安裝應用程式即可完全刪除所有資料。</div>
   </section>
@@ -694,7 +731,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-id">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>Terakhir diperbarui: 15 Mei 2026 &nbsp;·&nbsp; Berlaku: 15 Mei 2026</div>
+  <div class="meta-badge"><span class="dot"></span>Terakhir diperbarui: 2 Juli 2026 &nbsp;·&nbsp; Berlaku: 2 Juli 2026</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. Ikhtisar</h2></div>
@@ -710,20 +747,24 @@
       <tbody>
         <tr><td><strong>Data Tugas &amp; Log</strong><br>Judul, ikon, warna, pengaturan siklus, riwayat penyelesaian, catatan</td><td>Fungsi inti aplikasi</td><td><span class="tag tag-local">Hanya perangkat</span></td></tr>
         <tr><td><strong>Pengaturan Notifikasi</strong><br>Waktu pengingat dan preferensi hari sebelumnya</td><td>Pengingat lokal</td><td><span class="tag tag-local">Hanya perangkat</span></td></tr>
-        <tr><td><strong>Status Pembelian</strong><br>Token kuitansi anonim dari Apple</td><td>Akses fitur premium</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>Laporan Crash</strong><br>Model perangkat, versi OS, versi app, stack trace</td><td>Stabilitas app (menunggu aktivasi)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>Riwayat Pembelian</strong><br>Token kuitansi anonim serta catatan pembelian/pemulihan</td><td>Akses fitur premium</td><td><span class="tag tag-third">Apple App Store, RevenueCat</span></td></tr>
+        <tr><td><strong>Laporan Crash</strong><br>Model perangkat, versi OS, versi app, stack trace</td><td>Stabilitas app</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>Data Analitik Penggunaan</strong><br>ID instance app anonim, event penggunaan fitur (tidak termasuk judul item atau catatan)</td><td>Peningkatan produk</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>Data Lokasi</strong></td><td>Tidak dikumpulkan</td><td><span class="tag tag-no">Tidak dikumpulkan</span></td></tr>
         <tr><td><strong>Akun / Login</strong></td><td>Tidak dikumpulkan</td><td><span class="tag tag-no">Tidak dikumpulkan</span></td></tr>
-        <tr><td><strong>Analitik / Iklan</strong></td><td>Tidak dikumpulkan</td><td><span class="tag tag-no">Tidak dikumpulkan</span></td></tr>
+        <tr><td><strong>Data Iklan</strong></td><td>Tidak dikumpulkan</td><td><span class="tag tag-no">Tidak dikumpulkan</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva mengintegrasikan <strong>Firebase Crashlytics</strong> (Google LLC) untuk deteksi dan diagnosis crash. Fitur ini saat ini tidak aktif dan akan diaktifkan dalam pembaruan mendatang. Firebase Analytics dinonaktifkan secara eksplisit.</p>
-    <div class="highlight">Data Crashlytics <strong>hanya digunakan untuk meningkatkan stabilitas aplikasi</strong>, tidak berisi informasi yang dapat mengidentifikasi pribadi, dan tidak dijual atau digunakan untuk pemasaran.</div>
-    <p>Detail: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Kebijakan Privasi Firebase →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Analitik, Crashlytics &amp; Pembelian Dalam Aplikasi</h2></div>
+    <p>Demiva mengintegrasikan tiga SDK pihak ketiga: <strong>Firebase Analytics</strong> dan <strong>Firebase Crashlytics</strong> (Google LLC), serta <strong>RevenueCat</strong> (RevenueCat, Inc.) untuk manajemen pembelian dalam aplikasi.</p>
+    <p><strong>Firebase Analytics</strong> mengumpulkan event penggunaan anonim (misalnya fitur mana yang Anda ketuk, apakah Anda membuat item, atau menunda pengingat) dan ID instance app yang dibuat secara acak. Firebase Analytics tidak pernah mengumpulkan judul tugas, catatan, atau konten lain yang Anda ketik di Aplikasi. Pengumpulan data terkait iklan (ad storage, ad personalization) dinonaktifkan secara eksplisit — Analytics hanya digunakan untuk memahami penggunaan fitur, tidak pernah untuk iklan.</p>
+    <p><strong>Firebase Crashlytics</strong> hanya mengumpulkan, saat Aplikasi mengalami crash: model perangkat, versi OS, versi aplikasi, lokasi crash (stack trace), dan stempel waktu (UTC).</p>
+    <p><strong>RevenueCat</strong> mengelola pembelian dalam aplikasi Demiva Premium. RevenueCat membuat ID pembeli anonim (tidak terhubung dengan Apple ID, nama, atau email Anda) dan memproses transaksi pembelian/pemulihan Anda dengan Apple untuk menentukan apakah Premium terbuka di perangkat Anda.</p>
+    <div class="highlight">Data ini digunakan <strong>hanya untuk meningkatkan stabilitas aplikasi, memahami penggunaan fitur, dan mengelola pembelian Premium Anda</strong>. Tidak ada yang berisi informasi identitas pribadi, dan tidak ada yang dijual atau digunakan untuk iklan.</div>
+    <p>Detail: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Kebijakan Privasi Firebase →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">Kebijakan Privasi RevenueCat →</a></p>
   </section>
 
   <section class="section">
@@ -731,8 +772,9 @@
     <ul>
       <li><strong>Layanan Aplikasi:</strong> Pelacakan tugas, perhitungan siklus, riwayat penyelesaian, penjadwalan tunda</li>
       <li><strong>Notifikasi:</strong> Menjadwalkan pengingat lokal berdasarkan pengaturan Anda</li>
-      <li><strong>Akses Premium:</strong> Memvalidasi pembelian dalam aplikasi melalui Apple</li>
-      <li><strong>Stabilitas:</strong> Analisis crash dan perbaikan bug melalui Firebase Crashlytics (saat aktif)</li>
+      <li><strong>Akses Premium:</strong> Memvalidasi dan memulihkan pembelian dalam aplikasi melalui Apple dan RevenueCat</li>
+      <li><strong>Stabilitas:</strong> Analisis crash dan perbaikan bug melalui Firebase Crashlytics</li>
+      <li><strong>Peningkatan Produk:</strong> Memahami penggunaan fitur melalui Firebase Analytics (anonim, tidak pernah untuk iklan)</li>
     </ul>
     <p>Kami tidak menjual atau membagikan data tugas dan log Anda kepada pihak ketiga manapun.</p>
   </section>
@@ -741,8 +783,9 @@
     <div class="section-header"><div class="section-icon">🗂️</div><h2>5. Retensi &amp; Penghapusan Data</h2></div>
     <ul>
       <li><strong>Data Tugas &amp; Log:</strong> Disimpan di perangkat Anda, dihapus permanen saat Anda menghapus instalan Aplikasi.</li>
-      <li><strong>Data Pembelian:</strong> Token kuitansi anonim diatur oleh kebijakan retensi Apple.</li>
+      <li><strong>Data Pembelian:</strong> Token kuitansi anonim dan catatan pembeli RevenueCat diatur oleh kebijakan retensi Apple dan RevenueCat.</li>
       <li><strong>Laporan Crash:</strong> Firebase Crashlytics menyimpan data crash selama 90 hari sesuai kebijakan Google.</li>
+      <li><strong>Data Analitik Penggunaan:</strong> Firebase Analytics menyimpan data event anonim sesuai kebijakan retensi default Google.</li>
     </ul>
     <div class="highlight">Kami <strong>tidak menyimpan salinan</strong> data tugas atau log Anda. Menghapus instalan Aplikasi sudah cukup untuk menghapus semua data.</div>
   </section>
@@ -761,7 +804,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-ar" dir="rtl">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>آخر تحديث: 15 مايو 2026 &nbsp;·&nbsp; تاريخ السريان: 15 مايو 2026</div>
+  <div class="meta-badge"><span class="dot"></span>آخر تحديث: 2 يوليو 2026 &nbsp;·&nbsp; تاريخ السريان: 2 يوليو 2026</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. نظرة عامة</h2></div>
@@ -777,28 +820,33 @@
       <tbody>
         <tr><td><strong>بيانات المهام والسجلات</strong><br>العنوان، الأيقونة، اللون، إعدادات الدورة، سجل الإنجاز، الملاحظات</td><td>الوظيفة الأساسية للتطبيق</td><td><span class="tag tag-local">الجهاز فقط</span></td></tr>
         <tr><td><strong>إعدادات الإشعارات</strong><br>أوقات التذكير وتفضيلات الأيام المسبقة</td><td>التذكيرات المحلية</td><td><span class="tag tag-local">الجهاز فقط</span></td></tr>
-        <tr><td><strong>حالة الشراء</strong><br>رمز إيصال مجهول من Apple</td><td>الوصول للميزات المتميزة</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>تقارير الأعطال</strong><br>طراز الجهاز، إصدار النظام، إصدار التطبيق، تتبع المكدس</td><td>استقرار التطبيق (في انتظار التفعيل)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>سجل المشتريات</strong><br>رمز إيصال مجهول وسجلات الشراء/الاستعادة</td><td>الوصول للميزات المتميزة</td><td><span class="tag tag-third">Apple App Store، RevenueCat</span></td></tr>
+        <tr><td><strong>تقارير الأعطال</strong><br>طراز الجهاز، إصدار النظام، إصدار التطبيق، تتبع المكدس</td><td>استقرار التطبيق</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>بيانات التحليلات</strong><br>معرّف مجهول للتطبيق، أحداث استخدام الميزات (لا تشمل عناوين العناصر أو الملاحظات)</td><td>تحسين المنتج</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>بيانات الموقع</strong></td><td>لا يُجمع</td><td><span class="tag tag-no">لا يُجمع</span></td></tr>
         <tr><td><strong>الحساب / تسجيل الدخول</strong></td><td>لا يُجمع</td><td><span class="tag tag-no">لا يُجمع</span></td></tr>
-        <tr><td><strong>التحليلات / الإعلانات</strong></td><td>لا يُجمع</td><td><span class="tag tag-no">لا يُجمع</span></td></tr>
+        <tr><td><strong>بيانات الإعلانات</strong></td><td>لا يُجمع</td><td><span class="tag tag-no">لا يُجمع</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>يدمج Demiva <strong>Firebase Crashlytics</strong> (Google LLC) للكشف عن الأعطال وتشخيصها. هذه الميزة غير نشطة حالياً وستُفعَّل في تحديث قادم. تم تعطيل Firebase Analytics صراحةً.</p>
-    <div class="highlight">تُستخدم بيانات Crashlytics <strong>فقط لتحسين استقرار التطبيق</strong>، ولا تحتوي على معلومات تعريفية شخصية، ولن تُباع أو تُستخدم لأغراض تسويقية.</div>
-    <p>التفاصيل: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">سياسة خصوصية Firebase →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. التحليلات وتشخيص الأعطال والمشتريات داخل التطبيق</h2></div>
+    <p>يدمج Demiva ثلاث حزم تطوير من جهات خارجية: <strong>Firebase Analytics</strong> و<strong>Firebase Crashlytics</strong> (Google LLC)، و<strong>RevenueCat</strong> (RevenueCat, Inc.) لإدارة المشتريات داخل التطبيق.</p>
+    <p>يجمع <strong>Firebase Analytics</strong> أحداث استخدام مجهولة (مثل الميزات التي نقرت عليها، أو ما إذا كنت أنشأت عنصراً، أو أجّلت تذكيراً) ومعرّف تطبيق يُنشأ عشوائياً. لا يجمع أبداً عناوين مهامك أو ملاحظاتك أو أي محتوى آخر تكتبه في التطبيق. تم تعطيل جمع البيانات المتعلقة بالإعلانات صراحةً — يُستخدم Analytics فقط لفهم استخدام الميزات، وليس للإعلانات أبداً.</p>
+    <p>يجمع <strong>Firebase Crashlytics</strong>، فقط عند تعطل التطبيق: طراز الجهاز، إصدار النظام، إصدار التطبيق، موقع العطل (تتبع المكدس)، والطابع الزمني (UTC).</p>
+    <p>تدير <strong>RevenueCat</strong> شراء Demiva Premium داخل التطبيق. تُنشئ معرّف مشترٍ مجهول (غير مرتبط بمعرّف Apple الخاص بك أو اسمك أو بريدك الإلكتروني) وتعالج معاملات الشراء والاستعادة مع Apple لتحديد ما إذا كانت الميزة المتميزة مفعّلة على جهازك.</p>
+    <div class="highlight">تُستخدم هذه البيانات <strong>فقط لتحسين استقرار التطبيق، وفهم استخدام الميزات، وإدارة شراء الميزة المتميزة</strong>. لا تحتوي أي منها على معلومات تعريفية شخصية، ولن تُباع أو تُستخدم لأغراض إعلانية.</div>
+    <p>التفاصيل: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">سياسة خصوصية Firebase →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">سياسة خصوصية RevenueCat →</a></p>
   </section>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">🗂️</div><h2>4. الاحتفاظ بالبيانات وحذفها</h2></div>
     <ul>
       <li><strong>بيانات المهام والسجلات:</strong> مخزنة على جهازك، تُحذف نهائياً عند إلغاء تثبيت التطبيق.</li>
-      <li><strong>بيانات الشراء:</strong> رموز الإيصال المجهولة تخضع لسياسة Apple للاحتفاظ بالبيانات.</li>
+      <li><strong>بيانات الشراء:</strong> رموز الإيصال المجهولة وسجلات المشترين لدى RevenueCat تخضع لسياسات الاحتفاظ بالبيانات لدى Apple وRevenueCat.</li>
       <li><strong>تقارير الأعطال:</strong> يحتفظ Firebase Crashlytics ببيانات الأعطال لمدة 90 يوماً.</li>
+      <li><strong>بيانات التحليلات:</strong> يحتفظ Firebase Analytics ببيانات الأحداث المجهولة وفقاً لسياسة Google الافتراضية.</li>
     </ul>
     <div class="highlight">نحن <strong>لا نحتفظ بأي نسخة</strong> من بيانات مهامك أو سجلاتك. إلغاء تثبيت التطبيق كافٍ لحذف جميع البيانات.</div>
   </section>
@@ -817,7 +865,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-fa" dir="rtl">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>آخرین به‌روزرسانی: ۱۵ مه ۲۰۲۶ &nbsp;·&nbsp; تاریخ اجرا: ۱۵ مه ۲۰۲۶</div>
+  <div class="meta-badge"><span class="dot"></span>آخرین به‌روزرسانی: ۲ جولای ۲۰۲۶ &nbsp;·&nbsp; تاریخ اجرا: ۲ جولای ۲۰۲۶</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>۱. مرور کلی</h2></div>
@@ -833,28 +881,33 @@
       <tbody>
         <tr><td><strong>داده‌های وظایف و گزارش</strong><br>عنوان، آیکون، رنگ، تنظیمات چرخه، تاریخچه تکمیل، یادداشت‌ها</td><td>عملکرد اصلی برنامه</td><td><span class="tag tag-local">فقط دستگاه</span></td></tr>
         <tr><td><strong>تنظیمات اعلان</strong><br>زمان‌های یادآوری و تنظیمات روزهای از پیش</td><td>یادآورهای محلی</td><td><span class="tag tag-local">فقط دستگاه</span></td></tr>
-        <tr><td><strong>وضعیت خرید</strong><br>توکن رسید ناشناس از اپل</td><td>دسترسی به ویژگی‌های پریمیوم</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>گزارش‌های خرابی</strong><br>مدل دستگاه، نسخه سیستم‌عامل، نسخه برنامه، تریس پشته</td><td>پایداری برنامه (در انتظار فعال‌سازی)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>سابقه خرید</strong><br>توکن رسید ناشناس و سوابق خرید/بازیابی</td><td>دسترسی به ویژگی‌های پریمیوم</td><td><span class="tag tag-third">Apple App Store، RevenueCat</span></td></tr>
+        <tr><td><strong>گزارش‌های خرابی</strong><br>مدل دستگاه، نسخه سیستم‌عامل، نسخه برنامه، تریس پشته</td><td>پایداری برنامه</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>داده‌های تحلیلی استفاده</strong><br>شناسه ناشناس نمونه برنامه، رویدادهای استفاده از ویژگی‌ها (بدون عنوان مورد یا یادداشت)</td><td>بهبود محصول</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>داده موقعیت مکانی</strong></td><td>جمع‌آوری نمی‌شود</td><td><span class="tag tag-no">جمع‌آوری نمی‌شود</span></td></tr>
         <tr><td><strong>حساب / ورود</strong></td><td>جمع‌آوری نمی‌شود</td><td><span class="tag tag-no">جمع‌آوری نمی‌شود</span></td></tr>
-        <tr><td><strong>تحلیل / تبلیغات</strong></td><td>جمع‌آوری نمی‌شود</td><td><span class="tag tag-no">جمع‌آوری نمی‌شود</span></td></tr>
+        <tr><td><strong>داده‌های تبلیغاتی</strong></td><td>جمع‌آوری نمی‌شود</td><td><span class="tag tag-no">جمع‌آوری نمی‌شود</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>۳. Firebase Crashlytics</h2></div>
-    <p>Demiva از <strong>Firebase Crashlytics</strong> (Google LLC) برای تشخیص و تشخیص خرابی استفاده می‌کند. این ویژگی در حال حاضر غیرفعال است و در به‌روزرسانی آینده فعال خواهد شد. Firebase Analytics به صراحت غیرفعال شده است.</p>
-    <div class="highlight">داده‌های Crashlytics <strong>فقط برای بهبود پایداری برنامه</strong> استفاده می‌شود، هیچ اطلاعات شناسایی شخصی ندارد و فروخته یا برای اهداف بازاریابی استفاده نمی‌شود.</div>
-    <p>جزئیات: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">سیاست حریم خصوصی Firebase →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>۳. تحلیل، تشخیص خرابی و خریدهای درون‌برنامه‌ای</h2></div>
+    <p>Demiva از سه SDK شخص ثالث استفاده می‌کند: <strong>Firebase Analytics</strong> و <strong>Firebase Crashlytics</strong> (Google LLC)، و <strong>RevenueCat</strong> (RevenueCat, Inc.) برای مدیریت خریدهای درون‌برنامه‌ای.</p>
+    <p><strong>Firebase Analytics</strong> رویدادهای استفاده ناشناس (مانند اینکه کدام ویژگی را لمس کرده‌اید، آیا موردی ایجاد کرده‌اید، یا یادآوری را به تعویق انداخته‌اید) و یک شناسه نمونه برنامه تصادفی جمع‌آوری می‌کند. هرگز عنوان وظایف، یادداشت‌ها یا هر محتوای دیگری که تایپ می‌کنید را جمع‌آوری نمی‌کند. جمع‌آوری داده‌های مرتبط با تبلیغات به صراحت غیرفعال شده است — Analytics فقط برای درک استفاده از ویژگی‌ها استفاده می‌شود، هرگز برای تبلیغات.</p>
+    <p><strong>Firebase Crashlytics</strong> فقط هنگام خرابی برنامه این اطلاعات را جمع‌آوری می‌کند: مدل دستگاه، نسخه سیستم‌عامل، نسخه برنامه، محل خرابی (تریس پشته) و مهر زمانی (UTC).</p>
+    <p><strong>RevenueCat</strong> خرید Demiva Premium را مدیریت می‌کند. یک شناسه خریدار ناشناس (که به شناسه اپل، نام یا ایمیل شما متصل نیست) ایجاد می‌کند و تراکنش‌های خرید و بازیابی شما را با اپل پردازش می‌کند تا مشخص شود آیا پریمیوم روی دستگاه شما فعال است یا خیر.</p>
+    <div class="highlight">این داده‌ها <strong>فقط برای بهبود پایداری برنامه، درک استفاده از ویژگی‌ها و مدیریت خرید پریمیوم شما</strong> استفاده می‌شود. هیچ‌کدام حاوی اطلاعات شناسایی شخصی نیستند و فروخته یا برای تبلیغات استفاده نمی‌شوند.</div>
+    <p>جزئیات: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">سیاست حریم خصوصی Firebase →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">سیاست حریم خصوصی RevenueCat →</a></p>
   </section>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">🗂️</div><h2>۴. نگهداری و حذف داده‌ها</h2></div>
     <ul>
       <li><strong>داده‌های وظایف و گزارش:</strong> روی دستگاه شما ذخیره می‌شود، پس از حذف برنامه به طور دائم پاک می‌شود.</li>
-      <li><strong>داده‌های خرید:</strong> توکن‌های رسید ناشناس تابع سیاست نگهداری اپل هستند.</li>
+      <li><strong>داده‌های خرید:</strong> توکن‌های رسید ناشناس و سوابق خریدار RevenueCat تابع سیاست‌های نگهداری اپل و RevenueCat هستند.</li>
       <li><strong>گزارش‌های خرابی:</strong> Firebase Crashlytics داده‌های خرابی را ۹۰ روز نگه می‌دارد.</li>
+      <li><strong>داده‌های تحلیلی استفاده:</strong> Firebase Analytics داده‌های رویداد ناشناس را طبق سیاست پیش‌فرض گوگل نگه می‌دارد.</li>
     </ul>
     <div class="highlight">ما <strong>هیچ نسخه‌ای</strong> از داده‌های وظایف یا گزارش‌های شما نگه نمی‌داریم. حذف برنامه برای پاک کردن کامل تمام داده‌ها کافی است.</div>
   </section>
@@ -873,7 +926,7 @@
 ═══════════════════════════════════════════ -->
 <div lang-block id="content-he" dir="rtl">
 <main class="container">
-  <div class="meta-badge"><span class="dot"></span>עודכן לאחרונה: 15 במאי 2026 &nbsp;·&nbsp; תוקף מתאריך: 15 במאי 2026</div>
+  <div class="meta-badge"><span class="dot"></span>עודכן לאחרונה: 2 ביולי 2026 &nbsp;·&nbsp; תוקף מתאריך: 2 ביולי 2026</div>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">📋</div><h2>1. סקירה</h2></div>
@@ -889,28 +942,33 @@
       <tbody>
         <tr><td><strong>נתוני משימות ויומן</strong><br>כותרת, אייקון, צבע, הגדרות מחזור, היסטוריית השלמה, הערות</td><td>פונקציונליות ליבה של האפליקציה</td><td><span class="tag tag-local">מכשיר בלבד</span></td></tr>
         <tr><td><strong>הגדרות התראות</strong><br>זמני תזכורת והעדפות ימי הקדמה</td><td>תזכורות מקומיות</td><td><span class="tag tag-local">מכשיר בלבד</span></td></tr>
-        <tr><td><strong>סטטוס רכישה</strong><br>אסימון קבלה אנונימי מ-Apple</td><td>גישה לתכונות פרמיום</td><td><span class="tag tag-apple">Apple App Store</span></td></tr>
-        <tr><td><strong>דוחות קריסה</strong><br>דגם מכשיר, גרסת מערכת הפעלה, גרסת אפליקציה, מעקב מחסנית</td><td>יציבות אפליקציה (ממתין להפעלה)</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>היסטוריית רכישות</strong><br>אסימון קבלה אנונימי ורישומי רכישה/שחזור</td><td>גישה לתכונות פרמיום</td><td><span class="tag tag-third">Apple App Store, RevenueCat</span></td></tr>
+        <tr><td><strong>דוחות קריסה</strong><br>דגם מכשיר, גרסת מערכת הפעלה, גרסת אפליקציה, מעקב מחסנית</td><td>יציבות אפליקציה</td><td><span class="tag tag-third">Firebase Crashlytics</span></td></tr>
+        <tr><td><strong>נתוני אנליטיקה</strong><br>מזהה אפליקציה אנונימי, אירועי שימוש בתכונות (ללא כותרות פריטים או הערות)</td><td>שיפור המוצר</td><td><span class="tag tag-third">Firebase Analytics</span></td></tr>
         <tr><td><strong>נתוני מיקום</strong></td><td>לא נאסף</td><td><span class="tag tag-no">לא נאסף</span></td></tr>
         <tr><td><strong>חשבון / כניסה</strong></td><td>לא נאסף</td><td><span class="tag tag-no">לא נאסף</span></td></tr>
-        <tr><td><strong>ניתוח / פרסום</strong></td><td>לא נאסף</td><td><span class="tag tag-no">לא נאסף</span></td></tr>
+        <tr><td><strong>נתוני פרסום</strong></td><td>לא נאסף</td><td><span class="tag tag-no">לא נאסף</span></td></tr>
       </tbody>
     </table>
   </section>
 
   <section class="section">
-    <div class="section-header"><div class="section-icon">🔥</div><h2>3. Firebase Crashlytics</h2></div>
-    <p>Demiva משלב את <strong>Firebase Crashlytics</strong> (Google LLC) לזיהוי ואבחון קריסות. תכונה זו אינה פעילה כרגע ותופעל בעדכון עתידי. Firebase Analytics מושבת במפורש.</p>
-    <div class="highlight">נתוני Crashlytics משמשים <strong>אך ורק לשיפור יציבות האפליקציה</strong>, אינם מכילים מידע מזהה אישי, ולא נמכרים או משמשים למטרות שיווקיות.</div>
-    <p>פרטים: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">מדיניות הפרטיות של Firebase →</a></p>
+    <div class="section-header"><div class="section-icon">🔥</div><h2>3. אנליטיקה, אבחון קריסות ורכישות בתוך האפליקציה</h2></div>
+    <p>Demiva משלבת שלושה ערכות פיתוח (SDK) של צד שלישי: <strong>Firebase Analytics</strong> ו-<strong>Firebase Crashlytics</strong> (Google LLC), וכן <strong>RevenueCat</strong> (RevenueCat, Inc.) לניהול רכישות בתוך האפליקציה.</p>
+    <p><strong>Firebase Analytics</strong> אוספת אירועי שימוש אנונימיים (למשל אילו תכונות הקשת עליהן, האם יצרת פריט, או דחית תזכורת) ומזהה אפליקציה אקראי. היא לעולם לא אוספת את כותרות המשימות, ההערות או כל תוכן אחר שהקלדת באפליקציה. איסוף נתונים הקשורים לפרסום מושבת במפורש — Analytics משמשת רק להבנת השימוש בתכונות, לעולם לא לפרסום.</p>
+    <p><strong>Firebase Crashlytics</strong> אוספת, רק כאשר האפליקציה קורסת: דגם מכשיר, גרסת מערכת הפעלה, גרסת אפליקציה, מיקום הקריסה (מעקב מחסנית), וחותמת זמן (UTC).</p>
+    <p><strong>RevenueCat</strong> מנהלת את רכישת Demiva Premium בתוך האפליקציה. היא יוצרת מזהה רוכש אנונימי (שאינו מקושר למזהה ה-Apple, לשם או לדוא"ל שלך) ומעבדת את עסקאות הרכישה והשחזור שלך מול Apple כדי לקבוע אם הפרימיום פתוח במכשיר שלך.</p>
+    <div class="highlight">נתונים אלו משמשים <strong>אך ורק לשיפור יציבות האפליקציה, הבנת השימוש בתכונות, וניהול רכישת הפרימיום שלך</strong>. אף אחד מהם אינו מכיל מידע מזהה אישי, ואינו נמכר או משמש לפרסום.</div>
+    <p>פרטים: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">מדיניות הפרטיות של Firebase →</a> · <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">מדיניות הפרטיות של RevenueCat →</a></p>
   </section>
 
   <section class="section">
     <div class="section-header"><div class="section-icon">🗂️</div><h2>4. שמירה ומחיקת נתונים</h2></div>
     <ul>
       <li><strong>נתוני משימות ויומן:</strong> מאוחסנים במכשיר שלך, נמחקים לצמיתות כשמסירים את האפליקציה.</li>
-      <li><strong>נתוני רכישה:</strong> אסימוני קבלה אנונימיים כפופים למדיניות שמירת הנתונים של Apple.</li>
+      <li><strong>נתוני רכישה:</strong> אסימוני קבלה אנונימיים ורישומי רוכשים של RevenueCat כפופים למדיניות שמירת הנתונים של Apple ושל RevenueCat.</li>
       <li><strong>דוחות קריסה:</strong> Firebase Crashlytics שומר נתוני קריסות ל-90 יום.</li>
+      <li><strong>נתוני אנליטיקה:</strong> Firebase Analytics שומרת נתוני אירועים אנונימיים לפי מדיניות ברירת המחדל של Google.</li>
     </ul>
     <div class="highlight">אנו <strong>לא שומרים עותק כלשהו</strong> מנתוני המשימות או היומן שלך. הסרת האפליקציה מספיקה למחיקת כל הנתונים.</div>
   </section>
