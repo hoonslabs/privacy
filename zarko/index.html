@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Zarko</title>
+  <meta name="description" content="Zarko Privacy Policy / プライバシーポリシー" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:       #39FF8B;
+      --primary-deep:  #12C26E;
+      --primary-dim:   rgba(57,255,139,0.12);
+      --warning:       #FFB627;
+      --failure:       #FF3B5C;
+      --bg:            #0A0E1A;
+      --bg-inset:      #05080F;
+      --surface:       #111A2E;
+      --elevated:      #1A2742;
+      --text:          #EAF0F7;
+      --muted:         #97A3BE;
+      --muted2:        #58637E;
+      --border:        #243150;
+      --border-soft:   #1B2540;
+      --radius:        12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ── Language Toggle ── */
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 24px;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 5px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #04140B;
+    }
+
+    /* ── Header ── */
+    .site-header {
+      background: radial-gradient(ellipse at 50% 0%, #131D36 0%, var(--bg) 70%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      background: var(--primary-dim);
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(57,255,139,0.25);
+    }
+
+    .site-header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: var(--primary);
+      text-shadow: 0 0 24px rgba(57,255,139,0.35);
+    }
+
+    .site-header .subtitle {
+      font-size: 14px;
+      opacity: 0.75;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .meta-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 8px rgba(57,255,139,0.7);
+    }
+
+    /* ── Section ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .section-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--primary-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.3px;
+    }
+
+    /* ── Typography ── */
+    p { margin-bottom: 14px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--text); font-weight: 600; }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(57,255,139,0.35);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--primary); }
+
+    /* ── Highlight Box ── */
+    .highlight {
+      background: var(--primary-dim);
+      border-left: 3px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight.warn {
+      background: rgba(255,182,39,0.10);
+      border-color: var(--warning);
+    }
+
+    /* ── Table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: var(--primary-dim);
+      color: var(--primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Tags ── */
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-local  { background: rgba(57,255,139,0.15); color: #6EE7B7; }
+    .tag-third  { background: rgba(255,182,39,0.15); color: #FFC96B; }
+    .tag-no     { background: rgba(151,163,190,0.15); color: var(--muted); }
+
+    /* ── Contact Card ── */
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(135deg,
+        rgba(57,255,139,0.08),
+        rgba(18,194,110,0.06)
+      );
+      border: 1px solid rgba(57,255,139,0.2);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-card .icon { font-size: 28px; }
+
+    .contact-card .label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .contact-card .value {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .site-footer a { color: var(--muted); border-bottom: none; }
+
+    /* ── Lang visibility ── */
+    [lang-block] { display: none; }
+    [lang-block].visible { display: block; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .site-header { padding: 32px 20px 28px; }
+      .logo-mark { width: 52px; height: 52px; font-size: 26px; margin-bottom: 12px; }
+      .site-header h1 { font-size: 22px; }
+      .container { padding: 28px 16px 60px; }
+      .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Language Toggle -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
+  <button class="lang-btn"        onclick="setLang('ja')" id="btn-ja">日本語</button>
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="logo-mark">🔒</div>
+  <h1>Zarko</h1>
+  <p class="subtitle" lang-block="en" id="hd-en">Privacy Policy</p>
+  <p class="subtitle" lang-block="ja" id="hd-ja">プライバシーポリシー</p>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     ENGLISH VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="en" id="content-en">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    Last updated: July 19, 2026 &nbsp;·&nbsp; Effective: July 19, 2026
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. Overview</h2>
+    </div>
+    <p>
+      <strong>Zarko</strong> ("the App") is an app and website blocker for iOS that helps you stay focused
+      by making it deliberately hard to quit early — you can only unlock blocked apps before a session ends
+      by beating a chance-based challenge. This Privacy Policy explains what information the App collects,
+      how it's used, and your rights.
+    </p>
+    <div class="highlight">
+      Zarko is a <strong>Privacy-First</strong> app. Blocking is enforced entirely on your device using Apple's
+      official Screen Time (FamilyControls) framework. There is no account or login system, and we do not collect
+      personal information. Anonymous usage analytics help us improve the app. Your data is never sold.
+    </div>
+    <p>
+      By installing or using the App, you agree to this Privacy Policy.
+      If you do not agree, please discontinue use of the App.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. Information We Collect</h2>
+    </div>
+    <p>The following information is collected or processed by the App.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data Type</th>
+          <th>Purpose</th>
+          <th>Storage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Blocked Apps, Categories &amp; Websites</strong><br>Your selection of what to block during focus sessions</td>
+          <td>Core blocking functionality</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Focus Session History</strong><br>Duration, intensity level, streaks, unlock attempts</td>
+          <td>Stats &amp; streak tracking</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Theme &amp; Achievement Progress</strong></td>
+          <td>Reward / collection features</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Motion Data</strong><br>Accelerometer, gyroscope, step count</td>
+          <td>Detecting in-app challenge gestures (e.g. shake, flip, walk) — momentarily, while the challenge is on screen</td>
+          <td><span class="tag tag-local">Processed on-device, never stored or transmitted</span></td>
+        </tr>
+        <tr>
+          <td><strong>Notification Preferences</strong></td>
+          <td>Scheduling your optional streak reminder</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Anonymous Usage Analytics</strong><br>Session/unlock event parameters (duration, intensity, success/failure) — no PII</td>
+          <td>App improvement</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash Reports</strong></td>
+          <td>Stability &amp; bug fixing</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Location Data</strong></td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+        <tr>
+          <td><strong>Account / Login</strong></td>
+          <td>Not applicable — no account system exists</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+        <tr>
+          <td><strong>iCloud Sync</strong></td>
+          <td>Not implemented in the current version</td>
+          <td><span class="tag tag-no">N/A</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * Even our analytics never receive which specific apps, categories, or websites you choose to block —
+      only anonymized session parameters such as duration and intensity level.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <h2>3. Firebase Analytics</h2>
+    </div>
+    <p>
+      Zarko uses <strong>Firebase Analytics</strong> (Google LLC) to understand how the app is used
+      and to guide improvements.
+    </p>
+    <p><strong>Firebase Analytics</strong> collects only anonymous, aggregated data such as:</p>
+    <ul>
+      <li>Focus session starts, completions, and early exits (duration, intensity level)</li>
+      <li>Unlock challenge outcomes (success/failure, attempt number)</li>
+      <li>Device type, OS version, and app version</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analytics does <strong>not</strong> receive which specific apps, categories, or websites you block,
+      nor any other content from your device. It is used solely to improve app stability and feature design.
+      It is never sold or used for advertising — Zarko shows no ads.
+    </div>
+    <p>
+      For details on how Firebase handles data, please refer to the
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>4. How We Use Information</h2>
+    </div>
+    <p>Collected information is used solely for the following purposes.</p>
+    <ul>
+      <li><strong>App Services:</strong> Blocking the apps, categories, and websites you choose during a focus session, running the unlock challenge, and tracking your streak</li>
+      <li><strong>Reminders:</strong> Scheduling a local streak reminder notification, only if you turn it on</li>
+      <li><strong>Improvement:</strong> Understanding feature usage via Firebase Analytics to guide development</li>
+    </ul>
+    <p>We do not sell or share your data with any third parties for marketing purposes.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. Third-Party Services</h2>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>Purpose</th>
+          <th>Privacy Policy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>Anonymous usage analytics for app improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>Crash reporting for app stability</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple Screen Time</strong><br>(FamilyControls / DeviceActivity / ManagedSettings)</td>
+          <td>On-device app &amp; website blocking</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>App distribution</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. Data Retention &amp; Deletion</h2>
+    </div>
+    <ul>
+      <li><strong>Session History, Streaks, Achievements, Theme Progress:</strong> Stored only on your device and permanently deleted when you uninstall the App.</li>
+      <li><strong>Blocked App/Website Selection:</strong> Stored in a container shared only between the App and its Screen Time system extensions, deleted on uninstall.</li>
+      <li><strong>Analytics &amp; Crash Data:</strong> Retained per Google's data retention policy for Firebase.</li>
+    </ul>
+    <div class="highlight">
+      We hold no server-side copy of your data — Zarko has no backend server at all.
+      Uninstalling the App is sufficient to remove all personal data from your device.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. Your Rights</h2>
+    </div>
+    <p>Depending on your region, you may have the following rights.</p>
+    <ul>
+      <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
+      <li><strong>Right of Rectification:</strong> Correct inaccurate data</li>
+      <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
+      <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
+    </ul>
+    <p>
+      Since Zarko has no account system, most of these rights are already satisfied simply by uninstalling the App.
+      For anything else — including analytics data tied to your device — please contact us at the address below.
+    </p>
+    <div class="highlight warn">
+      <strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information.
+      We do not sell your data.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔞</div>
+      <h2>8. Age Rating &amp; Children's Privacy</h2>
+    </div>
+    <p>
+      Zarko is rated <strong>18+</strong> on the App Store. This is because its unlock challenge uses a
+      chance-based "gacha" mechanic that the App Store's rating system classifies as simulated gambling content —
+      no real money, in-app currency, or anything exchangeable for cash is ever used (see Section 1).
+    </p>
+    <p>
+      Zarko is not intended for use by anyone under the age required by your local App Store's rating system,
+      and we do not knowingly collect information from children.
+    </p>
+    <p>
+      If you believe a child has used the App, please contact us so we can take appropriate action.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. Security</h2>
+    </div>
+    <p>
+      Session, streak, and achievement data is stored using iOS SwiftData and UserDefaults, protected by the
+      device's file system encryption.
+    </p>
+    <p>
+      Your blocked app and website selections never leave your device — blocking is enforced entirely on-device
+      via Apple's ManagedSettings framework. Zarko has no server to transmit this data to.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. Changes to This Policy</h2>
+    </div>
+    <p>
+      This policy may be updated due to changes in law or service updates.
+      We will notify you of significant changes via in-app notice or this page.
+    </p>
+    <p>
+      Changes take effect upon posting to this page.
+      Continued use of the App after changes constitutes acceptance of the updated policy.
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. Contact Us</h2>
+    </div>
+    <p>For questions about this Privacy Policy or to exercise your rights, please reach out.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">Email</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      We aim to respond within 5 business days.
+    </p>
+  </section>
+
+</main>
+</div><!-- /content-en -->
+
+<!-- ══════════════════════════════════════════════
+     JAPANESE VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="ja" id="content-ja">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    最終更新: 2026年7月19日 &nbsp;·&nbsp; 施行日: 2026年7月19日
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. 概要</h2>
+    </div>
+    <p>
+      <strong>Zarko</strong>(以下「本アプリ」)は、早期の解除をあえて難しくすることで集中をサポートする、
+      iOS向けのアプリ・Webサイトブロッカーです。セッション終了前にブロックを解除するには、
+      確率に基づくチャレンジに勝つ必要があります。本プライバシーポリシーでは、本アプリが収集する情報、
+      その利用方法、およびお客様の権利についてご説明します。
+    </p>
+    <div class="highlight">
+      Zarkoは<strong>プライバシーファースト</strong>のアプリです。ブロック処理はAppleの公式Screen Time
+      (FamilyControls)機能を使い、すべて端末内で完結します。アカウントやログインの仕組みはなく、
+      個人情報も収集しません。匿名の利用統計のみがアプリ改善に活用され、データが販売されることはありません。
+    </div>
+    <p>
+      本アプリをインストールまたは使用することで、本ポリシーに同意したものとみなされます。
+      同意いただけない場合は、本アプリの使用を中止してください。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. 収集する情報</h2>
+    </div>
+    <p>本アプリが収集または処理する情報は以下のとおりです。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>データの種類</th>
+          <th>目的</th>
+          <th>保存場所</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ブロック対象のアプリ・カテゴリ・Webサイト</strong><br>集中セッション中にブロックする対象の選択内容</td>
+          <td>ブロック機能の中核</td>
+          <td><span class="tag tag-local">端末のみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>集中セッション履歴</strong><br>時間、強度、ストリーク、解除試行回数</td>
+          <td>統計・ストリーク記録</td>
+          <td><span class="tag tag-local">端末のみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>テーマ・実績の進捗</strong></td>
+          <td>報酬・コレクション機能</td>
+          <td><span class="tag tag-local">端末のみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>モーションデータ</strong><br>加速度センサー、ジャイロセンサー、歩数</td>
+          <td>アプリ内チャレンジのジェスチャー検知(振る・裏返す・歩くなど)、チャレンジ画面表示中のみ一時的に使用</td>
+          <td><span class="tag tag-local">端末内で処理、保存・送信は一切なし</span></td>
+        </tr>
+        <tr>
+          <td><strong>通知設定</strong></td>
+          <td>任意のストリークリマインダーのスケジュール設定</td>
+          <td><span class="tag tag-local">端末のみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名利用統計</strong><br>セッション/解除イベントのパラメータ(時間、強度、成功・失敗)、個人情報は含まれません</td>
+          <td>アプリの改善</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>クラッシュレポート</strong></td>
+          <td>安定性向上・不具合修正</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>位置情報</strong></td>
+          <td>収集しない</td>
+          <td><span class="tag tag-no">未収集</span></td>
+        </tr>
+        <tr>
+          <td><strong>アカウント・ログイン情報</strong></td>
+          <td>該当なし — アカウントの仕組み自体が存在しません</td>
+          <td><span class="tag tag-no">未収集</span></td>
+        </tr>
+        <tr>
+          <td><strong>iCloud同期</strong></td>
+          <td>現行バージョンでは未実装</td>
+          <td><span class="tag tag-no">該当なし</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
+      * 分析データにも、どのアプリ・カテゴリ・Webサイトをブロックしたかという具体的な情報は一切含まれません。
+      含まれるのは時間や強度レベルなど、匿名化されたセッション情報のみです。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <h2>3. Firebase Analytics</h2>
+    </div>
+    <p>
+      Zarkoはアプリの利用状況を把握し、機能改善の方向性を決めるために<strong>Firebase Analytics</strong>(Google LLC)を使用しています。
+    </p>
+    <p><strong>Firebase Analytics</strong>は以下のような匿名・集計データのみを収集します。</p>
+    <ul>
+      <li>集中セッションの開始・完了・途中終了(時間、強度レベル)</li>
+      <li>解除チャレンジの結果(成功・失敗、試行回数)</li>
+      <li>端末の種類、OSバージョン、アプリバージョン</li>
+    </ul>
+    <div class="highlight">
+      Firebase Analyticsには、どのアプリ・カテゴリ・Webサイトをブロックしたかという情報、
+      その他端末上のコンテンツは<strong>一切含まれません。</strong>
+      アプリの安定性向上と機能設計の改善にのみ使用され、販売や広告目的には使用しません — Zarkoは広告自体を表示しません。
+    </div>
+    <p>
+      Firebaseのデータ処理方法の詳細については、
+      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシーポリシー</a>をご参照ください。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>4. 情報の利用目的</h2>
+    </div>
+    <p>収集した情報は、以下の目的にのみ使用されます。</p>
+    <ul>
+      <li><strong>アプリサービスの提供:</strong> 集中セッション中に選択したアプリ・カテゴリ・Webサイトのブロック、解除チャレンジの実行、ストリークの記録</li>
+      <li><strong>リマインダー:</strong> オンにした場合のみ、端末内でストリークリマインダー通知をスケジュール</li>
+      <li><strong>アプリ改善:</strong> Firebase Analyticsによる機能利用状況の把握と開発方針の決定</li>
+    </ul>
+    <p>当社はお客様のデータをマーケティング目的で第三者に販売・共有することはありません。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>5. 第三者サービス</h2>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>サービス</th>
+          <th>目的</th>
+          <th>プライバシーポリシー</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>アプリ改善のための匿名利用統計</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>安定性向上のためのクラッシュレポート</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple Screen Time</strong><br>(FamilyControls / DeviceActivity / ManagedSettings)</td>
+          <td>端末内で完結するアプリ・Webサイトのブロック</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>アプリの配信</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>6. データの保持と削除</h2>
+    </div>
+    <ul>
+      <li><strong>セッション履歴・ストリーク・実績・テーマ進捗:</strong> お客様の端末にのみ保存され、アプリを削除すると完全に消去されます。</li>
+      <li><strong>ブロック対象の選択内容:</strong> 本アプリとScreen Time関連のシステム拡張機能のみが共有するコンテナに保存され、アプリ削除時に消去されます。</li>
+      <li><strong>分析・クラッシュデータ:</strong> Googleが定めるFirebaseのデータ保持ポリシーに従います。</li>
+    </ul>
+    <div class="highlight">
+      当社はお客様のデータのサーバー側コピーを一切保持していません — Zarkoにはそもそもバックエンドサーバーがありません。
+      アプリを削除するだけで、端末上のすべての個人データが完全に消去されます。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>7. お客様の権利</h2>
+    </div>
+    <p>お客様がお住まいの地域によって、以下の権利を有する場合があります。</p>
+    <ul>
+      <li><strong>アクセス権:</strong> 処理されている個人データの確認</li>
+      <li><strong>訂正権:</strong> 不正確なデータの修正</li>
+      <li><strong>削除権(忘れられる権利):</strong> データの削除請求</li>
+      <li><strong>処理制限権:</strong> 特定目的での処理の停止請求</li>
+    </ul>
+    <p>
+      Zarkoにはアカウントの仕組みがないため、これらの権利の大部分はアプリを削除するだけで満たされます。
+      それ以外のご要望(端末に紐づく分析データなど)は、下記の連絡先までお問い合わせください。
+    </p>
+    <div class="highlight warn">
+      <strong>カリフォルニア州の居住者(CCPA):</strong>個人情報の販売に対するオプトアウト権を有します。
+      当社はお客様のデータを販売しておりません。
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔞</div>
+      <h2>8. 年齢レーティングと子供のプライバシー保護</h2>
+    </div>
+    <p>
+      Zarkoは App Store で<strong>18+</strong>のレーティングが設定されています。
+      これは解除チャレンジが確率に基づく「ガチャ」的な仕組みを採用しており、
+      App Storeのレーティング基準ではシミュレーテッドギャンブル(疑似賭博)的コンテンツに分類されるためです —
+      実際の金銭やアプリ内通貨、換金可能な要素は一切使用されません(第1章参照)。
+    </p>
+    <p>
+      Zarkoは、お住まいの地域のApp Storeが定める年齢基準を満たさない方の利用を意図していません。
+      当社は子供の個人情報を意図的に収集することはありません。
+    </p>
+    <p>
+      子供が本アプリを使用したことを知った場合は、下記の連絡先までお知らせください。適切な措置を講じます。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>9. セキュリティ</h2>
+    </div>
+    <p>
+      セッション・ストリーク・実績データはiOSのSwiftDataおよびUserDefaultsに保存され、
+      端末のファイルシステム暗号化によって保護されています。
+    </p>
+    <p>
+      ブロック対象のアプリ・Webサイトの選択内容が端末外に送信されることはありません — ブロック処理は
+      Appleの ManagedSettings 機能によりすべて端末内で完結します。Zarkoにはこのデータを送信する先のサーバー自体が存在しません。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>10. ポリシーの変更</h2>
+    </div>
+    <p>
+      本ポリシーは、法律の変更またはサービスの更新に伴い改定されることがあります。
+      重要な変更がある場合は、アプリ内通知または本ページを通じてお知らせします。
+    </p>
+    <p>
+      変更されたポリシーは、本ページに掲載された時点から効力を持ちます。
+      変更後も引き続き本アプリをご利用の場合は、改定されたポリシーに同意したものとみなされます。
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>11. お問い合わせ</h2>
+    </div>
+    <p>プライバシーポリシーに関するご質問や権利行使のご要望は、下記までご連絡ください。</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">メールアドレス</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
+      営業日5日以内にご返答いたします。
+    </p>
+  </section>
+
+</main>
+</div><!-- /content-ja -->
+
+<footer class="site-footer">
+  <p>© 2026 PrivacyPure. All rights reserved.</p>
+  <p style="margin-top:6px;">
+    <span id="footer-en">This policy is provided in English and Japanese. In case of conflict, the English version prevails.</span>
+    <span id="footer-ja" style="display:none;">本ポリシーは英語・日本語で提供されています。内容に相違がある場合は、英語版が優先されます。</span>
+  </p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[lang-block]').forEach(el => {
+      el.classList.toggle('visible', el.id.endsWith('-' + lang));
+    });
+    ['en','ja'].forEach(l => {
+      document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+    });
+    document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('footer-ja').style.display = lang === 'ja' ? '' : 'none';
+    document.documentElement.lang = lang;
+    localStorage.setItem('zarko-lang', lang);
+  }
+
+  (function () {
+    const params  = new URLSearchParams(window.location.search);
+    const urlLang = params.get('lang');
+    if (['en','ja'].includes(urlLang)) { setLang(urlLang); return; }
+
+    const saved = localStorage.getItem('zarko-lang');
+    if (['en','ja'].includes(saved)) { setLang(saved); return; }
+
+    const nav = navigator.language;
+    if (nav.startsWith('ja')) { setLang('ja'); return; }
+    setLang('en');
+  })();
+</script>
+
+</body>
+</html>
