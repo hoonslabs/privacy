@@ -656,8 +656,6 @@
     var saved = localStorage.getItem('eutaxis-lang');
     if (['en', 'ko'].includes(saved)) { setLang(saved); return; }
 
-    var nav = navigator.language || '';
-    if (nav.startsWith('ko')) { setLang('ko'); return; }
     setLang('en');
   })();
 </script>
