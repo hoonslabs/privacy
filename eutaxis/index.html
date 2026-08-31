@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Eutaxis</title>
+  <meta name="description" content="Eutaxis Privacy Policy / 개인정보 처리방침" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:            #0A0F1E;
+      --surface:       #111827;
+      --surface-2:     #161F32;
+      --accent:        #00D4FF;
+      --accent-strong: #00D4FF;
+      --good:          #2ED573;
+      --warn:          #FFB800;
+      --text:          #F1F5F9;
+      --muted:         #64748B;
+      --border:        rgba(255,255,255,0.08);
+      --border-strong: rgba(255,255,255,0.14);
+      --radius:        14px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg:            #F8FAFC;
+        --surface:       #FFFFFF;
+        --surface-2:     #EEF2F7;
+        --accent:        #0092B8;
+        --accent-strong: #00D4FF;
+        --good:          #059669;
+        --warn:          #B45309;
+        --text:          #0F172A;
+        --muted:         #64748B;
+        --border:        #E2E8F0;
+        --border-strong: #CBD5E1;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* Language Toggle */
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 24px;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 5px 16px;
+      border-radius: 20px;
+      border: 1.5px solid var(--border-strong);
+      background: transparent;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg);
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo-mark {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-strong);
+      color: var(--accent-strong);
+    }
+
+    .logo-mark svg { width: 32px; height: 32px; }
+
+    .site-header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .site-header .subtitle {
+      font-size: 14px;
+      opacity: 0.75;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    /* Layout */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12.5px;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .meta-badge .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--good);
+    }
+
+    /* Section */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .section-header .num {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .section h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+
+    p { margin-bottom: 14px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--text); font-weight: 600; }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-strong) 35%, transparent);
+    }
+    a:hover { border-color: var(--accent-strong); }
+
+    .highlight {
+      background: color-mix(in srgb, var(--good) 10%, var(--surface));
+      border-left: 3px solid var(--good);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .highlight.info {
+      background: color-mix(in srgb, var(--accent-strong) 10%, var(--surface));
+      border-color: var(--accent-strong);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: var(--surface-2);
+      color: var(--accent-strong);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tag-local { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+    .tag-no    { background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--surface-2);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-card .icon { font-size: 26px; }
+    .contact-card .label { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 2px; }
+    .contact-card .value { font-size: 15px; font-weight: 600; color: var(--accent-strong); }
+
+    .site-footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .site-footer a { color: var(--muted); border-bottom: none; }
+    .site-footer a:hover { color: var(--text); }
+
+    [lang-block] { display: none; }
+    [lang-block].visible { display: block; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .site-header { padding: 32px 20px 28px; }
+      .logo-mark { width: 52px; height: 52px; }
+      .logo-mark svg { width: 26px; height: 26px; }
+      .site-header h1 { font-size: 20px; }
+      .container { padding: 28px 16px 60px; }
+      .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
+  <button class="lang-btn"        onclick="setLang('ko')" id="btn-ko">한국어</button>
+</div>
+
+<header class="site-header">
+  <div class="logo-mark">
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round">
+      <circle cx="50" cy="50" r="27"/>
+      <path d="M50 6 L50 20 M50 80 L50 94 M6 50 L20 50 M80 50 L94 50"/>
+      <circle cx="50" cy="50" r="4" fill="currentColor" stroke="none"/>
+    </svg>
+  </div>
+  <h1>Eutaxis</h1>
+  <p class="subtitle" lang-block="en" id="hd-en">Privacy Policy</p>
+  <p class="subtitle" lang-block="ko" id="hd-ko">개인정보 처리방침</p>
+</header>
+
+<!-- ═══════════════ ENGLISH ═══════════════ -->
+<div lang-block="en" id="content-en">
+<main class="container">
+
+  <div class="meta-badge"><span class="dot"></span>Last updated: August 31, 2026</div>
+
+  <section class="section">
+    <div class="section-header"><span class="num">01</span><h2>Overview</h2></div>
+    <p><strong>Eutaxis</strong> ("the App") is a professional on-site measurement and reporting
+      tool for construction, interior, and inspection work. This Privacy Policy explains what
+      information the App creates, how it is stored, and your rights over it.</p>
+    <div class="highlight">
+      Eutaxis is a <strong>100% on-device</strong> app. There is no account, no server, and no
+      backend of any kind. Everything you measure, photograph, or write into a report stays on
+      your iPhone unless you personally choose to share it.
+    </div>
+    <p>By installing or using the App, you agree to this Privacy Policy. If you do not agree,
+      please discontinue use of the App.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">02</span><h2>Information Created by the App</h2></div>
+    <p>Eutaxis does not "collect" data in the traditional sense — there is nowhere for it to go.
+      The table below lists what the App creates on your device as you use it.</p>
+    <table class="data-table">
+      <thead><tr><th>Data Type</th><th>Created When</th><th>Storage</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Projects</strong><br>Project name, client name, site address (typed by you)</td>
+          <td>Creating a project</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Measurements</strong><br>AR Ruler, Level, Light, and Noise readings, plus optional notes</td>
+          <td>Using a measurement tool</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Photos</strong><br>Site photos, AR tag annotations, Before/After image pairs</td>
+          <td>Using the camera in-app</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Site Location</strong><br>Coordinates, converted to a plain address record — never a raw device location object</td>
+          <td>Optional, only if you enable it for a report</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>PDF Reports</strong></td>
+          <td>Generating a report</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Account / Login</strong></td>
+          <td colspan="2"><span class="tag tag-no">Not collected — no accounts exist</span></td>
+        </tr>
+        <tr>
+          <td><strong>Analytics / Tracking / Advertising ID</strong></td>
+          <td colspan="2"><span class="tag tag-no">Not collected</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">03</span><h2>Camera, Microphone &amp; Motion Sensors</h2></div>
+    <ul>
+      <li><strong>Camera</strong> — used live by AR Ruler Pro for surface detection, and to capture
+        Photo Tagger and Before/After images. The camera feed itself is never recorded or saved;
+        only the photos you explicitly capture are stored.</li>
+      <li><strong>Microphone</strong> — used live by Noise Analyzer to estimate decibel levels.
+        Audio is analyzed in real time and discarded immediately; no audio recording is ever
+        saved. Only the resulting numeric dB reading is stored if you save the measurement.</li>
+      <li><strong>Motion sensors</strong> — used by Level Pro to read device pitch and roll. Only
+        the numeric angle you choose to save is stored.</li>
+      <li><strong>Location</strong> — used only if you choose to attach a site address to a
+        report. Off by default; you can use every tool in the App without ever granting it.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">04</span><h2>Third-Party Services</h2></div>
+    <div class="highlight">
+      This version of Eutaxis does not use any analytics, crash-reporting, advertising, or
+      payment SDK. No data leaves your device to any third party.
+    </div>
+    <p>A future version may add optional crash reporting or a subscription plan for advanced
+      features. If that happens, this policy will be updated in advance, and any new data
+      practice will be described here before it takes effect.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">05</span><h2>Data Retention &amp; Deletion</h2></div>
+    <ul>
+      <li>All data described above is stored in the App's local database and file storage on
+        your device only.</li>
+      <li>Deleting a project, measurement, photo, or report inside the App removes it
+        immediately and permanently — there is no remote copy to also delete.</li>
+      <li>Uninstalling the App deletes all of its data. Eutaxis does not currently sync to
+        iCloud, so there is no backup — export or share anything you want to keep before you
+        uninstall or reset your device.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">06</span><h2>Sharing Your Data</h2></div>
+    <p>When you export a PDF report or a photo using the iOS Share Sheet, you choose where it
+      goes — AirDrop, email, Messages, cloud storage, and so on. That transfer is between you and
+      the destination you pick; Eutaxis is not a party to it and cannot see or control what
+      happens to a file once it leaves the App.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">07</span><h2>Your Rights</h2></div>
+    <p>Because nothing is transmitted off your device, most rights are already in your hands
+      directly inside the App:</p>
+    <ul>
+      <li><strong>Access &amp; Portability:</strong> open any project to see everything stored
+        for it, or export a PDF report at any time.</li>
+      <li><strong>Correction:</strong> edit or delete any project, measurement, or note directly.</li>
+      <li><strong>Erasure:</strong> delete individual items, or use <em>Settings → Delete All
+        Data</em> to wipe everything at once.</li>
+    </ul>
+    <div class="highlight info">
+      <strong>California residents (CCPA):</strong> Eutaxis does not sell personal information —
+      there is none to sell.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">08</span><h2>Children's Privacy</h2></div>
+    <p>Eutaxis is a professional tool not directed to children under 13 (US) or 16 (EU/EEA), and
+      we do not knowingly collect information from children. Since the App has no server, no
+      information from any user, adult or child, is ever transmitted off-device.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">09</span><h2>Security</h2></div>
+    <p>Project data, measurements, and photos are stored using SwiftData and the iOS file
+      system, protected by your device's built-in file system encryption. Because everything
+      stays on-device, there is no server-side breach surface for this data.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">10</span><h2>Changes to This Policy</h2></div>
+    <p>This policy may be updated as the App evolves. Material changes — such as introducing a
+      new third-party service — will be reflected here with an updated "Last updated" date
+      before they take effect.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">11</span><h2>Contact</h2></div>
+    <p>Questions about this Privacy Policy or your data are welcome any time.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div><div class="label">Email</div><div class="value">hoons.labs@gmail.com</div></div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">We aim to respond within 5 business days.</p>
+  </section>
+
+</main>
+</div>
+
+<!-- ═══════════════ KOREAN ═══════════════ -->
+<div lang-block="ko" id="content-ko">
+<main class="container">
+
+  <div class="meta-badge"><span class="dot"></span>최종 업데이트: 2026년 8월 31일</div>
+
+  <section class="section">
+    <div class="section-header"><span class="num">01</span><h2>개요</h2></div>
+    <p><strong>Eutaxis</strong>(이하 "앱")는 건설·인테리어·현장 감리 업무를 위한 전문 현장 측정 및
+      리포팅 도구입니다. 본 개인정보 처리방침은 앱이 생성하는 정보, 저장 방식, 그리고 사용자의
+      권리를 설명합니다.</p>
+    <div class="highlight">
+      Eutaxis는 <strong>100% 온디바이스</strong> 앱입니다. 계정도, 서버도, 어떠한 형태의 백엔드도
+      존재하지 않습니다. 측정하거나 촬영하거나 리포트에 기록한 모든 내용은 사용자가 직접 공유하지
+      않는 한 아이폰 안에만 저장됩니다.
+    </div>
+    <p>앱을 설치하거나 사용함으로써 본 방침에 동의하는 것으로 간주됩니다. 동의하지 않으시면 앱
+      사용을 중단해 주세요.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">02</span><h2>앱이 생성하는 정보</h2></div>
+    <p>Eutaxis는 전통적인 의미의 "수집"을 하지 않습니다 — 데이터가 전송될 곳 자체가 없기
+      때문입니다. 아래 표는 앱 사용 중 기기에 생성되는 정보를 정리한 것입니다.</p>
+    <table class="data-table">
+      <thead><tr><th>데이터 유형</th><th>생성 시점</th><th>저장 위치</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>프로젝트</strong><br>프로젝트명, 클라이언트명, 현장 주소(직접 입력)</td>
+          <td>프로젝트 생성 시</td>
+          <td><span class="tag tag-local">기기 전용</span></td>
+        </tr>
+        <tr>
+          <td><strong>측정값</strong><br>AR Ruler, Level, Light, Noise 측정값 및 선택적 메모</td>
+          <td>측정 도구 사용 시</td>
+          <td><span class="tag tag-local">기기 전용</span></td>
+        </tr>
+        <tr>
+          <td><strong>사진</strong><br>현장 사진, AR 태그 주석, Before/After 사진 쌍</td>
+          <td>앱 내 카메라 사용 시</td>
+          <td><span class="tag tag-local">기기 전용</span></td>
+        </tr>
+        <tr>
+          <td><strong>현장 위치</strong><br>좌표를 단순 주소 레코드로 변환하여 저장 — 원본 기기
+            위치 객체는 절대 저장하지 않음</td>
+          <td>리포트에 위치를 포함하도록 선택한 경우에만</td>
+          <td><span class="tag tag-local">기기 전용</span></td>
+        </tr>
+        <tr>
+          <td><strong>PDF 리포트</strong></td>
+          <td>리포트 생성 시</td>
+          <td><span class="tag tag-local">기기 전용</span></td>
+        </tr>
+        <tr>
+          <td><strong>계정/로그인 정보</strong></td>
+          <td colspan="2"><span class="tag tag-no">수집하지 않음 — 계정 자체가 없음</span></td>
+        </tr>
+        <tr>
+          <td><strong>분석/추적/광고 식별자</strong></td>
+          <td colspan="2"><span class="tag tag-no">수집하지 않음</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">03</span><h2>카메라·마이크·모션 센서</h2></div>
+    <ul>
+      <li><strong>카메라</strong> — AR Ruler Pro의 실시간 표면 감지, Photo Tagger 및 Before/After
+        사진 촬영에 사용됩니다. 카메라 화면 자체는 녹화·저장되지 않으며, 사용자가 명시적으로
+        촬영한 사진만 저장됩니다.</li>
+      <li><strong>마이크</strong> — Noise Analyzer의 데시벨 추정에 실시간으로 사용됩니다. 오디오는
+        실시간 분석 후 즉시 폐기되며 녹음 파일로 저장되지 않습니다. 측정값을 저장할 경우 결과
+        숫자(dB)만 저장됩니다.</li>
+      <li><strong>모션 센서</strong> — Level Pro의 기기 기울기(pitch/roll) 측정에 사용됩니다.
+        저장을 선택한 각도 숫자만 보관됩니다.</li>
+      <li><strong>위치 정보</strong> — 리포트에 현장 주소를 첨부하도록 선택한 경우에만
+        사용됩니다. 기본값은 꺼짐이며, 위치 권한 없이도 앱의 모든 기능을 사용할 수 있습니다.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">04</span><h2>제3자 서비스</h2></div>
+    <div class="highlight">
+      현재 버전의 Eutaxis는 분석, 크래시 리포팅, 광고, 결제 SDK를 전혀 사용하지 않습니다.
+      어떠한 데이터도 기기 밖 제3자에게 전송되지 않습니다.
+    </div>
+    <p>향후 버전에서 선택적 크래시 리포팅이나 고급 기능을 위한 구독제가 추가될 수 있습니다.
+      그럴 경우 해당 기능이 적용되기 전에 본 방침을 먼저 업데이트하여 새로운 데이터 처리 방식을
+      명시하겠습니다.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">05</span><h2>데이터 보관 및 삭제</h2></div>
+    <ul>
+      <li>위에 설명된 모든 데이터는 사용자 기기의 앱 로컬 데이터베이스와 파일 저장소에만
+        보관됩니다.</li>
+      <li>앱 내에서 프로젝트, 측정값, 사진, 리포트를 삭제하면 즉시 영구적으로 제거됩니다 —
+        추가로 삭제해야 할 원격 사본이 존재하지 않습니다.</li>
+      <li>앱을 삭제하면 모든 데이터가 함께 삭제됩니다. Eutaxis는 현재 iCloud 동기화를 지원하지
+        않으므로 별도의 백업이 없습니다 — 앱 삭제나 기기 초기화 전에 보관하고 싶은 내용은
+        미리 내보내거나 공유해 주세요.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">06</span><h2>데이터 공유</h2></div>
+    <p>iOS 공유 시트를 통해 PDF 리포트나 사진을 내보낼 때, 전송 위치(AirDrop, 이메일, 메시지,
+      클라우드 저장소 등)는 사용자가 직접 선택합니다. 해당 전송은 사용자와 선택한 대상 사이의
+      일이며, Eutaxis는 관여하지 않고 파일이 앱을 벗어난 이후의 처리를 확인하거나 통제할 수
+      없습니다.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">07</span><h2>사용자 권리</h2></div>
+    <p>어떠한 데이터도 기기 밖으로 전송되지 않으므로, 대부분의 권리는 앱 안에서 사용자가 직접
+      행사할 수 있습니다.</p>
+    <ul>
+      <li><strong>열람 및 이동:</strong> 프로젝트를 열어 저장된 모든 내용을 확인하거나, 언제든
+        PDF 리포트로 내보낼 수 있습니다.</li>
+      <li><strong>정정:</strong> 프로젝트, 측정값, 메모를 직접 수정하거나 삭제할 수 있습니다.</li>
+      <li><strong>삭제:</strong> 개별 항목을 삭제하거나, <em>설정 → 모든 데이터 삭제</em>로 한
+        번에 전체를 삭제할 수 있습니다.</li>
+    </ul>
+    <div class="highlight info">
+      <strong>캘리포니아 거주자(CCPA):</strong> Eutaxis는 개인정보를 판매하지 않습니다 — 판매할
+      개인정보 자체가 존재하지 않습니다.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">08</span><h2>아동 개인정보 보호</h2></div>
+    <p>Eutaxis는 <strong>만 13세 미만</strong>(미국 기준) 또는 <strong>만 16세 미만</strong>(EU/EEA
+      기준) 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다. 앱에
+      서버가 없으므로 성인·아동을 불문하고 어떤 사용자의 정보도 기기 밖으로 전송되지 않습니다.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">09</span><h2>보안</h2></div>
+    <p>프로젝트 데이터, 측정값, 사진은 SwiftData와 iOS 파일 시스템에 저장되며, 기기 자체의
+      파일 시스템 암호화로 보호됩니다. 모든 데이터가 기기 안에만 있기 때문에 이 데이터에 대한
+      서버 측 유출 위험은 존재하지 않습니다.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">10</span><h2>방침 변경</h2></div>
+    <p>본 방침은 앱이 발전함에 따라 업데이트될 수 있습니다. 새로운 제3자 서비스 도입 등 중대한
+      변경 사항은 적용 전 "최종 업데이트" 날짜와 함께 이 페이지에 먼저 반영됩니다.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><span class="num">11</span><h2>문의</h2></div>
+    <p>본 개인정보 처리방침이나 데이터에 관한 문의는 언제든 환영합니다.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div><div class="label">이메일</div><div class="value">hoons.labs@gmail.com</div></div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">영업일 기준 5일 이내에 답변드립니다.</p>
+  </section>
+
+</main>
+</div>
+
+<footer class="site-footer">
+  <p>© 2026 Eutaxis. All rights reserved.</p>
+  <p style="margin-top:6px;">
+    <span id="footer-en">This policy is provided in English and Korean. In case of conflict, the English version prevails.</span>
+    <span id="footer-ko" style="display:none;">본 방침은 영어와 한국어로 제공됩니다. 내용이 상충할 경우 영어 버전이 우선합니다.</span>
+  </p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[lang-block]').forEach(function (el) {
+      el.classList.toggle('visible', el.id.endsWith('-' + lang));
+    });
+    ['en', 'ko'].forEach(function (l) {
+      document.getElementById('btn-' + l).classList.toggle('active', l === lang);
+    });
+    document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
+    document.getElementById('footer-ko').style.display = lang === 'ko' ? '' : 'none';
+    document.documentElement.lang = lang;
+    localStorage.setItem('eutaxis-lang', lang);
+  }
+
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var urlLang = params.get('lang');
+    if (['en', 'ko'].includes(urlLang)) { setLang(urlLang); return; }
+
+    var saved = localStorage.getItem('eutaxis-lang');
+    if (['en', 'ko'].includes(saved)) { setLang(saved); return; }
+
+    var nav = navigator.language || '';
+    if (nav.startsWith('ko')) { setLang('ko'); return; }
+    setLang('en');
+  })();
+</script>
+
+</body>
+</html>
