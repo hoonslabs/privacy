@@ -653,9 +653,6 @@
     var urlLang = params.get('lang');
     if (['en', 'ko'].includes(urlLang)) { setLang(urlLang); return; }
 
-    var saved = localStorage.getItem('eutaxis-lang');
-    if (['en', 'ko'].includes(saved)) { setLang(saved); return; }
-
     setLang('en');
   })();
 </script>
