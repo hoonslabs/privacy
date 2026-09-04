@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Chroia</title>
+  <meta name="description" content="Chroia — Privacy Policy" />
+  <link rel="icon" href="./assets/chroia-icon-180.png" />
+  <link rel="apple-touch-icon" href="./assets/chroia-icon-180.png" />
+  <meta property="og:title" content="Chroia — Privacy Policy" />
+  <meta property="og:description" content="Chroia — Privacy Policy" />
+  <meta property="og:image" content="https://hoonslabs.github.io/privacy/chroia/assets/chroia-icon-1024.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:         #201A16;
+      --steel:       #0047AB;
+      --accent:      #FF265C;
+      --accent-dark: #C4174A;
+      --info:        #0047AB;
+      --amber:       #C4833A;
+      --cream:       #F4EFE6;
+      --surface:     #E4DCCB;
+      --charcoal:    #201A16;
+      --muted:       #6B6055;
+      --border:      #DCD2BE;
+      --radius:      2px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --cream:   #17130F;
+        --surface: #241E17;
+        --charcoal:#F4EFE6;
+        --border:  #3A3128;
+        --muted:   #B8AFA0;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--ink) 0%, var(--steel) 100%);
+      color: #F4EFE6;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+
+    .logo-mark {
+      width: 64px; height: 64px;
+      border-radius: 14px;
+      display: block; margin: 0 auto 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+    }
+
+    .site-header h1 { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 26px; font-weight: 700; letter-spacing: 2px; margin-bottom: 8px; }
+    .site-header .subtitle { font-size: 14px; opacity: 0.75; font-weight: 400; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .meta-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 6px 14px;
+      font-size: 13px; color: var(--muted); margin-bottom: 40px;
+    }
+    .meta-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+
+    .section {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 32px; margin-bottom: 20px;
+    }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-icon {
+      width: 40px; height: 40px; border-radius: 8px;
+      background: color-mix(in srgb, var(--accent) 14%, transparent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .section h2 { font-size: 18px; font-weight: 700; color: var(--charcoal); letter-spacing: -0.3px; }
+
+    p { margin-bottom: 14px; color: var(--charcoal); }
+    p:last-child { margin-bottom: 0; }
+    ul, ol { padding-left: 20px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+    strong { color: var(--charcoal); font-weight: 600; }
+    a { color: var(--accent-dark); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); transition: border-color 0.2s; }
+    a:hover { border-color: var(--accent); }
+
+    .highlight {
+      background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 16px 0; font-size: 15px;
+    }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .data-table th {
+      background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+      color: var(--accent-dark); font-weight: 600; text-align: left;
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+    }
+    .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .tag-local { background: color-mix(in srgb, var(--info) 16%, transparent); color: #0047AB; }
+    .tag-third { background: color-mix(in srgb, var(--amber) 22%, transparent); color: #7a4d1f; }
+    .tag-no    { background: color-mix(in srgb, var(--muted) 18%, transparent); color: var(--muted); }
+
+    .contact-card {
+      display: flex; align-items: center; gap: 16px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--surface)), color-mix(in srgb, var(--steel) 8%, var(--surface)));
+      border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+      border-radius: var(--radius); padding: 20px 24px; margin-top: 16px;
+    }
+    .contact-card .icon { font-size: 28px; }
+    .contact-card .label { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 2px; }
+    .contact-card .value { font-size: 15px; font-weight: 600; color: var(--accent-dark); }
+
+    .site-footer { text-align: center; padding: 32px 24px; border-top: 1px solid var(--border); font-size: 13px; color: var(--muted); }
+    .site-footer a { color: var(--muted); }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .site-header { padding: 40px 20px 36px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+      .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <img class="logo-mark" src="./assets/chroia-icon-180.png" alt="Chroia" width="64" height="64" />
+  <h1>CHROIA</h1>
+  <p class="subtitle">Privacy Policy</p>
+</header>
+
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    <span>Effective: September 4, 2026</span>
+  </div>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📋</div><h2>1. Overview</h2></div>
+    <p><strong>Chroia</strong> ("the App") is a camera app that reproduces risograph printing — multi-plate color separation, halftone dot screens, and intentional plate misregistration — live in the viewfinder and at full quality when you press the shutter. This Privacy Policy explains what information the App collects, how it is used, and your rights.</p>
+    <div class="highlight">Chroia saves every photo you capture directly to your own <strong>iOS Photos Library</strong>, inside a dedicated "Chroia" album. We do not run any server that stores your photos, and we cannot access them.</div>
+    <p>By installing or using the App, you agree to this Privacy Policy. If you do not agree, please discontinue use of the App.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">📊</div><h2>2. Information We Collect</h2></div>
+    <p>The following information is collected or processed by the App.</p>
+    <table class="data-table">
+      <thead><tr><th>Data Type</th><th>Purpose</th><th>Storage</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Photos</strong><br>Captured images</td>
+          <td>Core app functionality</td>
+          <td><span class="tag tag-local">Your Photos Library</span></td>
+        </tr>
+        <tr>
+          <td><strong>App Settings</strong><br>Selected mechanism, ink color, and adjustment preferences</td>
+          <td>Personalize the shooting experience</td>
+          <td><span class="tag tag-local">Device only</span></td>
+        </tr>
+        <tr>
+          <td><strong>Anonymous Usage Events</strong><br>App open, screen views</td>
+          <td>App quality &amp; stability improvement</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash Reports</strong><br>Device model, OS version, app version, crash stack trace</td>
+          <td>App stability improvement</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Purchase Status</strong><br>Full Unlock entitlement (anonymous)</td>
+          <td>Unlocking paid mechanisms</td>
+          <td><span class="tag tag-third">Apple App Store</span></td>
+        </tr>
+        <tr>
+          <td><strong>Location Data</strong><br>(GPS / device sensor)</td>
+          <td>Not collected</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+        <tr>
+          <td><strong>Account / Login</strong></td>
+          <td>Not collected — the App has no account system</td>
+          <td><span class="tag tag-no">Not collected</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">Note: Chroia never requests location permission and never reads GPS or device location sensors. Any location data attached to a photo comes solely from iOS's own system-level camera metadata behavior, entirely outside the App's control.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🗄️</div><h2>3. How Your Media Is Stored</h2></div>
+    <p>Every photo captured by Chroia is written directly to your device's <strong>iOS Photos Library</strong>, inside a dedicated <strong>"Chroia"</strong> album created by the App via Apple's Photos framework — the same system every camera app uses to save photos on iOS.</p>
+    <ul>
+      <li>Photos are protected by whatever device-level security you already have configured (device passcode, Face ID / Touch ID, Photos app permissions) — Chroia adds no separate lock of its own.</li>
+      <li>The App also stores the name of the mechanism used (e.g. "Riso Duotone", "Offset Newsprint") in the photo's standard EXIF/TIFF metadata, so it travels with the photo when you share or export it.</li>
+      <li>Media is never transmitted to any server we operate. We have no ability to view, copy, or retrieve your photos.</li>
+    </ul>
+    <div class="highlight">Your photos live <strong>only in your own Photos Library</strong>. Deleting the App does not delete photos already saved there — they remain exactly where iOS Photos keeps them, under your control.</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔥</div><h2>4. Firebase Services</h2></div>
+    <p>Chroia uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC) to understand app quality and stability.</p>
+    <p><strong>Firebase Analytics</strong> collects only Firebase's default, automatically-gathered events (such as app opens and screen views). The App does not send any custom event beyond this default collection.</p>
+    <div class="highlight">All advertising-related consent signals (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) are permanently set to <strong>denied</strong>. Chroia shows no ads, does no ad tracking, and never requests App Tracking Transparency permission.</div>
+    <p><strong>Firebase Crashlytics</strong> collects the following only when the App crashes:</p>
+    <ul>
+      <li>Device model, OS version, and app version</li>
+      <li>Crash location (stack trace)</li>
+      <li>Timestamp of the crash (UTC)</li>
+    </ul>
+    <div class="highlight">Crashlytics data contains no information that can personally identify you, and never includes your photos.</div>
+    <p>For details on how Firebase handles data, see <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔗</div><h2>5. Third-Party Services</h2></div>
+    <p>The App uses the following third-party services.</p>
+    <table class="data-table">
+      <thead><tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>Anonymous app usage collection</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>Crash reporting and stability improvement</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>App distribution, billing, and Full Unlock purchase processing (StoreKit)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🗂️</div><h2>6. Data Retention &amp; Deletion</h2></div>
+    <ul>
+      <li><strong>Photos:</strong> Live in your iOS Photos Library, under the standard iOS Photos deletion/Recently Deleted behavior — entirely governed by iOS, not by Chroia.</li>
+      <li><strong>App settings (local):</strong> Mechanism/ink preferences are stored on-device and removed when you uninstall the App.</li>
+      <li><strong>Purchase records:</strong> Retained by Apple per the App Store's own policies. See Section 5.</li>
+      <li><strong>Analytics &amp; crash data:</strong> Subject to Google's data retention policies.</li>
+    </ul>
+    <div class="highlight">We hold no copy of your photos anywhere. Uninstalling the App does not remove them — they stay in your Photos Library exactly as any other photo would.</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">⚖️</div><h2>7. Your Rights</h2></div>
+    <p>Depending on your region, you may have the following rights.</p>
+    <ul>
+      <li><strong>Right of Access:</strong> Request a copy of your personal data</li>
+      <li><strong>Right of Rectification:</strong> Correct inaccurate data</li>
+      <li><strong>Right to Erasure:</strong> Request deletion of your data</li>
+      <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
+    </ul>
+    <p>To exercise your rights or for inquiries, please contact us at the address below.</p>
+    <div class="highlight" style="border-color: var(--amber);"><strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information. We do not sell your data.</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">👶</div><h2>8. Children's Privacy</h2></div>
+    <p>Chroia is not directed to children under the age of <strong>13</strong> (US) or <strong>16</strong> (EU/EEA). We do not knowingly collect personal information from children.</p>
+    <p>If you become aware that a child has used the App, please contact us immediately so we can take appropriate steps.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔒</div><h2>9. Security</h2></div>
+    <ul>
+      <li>Photos are protected by your device's own security (passcode, Face ID / Touch ID) via the standard iOS Photos permission model.</li>
+      <li>Chroia has no account system, so there are no login credentials to protect.</li>
+      <li>Your photos are never transmitted to our servers under any circumstance.</li>
+      <li>Purchase state is verified directly through Apple's App Store — Chroia never handles your payment details itself, and uses no third-party purchase-management service.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">🔄</div><h2>10. Changes to This Policy</h2></div>
+    <p>This policy may be updated due to changes in law, service updates, or third-party policy changes. We will notify you of significant changes via in-app notice or this page.</p>
+    <p>Changes take effect upon posting to this page. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header"><div class="section-icon">✉️</div><h2>11. Contact Us</h2></div>
+    <p>For questions about this Privacy Policy or to exercise your rights, please reach out.</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">Email</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">We aim to respond within 5 business days.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Hoon's Labs · Chroia</p>
+  <p style="margin-top:6px;">
+    <a href="../../privacy/chroia/">Privacy Policy</a>
+    &nbsp;·&nbsp;
+    <a href="../../support/chroia/">Support</a>
+  </p>
+</footer>
+
+</body>
+</html>
