@@ -317,7 +317,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Last updated: July 31, 2026 &nbsp;·&nbsp; Effective: July 19, 2026
+    Last updated: October 4, 2026 &nbsp;·&nbsp; Effective: July 19, 2026
   </div>
 
   <section class="section">
@@ -380,11 +380,21 @@
         </tr>
         <tr>
           <td><strong>Notification Preferences</strong></td>
-          <td>Scheduling your optional streak reminder</td>
+          <td>Scheduling your optional streak reminder, and the "Open Zarko" notification you can trigger from the block screen</td>
           <td><span class="tag tag-local">Device only</span></td>
         </tr>
         <tr>
-          <td><strong>Anonymous Usage Analytics</strong><br>Session/unlock event parameters (duration, intensity, success/failure) — no PII</td>
+          <td><strong>Screen Time Usage (Detailed Stats)</strong><br>Time spent in your blocked apps, shown on the Stats tab if you've unlocked Detailed Stats</td>
+          <td>Showing your top blocked apps and week-over-week changes</td>
+          <td><span class="tag tag-local">Read and displayed on-device by Apple's Screen Time report — never stored or transmitted by Zarko</span></td>
+        </tr>
+        <tr>
+          <td><strong>Purchase Status</strong><br>Whether you've bought the one-time "Unlock Everything" purchase</td>
+          <td>Enabling purchased features</td>
+          <td><span class="tag tag-local">Verified on-device with Apple (StoreKit)</span></td>
+        </tr>
+        <tr>
+          <td><strong>Anonymous Usage Analytics</strong><br>Session/unlock event parameters (duration, intensity, success/failure) and anonymous purchase/restore events — no PII</td>
           <td>App improvement</td>
           <td><span class="tag tag-third">Firebase Analytics</span></td>
         </tr>
@@ -429,6 +439,7 @@
     <ul>
       <li>Focus session starts, completions, and early exits (duration, intensity level)</li>
       <li>Unlock challenge outcomes (success/failure, attempt number)</li>
+      <li>Paywall views and completed purchases/restores (no price, payment, or Apple ID details)</li>
       <li>Device type, OS version, and app version</li>
     </ul>
     <div class="highlight">
@@ -451,6 +462,7 @@
     <ul>
       <li><strong>App Services:</strong> Blocking the apps, categories, and websites you choose during a focus session, running the unlock challenge, and tracking your streak</li>
       <li><strong>Reminders:</strong> Scheduling a local streak reminder notification, only if you turn it on</li>
+      <li><strong>Purchases:</strong> Checking with Apple whether you've bought "Unlock Everything" so the included features are available</li>
       <li><strong>Improvement:</strong> Understanding feature usage via Firebase Analytics to guide development</li>
     </ul>
     <p>We do not sell or share your data with any third parties for marketing purposes.</p>
@@ -487,7 +499,7 @@
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
-          <td>App distribution</td>
+          <td>App distribution and in-app purchase processing — payments are handled entirely by Apple; Zarko never sees your payment details</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
         </tr>
       </tbody>
@@ -610,7 +622,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    最終更新: 2026年7月31日 &nbsp;·&nbsp; 施行日: 2026年7月19日
+    最終更新: 2026年10月4日 &nbsp;·&nbsp; 施行日: 2026年7月19日
   </div>
 
   <section class="section">
@@ -673,11 +685,21 @@
         </tr>
         <tr>
           <td><strong>通知設定</strong></td>
-          <td>任意のストリークリマインダーのスケジュール設定</td>
+          <td>任意のストリークリマインダーのスケジュール設定、およびブロック画面から送れる「Zarkoを開く」通知</td>
           <td><span class="tag tag-local">端末のみ</span></td>
         </tr>
         <tr>
-          <td><strong>匿名利用統計</strong><br>セッション/解除イベントのパラメータ(時間、強度、成功・失敗)、個人情報は含まれません</td>
+          <td><strong>スクリーンタイムの使用状況(詳細統計)</strong><br>ブロック対象アプリの使用時間。詳細統計を解放している場合に統計タブで表示</td>
+          <td>使用時間が長いブロック対象アプリと前週比の表示</td>
+          <td><span class="tag tag-local">AppleのScreen Timeレポートが端末内で読み取り・表示。Zarkoが保存・送信することはありません</span></td>
+        </tr>
+        <tr>
+          <td><strong>購入状況</strong><br>買い切りの「すべてを解放」を購入済みかどうか</td>
+          <td>購入した機能の有効化</td>
+          <td><span class="tag tag-local">Apple(StoreKit)により端末内で検証</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名利用統計</strong><br>セッション/解除イベントのパラメータ(時間、強度、成功・失敗)と匿名の購入・復元イベント、個人情報は含まれません</td>
           <td>アプリの改善</td>
           <td><span class="tag tag-third">Firebase Analytics</span></td>
         </tr>
@@ -721,6 +743,7 @@
     <ul>
       <li>集中セッションの開始・完了・途中終了(時間、強度レベル)</li>
       <li>解除チャレンジの結果(成功・失敗、試行回数)</li>
+      <li>購入画面の表示、購入・復元の完了(価格・支払い情報・Apple IDは含まれません)</li>
       <li>端末の種類、OSバージョン、アプリバージョン</li>
     </ul>
     <div class="highlight">
@@ -743,6 +766,7 @@
     <ul>
       <li><strong>アプリサービスの提供:</strong> 集中セッション中に選択したアプリ・カテゴリ・Webサイトのブロック、解除チャレンジの実行、ストリークの記録</li>
       <li><strong>リマインダー:</strong> オンにした場合のみ、端末内でストリークリマインダー通知をスケジュール</li>
+      <li><strong>購入:</strong> 「すべてを解放」の購入状況をAppleに確認し、含まれる機能を利用可能にする</li>
       <li><strong>アプリ改善:</strong> Firebase Analyticsによる機能利用状況の把握と開発方針の決定</li>
     </ul>
     <p>当社はお客様のデータをマーケティング目的で第三者に販売・共有することはありません。</p>
@@ -779,7 +803,7 @@
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
-          <td>アプリの配信</td>
+          <td>アプリの配信とアプリ内課金の処理。支払いはすべてAppleが処理し、Zarkoが支払い情報を目にすることはありません</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
         </tr>
       </tbody>
