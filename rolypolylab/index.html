@@ -140,7 +140,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    <span>Last updated: October 13, 2026</span>
+    <span>Last updated: October 14, 2026</span>
   </div>
 
   <section class="section">
@@ -211,7 +211,8 @@
   <section class="section">
     <div class="section-header"><div class="section-icon">🔥</div><h2>4. Firebase Services</h2></div>
     <p>The App uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC).</p>
-    <p><strong>Firebase Analytics</strong> collects Firebase's default events (such as app opens and screen views) and a small set of game events — for example starting a new colony, returning after time away, watching a rewarded ad, viewing or completing a purchase, cataloguing a morph or breeding a pair. These events contain no name, no email, no user account and no text you type.</p>
+    <p>Neither service starts until the year-of-birth question on first launch has been answered.</p>
+        <p><strong>Firebase Analytics</strong> collects Firebase's default events (such as app opens and screen views) and a small set of game events — for example starting a new colony, returning after time away, watching a rewarded ad, viewing or completing a purchase, cataloguing a morph or breeding a pair. These events contain no name, no email, no user account and no text you type.</p>
     <div class="highlight">Advertising-related consent signals for Analytics (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) are permanently set to <strong>denied</strong>. If you tell the App you are under 13, Analytics is turned off.</div>
     <p><strong>Firebase Crashlytics</strong> collects the following only when the App crashes: device model, OS version, app version, the crash location (stack trace) and its time.</p>
     <p>For details, see <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy</a>.</p>
@@ -249,12 +250,19 @@
   <section class="section">
     <div class="section-header"><div class="section-icon">👶</div><h2>8. Children</h2></div>
     <p>The App is made for anyone who likes science and nature. On first launch it asks for your year of birth, once, with no answer pre-selected. The answer stays on your device.</p>
+    <p>Until the question is answered, the App does not start its ad or Firebase services, so nothing is collected before then.</p>
     <p>If the answer shows you are <strong>under 13</strong>:</p>
     <ul>
       <li>ad requests are marked as child-directed and limited to general-audience (G-rated) ads, and are always non-personalized;</li>
-      <li>Firebase Analytics is turned off (Crashlytics still reports crashes, which contain no personal information).</li>
+      <li>Firebase Analytics is turned off (Crashlytics still reports crashes, which contain no name, contact details or game content).</li>
     </ul>
-    <p>We do not knowingly collect personal information from children under 13. If you believe a child's information was collected, please contact us so we can help.</p>
+    <p><strong>Information about children and how long it is kept</strong></p>
+    <ul>
+      <li><strong>What:</strong> for a player under 13, the only information that leaves the device is what an ad request needs (device and app information, approximate location from IP address, ad views and taps) and, if the App crashes, a crash report. No usage events are sent.</li>
+      <li><strong>Why:</strong> to show the rewarded and interstitial ads the free game depends on, to prevent ad fraud, and to fix crashes. It is not used to build a profile, for personalized ads or for anything else.</li>
+      <li><strong>How long:</strong> we keep none of it on our own servers. The year of birth and the game stay on the device until the App is deleted. Google keeps ad request data only as long as needed for the purposes above under its retention policies, and Firebase Crashlytics deletes crash reports after 90 days. Nothing is kept indefinitely.</li>
+    </ul>
+    <p>We do not knowingly collect personal information from children under 13 beyond what is described above. If you believe a child's information was collected, please contact us and we will help have it deleted.</p>
   </section>
 
   <section class="section">
