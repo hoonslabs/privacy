@@ -224,7 +224,6 @@
     .tag-local  { background: rgba(107,143,113,0.18); color: #9CC1A2; }
     .tag-third  { background: rgba(201,162,92,0.18);  color: var(--gold); }
     .tag-no     { background: rgba(169,167,156,0.15); color: var(--muted); }
-    .tag-icloud { background: rgba(90,109,163,0.25);  color: #A9BBF0; }
 
     .contact-card {
       display: flex;
@@ -289,7 +288,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    最終更新日: 2026年7月18日 ・ 施行日: 2026年7月18日
+    最終更新日: 2026年10月21日 ・ 施行日: 2026年10月21日
   </div>
 
   <!-- 1. 概要 -->
@@ -304,8 +303,7 @@
       および利用者の権利について説明します。
     </p>
     <div class="highlight">
-      本アプリは<strong>ローカルファースト</strong>です。作成した選択肢や選択履歴は、基本的に端末内に保存されます。
-      iCloudにログインしている場合は、複数端末間の同期のためにApple iCloud（CloudKit）へ暗号化された状態で保存されることがあります。
+      本アプリは<strong>ローカルファースト</strong>です。作成した選択肢や選択履歴は、端末内にのみ保存されます。
       当社独自のサーバーへ、利用者が作成したコンテンツが送信されることはありません。
     </div>
     <p>本アプリのインストールまたは利用をもって、本ポリシーに同意したものとみなされます。</p>
@@ -325,12 +323,12 @@
         <tr>
           <td><strong>選択肢・セットデータ</strong><br>絵文字、ラベル、カラー</td>
           <td>アプリの中核機能</td>
-          <td><span class="tag tag-local">端末内のみ</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">端末内のみ</span></td>
         </tr>
         <tr>
           <td><strong>選択履歴</strong><br>決定結果、日時</td>
           <td>「今日の選択」表示</td>
-          <td><span class="tag tag-local">端末内のみ</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">端末内のみ</span></td>
         </tr>
         <tr>
           <td><strong>アプリ設定</strong><br>テーマ、オンボーディング完了状態</td>
@@ -353,15 +351,22 @@
           <td><span class="tag tag-third">RevenueCat / Apple</span></td>
         </tr>
         <tr>
+          <td><strong>利用状況データ</strong><br>スピン回数・選択肢の数・演出の種類などの操作イベント（選択肢の内容は含みません）</td>
+          <td>アプリ改善のための統計分析</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>クラッシュ・診断データ</strong><br>クラッシュログ、端末モデル、OSバージョン</td>
+          <td>不具合の調査・修正</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
           <td><strong>アカウント・ログイン情報</strong></td>
           <td>収集しません（アプリ独自のアカウントなし）</td>
           <td><span class="tag tag-no">未収集</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:10px; font-size:13px; color:var(--muted);">
-      * iCloudにログインしている場合のみ適用されます。iCloudを利用しない場合、データは端末にのみ保存されます。
-    </p>
   </section>
 
   <!-- 3. 位置情報の取り扱い -->
@@ -392,6 +397,7 @@
       <li><strong>アプリ機能の提供:</strong> 選択肢の作成、ガチャ抽選、履歴表示、ウィジェット表示</li>
       <li><strong>広告の表示:</strong> Google AdMobによる広告配信（無料利用の維持のため）</li>
       <li><strong>購入処理:</strong> 広告除去オプションの購入・復元</li>
+      <li><strong>アプリの改善:</strong> 利用状況の統計分析とクラッシュの調査（個人を特定する目的では使用しません）</li>
       <li><strong>おすすめ機能:</strong> 天気に応じた選択肢の提案（オプトイン時のみ）</li>
     </ul>
     <p>利用者が作成したコンテンツを第三者に販売することはありません。</p>
@@ -407,14 +413,14 @@
       <thead><tr><th>サービス</th><th>用途</th><th>プライバシーポリシー</th></tr></thead>
       <tbody>
         <tr>
-          <td><strong>Apple iCloud（CloudKit）</strong></td>
-          <td>選択肢・履歴データの端末間同期</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">こちら →</a></td>
-        </tr>
-        <tr>
           <td><strong>Google AdMob</strong></td>
           <td>広告配信（バナー・リワード動画）</td>
           <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">こちら →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Firebase</strong><br>Analytics / Crashlytics</td>
+          <td>利用状況の統計分析・クラッシュレポート</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">こちら →</a></td>
         </tr>
         <tr>
           <td><strong>RevenueCat</strong></td>
@@ -447,9 +453,9 @@
     </div>
     <ul>
       <li><strong>端末内データ:</strong> アプリ削除と同時に即座に削除されます。</li>
-      <li><strong>iCloudデータ:</strong> iCloudを利用している場合、アプリ削除だけではiCloud上のコピーは削除されません。完全に削除するには、削除前に設定からiCloud同期をオフにするか、iCloud設定からPurrPickのデータを削除してください。</li>
       <li><strong>ウィジェットデータ:</strong> App Group経由で端末内のみに保存され、外部へは送信されません。</li>
       <li><strong>広告関連データ:</strong> Googleのデータ保持ポリシーに準じます。</li>
+      <li><strong>分析・クラッシュデータ:</strong> Google（Firebase）のデータ保持ポリシーに準じます。</li>
     </ul>
   </section>
 
@@ -496,7 +502,6 @@
       選択肢・履歴データはSwiftData（端末内データベース）に保存され、iOSのファイルシステム暗号化により保護されます。
     </p>
     <p>
-      iCloud同期を利用する場合、データは転送中・保存中の両方でAppleの暗号化ポリシーに基づき保護されます。
       当社サーバーへデータが送信されることはありません。
     </p>
   </section>
@@ -542,7 +547,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    최종 업데이트: 2026년 7월 18일 · 시행일: 2026년 7월 18일
+    최종 업데이트: 2026년 10월 21일 · 시행일: 2026년 10월 21일
   </div>
 
   <!-- 1. 개요 -->
@@ -556,8 +561,7 @@
       심플한 의사결정 도우미 앱입니다. 본 방침은 본 앱이 수집하는 정보, 이용 방식, 그리고 이용자의 권리를 설명합니다.
     </p>
     <div class="highlight">
-      본 앱은 <strong>로컬 우선(Local-First)</strong>입니다. 만든 선택지와 선택 기록은 기본적으로 기기 내에 저장됩니다.
-      iCloud에 로그인한 경우, 여러 기기 간 동기화를 위해 Apple iCloud(CloudKit)에 암호화되어 저장될 수 있습니다.
+      본 앱은 <strong>로컬 우선(Local-First)</strong>입니다. 만든 선택지와 선택 기록은 기기 내에만 저장됩니다.
       이용자가 만든 콘텐츠가 당사 서버로 전송되는 일은 없습니다.
     </div>
     <p>본 앱을 설치하거나 이용함으로써 본 방침에 동의한 것으로 간주됩니다.</p>
@@ -577,12 +581,12 @@
         <tr>
           <td><strong>선택지・세트 데이터</strong><br>이모지, 라벨, 색상</td>
           <td>앱 핵심 기능</td>
-          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">기기 전용</span></td>
         </tr>
         <tr>
           <td><strong>선택 기록</strong><br>결정 결과, 일시</td>
           <td>"오늘의 선택" 표시</td>
-          <td><span class="tag tag-local">기기 전용</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">기기 전용</span></td>
         </tr>
         <tr>
           <td><strong>앱 설정</strong><br>테마, 온보딩 완료 여부</td>
@@ -605,15 +609,22 @@
           <td><span class="tag tag-third">RevenueCat / Apple</span></td>
         </tr>
         <tr>
+          <td><strong>이용 현황 데이터</strong><br>스핀 횟수・선택지 개수・연출 종류 등 조작 이벤트(선택지 내용은 포함하지 않음)</td>
+          <td>앱 개선을 위한 통계 분석</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>크래시・진단 데이터</strong><br>크래시 로그, 기기 모델, OS 버전</td>
+          <td>오류 조사・수정</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
           <td><strong>계정・로그인 정보</strong></td>
           <td>수집하지 않음(앱 자체 계정 없음)</td>
           <td><span class="tag tag-no">미수집</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:10px; font-size:13px; color:var(--muted);">
-      * iCloud에 로그인된 경우에만 적용됩니다. iCloud를 사용하지 않으면 데이터는 기기에만 저장됩니다.
-    </p>
   </section>
 
   <!-- 3. 위치 정보 처리 -->
@@ -644,6 +655,7 @@
       <li><strong>앱 기능 제공:</strong> 선택지 생성, 가챠 추첨, 기록 표시, 위젯 표시</li>
       <li><strong>광고 표시:</strong> Google AdMob을 통한 광고 게재(무료 이용 유지 목적)</li>
       <li><strong>구매 처리:</strong> 광고 제거 옵션 구매・복원</li>
+      <li><strong>앱 개선:</strong> 이용 현황 통계 분석 및 크래시 조사(개인을 식별하는 목적으로 사용하지 않음)</li>
       <li><strong>추천 기능:</strong> 날씨 기반 선택지 제안(옵트인 시에만)</li>
     </ul>
     <p>이용자가 만든 콘텐츠를 제3자에게 판매하지 않습니다.</p>
@@ -659,14 +671,14 @@
       <thead><tr><th>서비스</th><th>용도</th><th>개인정보처리방침</th></tr></thead>
       <tbody>
         <tr>
-          <td><strong>Apple iCloud(CloudKit)</strong></td>
-          <td>선택지・기록 데이터 기기 간 동기화</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
-        </tr>
-        <tr>
           <td><strong>Google AdMob</strong></td>
           <td>광고 게재(배너・리워드 동영상)</td>
           <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">바로가기 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Firebase</strong><br>Analytics / Crashlytics</td>
+          <td>이용 현황 통계 분석・크래시 리포트</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
         </tr>
         <tr>
           <td><strong>RevenueCat</strong></td>
@@ -699,9 +711,9 @@
     </div>
     <ul>
       <li><strong>기기 내 데이터:</strong> 앱 삭제와 동시에 즉시 삭제됩니다.</li>
-      <li><strong>iCloud 데이터:</strong> iCloud를 사용 중이라면 앱 삭제만으로는 iCloud 사본이 제거되지 않습니다. 완전히 삭제하려면 삭제 전 설정에서 iCloud 동기화를 끄거나, iCloud 설정에서 PurrPick 데이터를 삭제해주세요.</li>
       <li><strong>위젯 데이터:</strong> App Group을 통해 기기 내에만 저장되며 외부로 전송되지 않습니다.</li>
       <li><strong>광고 관련 데이터:</strong> Google의 데이터 보관 정책을 따릅니다.</li>
+      <li><strong>분석・크래시 데이터:</strong> Google(Firebase)의 데이터 보관 정책을 따릅니다.</li>
     </ul>
   </section>
 
@@ -746,7 +758,6 @@
     </div>
     <p>선택지・기록 데이터는 SwiftData(기기 내 데이터베이스)에 저장되며, iOS의 파일 시스템 암호화로 보호됩니다.</p>
     <p>
-      iCloud 동기화를 사용하는 경우, 데이터는 전송 중・저장 중 모두 Apple의 암호화 정책에 따라 보호됩니다.
       당사 서버로는 어떠한 데이터도 전송되지 않습니다.
     </p>
   </section>
@@ -789,7 +800,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Last updated: July 18, 2026 · Effective: July 18, 2026
+    Last updated: October 21, 2026 · Effective: October 21, 2026
   </div>
 
   <!-- 1. Overview -->
@@ -804,9 +815,8 @@
       how it's used, and your rights.
     </p>
     <div class="highlight">
-      The App is <strong>local-first</strong>. The options and history you create are stored on your
-      device by default. If you're signed into iCloud, they may also be stored, encrypted, in Apple
-      iCloud (CloudKit) to sync across your own devices. We never send your content to our own servers.
+      The App is <strong>local-first</strong>. The options and history you create are stored only on your
+      device. We never send your content to our own servers.
     </div>
     <p>By installing or using the App, you agree to this policy.</p>
   </section>
@@ -823,12 +833,12 @@
         <tr>
           <td><strong>Options &amp; sets</strong><br>emoji, label, color</td>
           <td>Core app functionality</td>
-          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">Device only</span></td>
         </tr>
         <tr>
           <td><strong>Pick history</strong><br>result, timestamp</td>
           <td>"Today's Choices" view</td>
-          <td><span class="tag tag-local">Device only</span> <span class="tag tag-icloud">iCloud *</span></td>
+          <td><span class="tag tag-local">Device only</span></td>
         </tr>
         <tr>
           <td><strong>App settings</strong><br>theme, onboarding state</td>
@@ -851,15 +861,22 @@
           <td><span class="tag tag-third">RevenueCat / Apple</span></td>
         </tr>
         <tr>
+          <td><strong>Usage data</strong><br>interaction events such as spin count, number of options, and spin style (never the content of your options)</td>
+          <td>Statistical analysis to improve the App</td>
+          <td><span class="tag tag-third">Firebase Analytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>Crash &amp; diagnostics</strong><br>crash logs, device model, OS version</td>
+          <td>Investigating and fixing bugs</td>
+          <td><span class="tag tag-third">Firebase Crashlytics</span></td>
+        </tr>
+        <tr>
           <td><strong>Account / login info</strong></td>
           <td>Not collected — no app account exists</td>
           <td><span class="tag tag-no">Not collected</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:10px; font-size:13px; color:var(--muted);">
-      * Only applies if you're signed into iCloud. Without iCloud, data stays on-device only.
-    </p>
   </section>
 
   <!-- 3. Location Data -->
@@ -890,6 +907,7 @@
       <li><strong>Core functionality:</strong> creating options, running the gacha pick, showing history, widget display</li>
       <li><strong>Advertising:</strong> serving ads via Google AdMob, to keep the App free</li>
       <li><strong>Purchases:</strong> processing and restoring the ad-removal purchase</li>
+      <li><strong>Improving the App:</strong> statistical usage analysis and crash investigation (never used to identify you)</li>
       <li><strong>Suggestions:</strong> weather-based option suggestions, opt-in only</li>
     </ul>
     <p>We do not sell content you create to third parties.</p>
@@ -905,14 +923,14 @@
       <thead><tr><th>Service</th><th>Purpose</th><th>Privacy Policy</th></tr></thead>
       <tbody>
         <tr>
-          <td><strong>Apple iCloud (CloudKit)</strong></td>
-          <td>Syncing options &amp; history across your devices</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
           <td><strong>Google AdMob</strong></td>
           <td>Banner and rewarded video ads</td>
           <td><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">View →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Google Firebase</strong><br>Analytics / Crashlytics</td>
+          <td>Usage analytics and crash reporting</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
         </tr>
         <tr>
           <td><strong>RevenueCat</strong></td>
@@ -945,9 +963,9 @@
     </div>
     <ul>
       <li><strong>On-device data:</strong> deleted immediately when you delete the App.</li>
-      <li><strong>iCloud data:</strong> if you use iCloud, deleting the App alone does not remove your iCloud copy. To fully remove it, turn off iCloud sync in Settings before deleting, or remove PurrPick's data from your iCloud settings.</li>
       <li><strong>Widget data:</strong> stored on-device only, via an App Group — never transmitted externally.</li>
       <li><strong>Ad-related data:</strong> follows Google's own retention policy.</li>
+      <li><strong>Analytics &amp; crash data:</strong> follows Google's (Firebase) retention policy.</li>
     </ul>
   </section>
 
@@ -992,7 +1010,6 @@
     </div>
     <p>Options and history are stored in SwiftData (an on-device database), protected by iOS's file-system encryption.</p>
     <p>
-      When iCloud sync is used, data is protected by Apple's encryption policy both in transit and at rest.
       No data is ever transmitted to our own servers.
     </p>
   </section>
