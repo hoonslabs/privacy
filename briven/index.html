@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Briven</title>
-  <meta name="description" content="Briven Privacy Policy / 개인정보 처리방침 / プライバシーポリシー" />
+  <meta name="description" content="Briven Privacy Policy / 개인정보 처리방침 / プライバシーポリシー / 隱私權政策" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -304,15 +304,24 @@
       .data-table th, .data-table td { padding: 8px 10px; }
       .contact-card { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
+
+    /* 4개 언어 버튼 — 좁은 화면에서 넘치지 않게(2026-10-27 zh-Hant 추가) */
+    .lang-bar { flex-wrap: wrap; }
+    @media (max-width: 420px) {
+      .lang-bar { justify-content: center; padding: 10px 12px; gap: 6px; }
+      .lang-btn { padding: 5px 11px; }
+    }
   </style>
 </head>
 <body>
 
+
 <!-- Language Toggle -->
 <div class="lang-bar">
   <button class="lang-btn active" onclick="setLang('en')" id="btn-en">English</button>
-  <button class="lang-btn"        onclick="setLang('ko')" id="btn-ko">한국어</button>
-  <button class="lang-btn"        onclick="setLang('ja')" id="btn-ja">日本語</button>
+  <button class="lang-btn" onclick="setLang('ko')" id="btn-ko">한국어</button>
+  <button class="lang-btn" onclick="setLang('ja')" id="btn-ja">日本語</button>
+  <button class="lang-btn" onclick="setLang('zh-Hant')" id="btn-zh-Hant">繁體中文</button>
 </div>
 
 <!-- Header -->
@@ -322,6 +331,7 @@
   <p class="subtitle" lang-block="en" id="hd-en">Privacy Policy</p>
   <p class="subtitle" lang-block="ko" id="hd-ko">개인정보 처리방침</p>
   <p class="subtitle" lang-block="ja" id="hd-ja">プライバシーポリシー</p>
+  <p class="subtitle" lang-block="zh-Hant" id="hd-zh-Hant">隱私權政策</p>
 </header>
 
 <!-- ══════════════════════════════════════════════
@@ -332,7 +342,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    Last updated: July 30, 2026 &nbsp;·&nbsp; Effective: July 30, 2026
+    Last updated: October 27, 2026 &nbsp;·&nbsp; Effective: October 27, 2026
   </div>
 
   <section class="section">
@@ -340,21 +350,9 @@
       <div class="section-icon">📋</div>
       <h2>1. Overview</h2>
     </div>
-    <p>
-      <strong>Briven</strong> ("the App") is a manual, structural budgeting app for iOS —
-      no bank connections, no CSV/OFX import, no accounts. You enter your income sources,
-      subscriptions, and expenses yourself, and Briven turns that into a clear monthly picture.
-    </p>
-    <div class="highlight">
-      Briven is a <strong>Privacy-First</strong> app. Your financial data is stored on your device
-      and, optionally, synced only to your own private Apple iCloud. We run no backend server and
-      cannot see your income, expenses, or subscriptions. Anonymous, aggregated usage analytics help
-      us improve the app — never your financial data.
-    </div>
-    <p>
-      By installing or using the App, you agree to this Privacy Policy.
-      If you do not agree, please discontinue use of the App.
-    </p>
+    <p><strong>Briven</strong> ("the App") is a manual, structural budgeting app for iOS — no bank connections, no CSV/OFX import, no accounts. You enter your income sources, subscriptions, and expenses yourself, and Briven turns that into a clear monthly picture.</p>
+    <div class="highlight">Briven is a <strong>Privacy-First</strong> app. Your financial data is stored on your device and, optionally, synced only to your own private Apple iCloud. We run no backend server and cannot see your income, expenses, or subscriptions. Anonymous, aggregated usage analytics help us improve the app — never your financial data.</div>
+    <p>By installing or using the App, you agree to this Privacy Policy. If you do not agree, please discontinue use of the App.</p>
   </section>
 
   <section class="section">
@@ -363,7 +361,6 @@
       <h2>2. Information We Collect</h2>
     </div>
     <p>The following information is collected or processed by the App.</p>
-
     <table class="data-table">
       <thead>
         <tr>
@@ -374,7 +371,7 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>Financial Data</strong><br>Income sources, subscriptions, expenses, categories, payment methods, budget settings — all entered manually by you</td>
+          <td><strong>Financial Data</strong><br>Income sources, subscriptions, expenses, savings goals, categories, payment methods, budget settings — all entered manually by you</td>
           <td>Core app functionality</td>
           <td><span class="tag tag-local">Device only</span></td>
         </tr>
@@ -389,9 +386,14 @@
           <td><span class="tag tag-no">Not collected — on-device only</span></td>
         </tr>
         <tr>
-          <td><strong>Purchase Status</strong><br>Anonymous purchase token issued by Apple (future feature)</td>
-          <td>Optional lifetime unlock validation</td>
-          <td><span class="tag tag-rc">RevenueCat</span></td>
+          <td><strong>Purchase Status</strong><br>Whether you own the optional one-time Briven Lifetime purchase, verified by Apple</td>
+          <td>Unlocking paid features</td>
+          <td><span class="tag tag-icloud">Apple App Store</span></td>
+        </tr>
+        <tr>
+          <td><strong>Exported Files</strong><br>CSV/PDF files you choose to create from your expenses</td>
+          <td>Data export (optional)</td>
+          <td><span class="tag tag-local">Device — shared only where you choose</span></td>
         </tr>
         <tr>
           <td><strong>Anonymous Usage Analytics</strong><br>App opens, feature interactions, crash diagnostics (no PII)</td>
@@ -415,11 +417,7 @@
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
-      * Applies only when you are signed into iCloud on your device. Sync happens directly between
-      your devices and Apple's private CloudKit database — the App's developer never receives a copy
-      of your data.
-    </p>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">* Applies only when you are signed into iCloud on your device. Sync happens directly between your devices and Apple's private CloudKit database — the App's developer never receives a copy of your data.</p>
   </section>
 
   <section class="section">
@@ -427,10 +425,7 @@
       <div class="section-icon">🔥</div>
       <h2>3. Firebase Analytics &amp; Crashlytics</h2>
     </div>
-    <p>
-      Briven uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC)
-      to understand how the app is used and to diagnose crashes.
-    </p>
+    <p>Briven uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC) to understand how the app is used and to diagnose crashes.</p>
     <p>These tools collect only anonymous, aggregated data such as:</p>
     <ul>
       <li>App open frequency and session duration</li>
@@ -439,38 +434,17 @@
       <li>Crash logs and stack traces</li>
       <li>Country/region (derived from IP, not GPS)</li>
     </ul>
-    <div class="highlight">
-      Firebase never receives your income, expenses, subscriptions, categories, or any other financial
-      data you enter — that data never leaves your device or your own iCloud. Analytics data is used
-      solely to improve app stability and feature design, and is never sold or used for advertising.
-    </div>
-    <p>
-      For details on how Firebase handles data, please refer to the
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>.
-    </p>
+    <div class="highlight">Firebase never receives your income, expenses, subscriptions, categories, or any other financial data you enter — that data never leaves your device or your own iCloud. Analytics data is used solely to improve app stability and feature design, and is never sold or used for advertising.</div>
+    <p>For details on how Firebase handles data, please refer to the <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy Policy</a>.</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">💳</div>
-      <h2>4. RevenueCat (Future Lifetime Purchase)</h2>
+      <h2>4. In-App Purchase (Apple)</h2>
     </div>
-    <p>
-      Briven is currently free. A future update will introduce an optional, one-time
-      <strong>lifetime purchase</strong> (not a subscription) to unlock features such as savings goals
-      and multi-year trend reports. When available, this purchase will be processed using
-      <strong>RevenueCat</strong>.
-    </p>
-    <div class="highlight">
-      RevenueCat does <strong>not collect personally identifiable information.</strong>
-      It receives only an anonymous purchase receipt token issued by Apple's in-app purchase system —
-      never your name, email, or payment card details. This data is used solely to verify and restore
-      your purchase.
-    </div>
-    <p>
-      For details on how RevenueCat handles data, please refer to the
-      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a>.
-    </p>
+    <p>Briven offers an optional, one-time purchase called <strong>Briven Lifetime</strong> — not a subscription. The purchase is processed entirely by Apple through the App Store.</p>
+    <div class="highlight">We never receive your name, email address, or payment details. The App checks whether you own the purchase using Apple's StoreKit framework on your device, and restoring a purchase also goes through Apple. No third-party purchase service is involved.</div>
   </section>
 
   <section class="section">
@@ -480,10 +454,12 @@
     </div>
     <p>Collected information is used solely for the following purposes.</p>
     <ul>
-      <li><strong>App Services:</strong> Tracking your income, subscriptions, and expenses, and turning them into monthly summaries and reports</li>
+      <li><strong>App Services:</strong> Tracking your income, subscriptions, expenses, and savings goals, and turning them into monthly summaries and reports</li>
       <li><strong>Multi-Device Sync:</strong> Synchronizing your financial data across your own Apple devices via iCloud</li>
       <li><strong>App Lock:</strong> Verifying Face ID/Touch ID locally to protect access to the app</li>
-      <li><strong>Purchases:</strong> Validating and restoring your optional lifetime purchase via RevenueCat (when available)</li>
+      <li><strong>Purchases:</strong> Checking and restoring your optional Briven Lifetime purchase through Apple</li>
+      <li><strong>Data Export:</strong> Creating a CSV or PDF file on your device only when you tap Export; the file goes only where you choose in the share sheet, and the temporary copy is deleted afterward</li>
+      <li><strong>Widgets &amp; Control Center:</strong> They only open the App to a new expense — they do not read or display your financial data</li>
       <li><strong>Improvement:</strong> Understanding feature usage and diagnosing crashes via Firebase to guide development</li>
     </ul>
     <p>We do not sell or share your financial data or usage data with any third party for marketing purposes.</p>
@@ -514,18 +490,13 @@
           <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">View →</a></td>
         </tr>
         <tr>
-          <td><strong>RevenueCat</strong></td>
-          <td>Lifetime purchase management and validation (future feature)</td>
-          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">View →</a></td>
-        </tr>
-        <tr>
           <td><strong>Apple iCloud (CloudKit)</strong></td>
           <td>Free multi-device sync of your financial data (only when signed into iCloud)</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
-          <td>App distribution and in-app purchases</td>
+          <td>App distribution and the optional in-app purchase</td>
           <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">View →</a></td>
         </tr>
       </tbody>
@@ -539,14 +510,12 @@
     </div>
     <ul>
       <li><strong>Financial Data (Local):</strong> Stored on your device and permanently deleted when you uninstall the App.</li>
-      <li><strong>Financial Data (iCloud):</strong> If iCloud sync is in use, uninstalling the App from one device does not remove your private iCloud copy. To fully remove it, go to <em>iOS Settings → [your name] → iCloud → Manage Account Storage → Briven</em> and delete the app data, or contact us for assistance.</li>
-      <li><strong>Purchase Data:</strong> RevenueCat's anonymous receipt tokens are governed by RevenueCat's retention policy. Contact us to request deletion.</li>
+      <li><strong>Financial Data (iCloud):</strong> If iCloud sync is in use, uninstalling the App from one device does not remove your private iCloud copy — reinstalling restores it. To remove it, delete your entries in the App before uninstalling, or check <em>iOS Settings → [your name] → iCloud → Manage Account Storage</em>. Because this data lives in your own private iCloud, we cannot access or delete it on your behalf, but we are happy to help by email.</li>
+      <li><strong>Purchase Data:</strong> Managed by Apple. We keep no purchase records of our own.</li>
+      <li><strong>Exported Files:</strong> Files you share are under your control. The App deletes its temporary copy as soon as the share sheet closes.</li>
       <li><strong>Analytics Data:</strong> Firebase Analytics and Crashlytics retain aggregated, anonymous event and crash data per Google's data retention policy.</li>
     </ul>
-    <div class="highlight">
-      We hold no copy of your financial data on any server we control. If you do not use iCloud sync,
-      uninstalling the App is sufficient to completely remove all your data.
-    </div>
+    <p>We hold no copy of your financial data on any server we control. If you do not use iCloud sync, uninstalling the App is sufficient to completely remove all your data.</p>
   </section>
 
   <section class="section">
@@ -562,10 +531,7 @@
       <li><strong>Right to Restriction:</strong> Request limitation of processing</li>
     </ul>
     <p>To exercise your rights or for inquiries, please contact us at the address below.</p>
-    <div class="highlight warn">
-      <strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information.
-      We do not sell your data.
-    </div>
+    <div class="highlight"><strong>California residents (CCPA):</strong> You have the right to opt out of the sale of personal information. We do not sell your data.</div>
   </section>
 
   <section class="section">
@@ -573,13 +539,8 @@
       <div class="section-icon">👶</div>
       <h2>9. Children's Privacy</h2>
     </div>
-    <p>
-      Briven is not directed to children under the age of <strong>13</strong> (US) or <strong>16</strong> (EU/EEA).
-      We do not knowingly collect personal information from children.
-    </p>
-    <p>
-      If you become aware that a child has used the App, please contact us immediately so we can take appropriate steps to delete the relevant data.
-    </p>
+    <p>Briven is not directed to children under the age of 13 (US) or 16 (EU/EEA). We do not knowingly collect personal information from children.</p>
+    <p>If you become aware that a child has used the App, please contact us immediately so we can take appropriate steps to delete the relevant data.</p>
   </section>
 
   <section class="section">
@@ -587,18 +548,9 @@
       <div class="section-icon">🔒</div>
       <h2>10. Security</h2>
     </div>
-    <p>
-      Your financial data is stored using Apple's SwiftData framework, protected by the device's file system encryption.
-    </p>
-    <p>
-      When iCloud sync is enabled, data is transmitted to and stored in Apple's private CloudKit database
-      under Apple's encryption policy, both in transit and at rest. Your data is never transmitted to our servers.
-    </p>
-    <p>
-      When app lock is enabled, Face ID / Touch ID authentication is handled entirely by Apple's
-      <code>LocalAuthentication</code> framework and the device's Secure Enclave — your biometric data
-      never leaves your device and Briven never has access to it.
-    </p>
+    <p>Your financial data is stored using Apple's SwiftData framework, protected by the device's file system encryption. Exported files are written with iOS data protection and deleted after sharing.</p>
+    <p>When iCloud sync is enabled, data is transmitted to and stored in Apple's private CloudKit database under Apple's encryption policy, both in transit and at rest. Your data is never transmitted to our servers.</p>
+    <p>When app lock is enabled, Face ID / Touch ID authentication is handled entirely by Apple's LocalAuthentication framework and the device's Secure Enclave — your biometric data never leaves your device and Briven never has access to it.</p>
   </section>
 
   <section class="section">
@@ -606,14 +558,8 @@
       <div class="section-icon">🔄</div>
       <h2>11. Changes to This Policy</h2>
     </div>
-    <p>
-      This policy may be updated due to changes in law or service updates.
-      We will notify you of significant changes via in-app notifications or this page.
-    </p>
-    <p>
-      Changes take effect upon posting to this page.
-      Continued use of the App after changes constitutes acceptance of the updated policy.
-    </p>
+    <p>This policy may be updated due to changes in law or service updates. We will notify you of significant changes via in-app notifications or this page.</p>
+    <p>Changes take effect upon posting to this page. Continued use of the App after changes constitutes acceptance of the updated policy.</p>
   </section>
 
   <section class="section">
@@ -629,9 +575,7 @@
         <div class="value">hoons.labs@gmail.com</div>
       </div>
     </div>
-    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
-      We aim to respond within 5 business days.
-    </p>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">We aim to respond within 5 business days.</p>
   </section>
 
 </main>
@@ -645,7 +589,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    최종 업데이트: 2026년 7월 30일 &nbsp;·&nbsp; 시행일: 2026년 7월 30일
+    최종 수정일: 2026년 10월 27일 &nbsp;·&nbsp; 시행일: 2026년 10월 27일
   </div>
 
   <section class="section">
@@ -653,21 +597,9 @@
       <div class="section-icon">📋</div>
       <h2>1. 개요</h2>
     </div>
-    <p>
-      <strong>Briven</strong>(이하 "앱")은 은행 연동, CSV/OFX 임포트, 계정 로그인이 전혀 없는
-      순수 매뉴얼 구조적 예산관리 앱입니다. 수입원, 구독, 지출을 사용자가 직접 입력하면
-      Briven이 이를 명확한 월별 현황으로 정리해 보여줍니다.
-    </p>
-    <div class="highlight">
-      Briven은 <strong>프라이버시 우선</strong> 앱입니다. 사용자의 금융 데이터는 기기에 저장되며,
-      선택적으로 사용자 본인 소유의 Apple iCloud에만 동기화됩니다. 당사는 백엔드 서버를 운영하지
-      않으며 사용자의 수입, 지출, 구독 내역을 볼 수 없습니다. 익명 집계 사용 통계만 앱 개선에
-      활용되며, 금융 데이터는 절대 포함되지 않습니다.
-    </div>
-    <p>
-      앱을 설치하거나 사용함으로써 본 방침에 동의하는 것으로 간주됩니다.
-      동의하지 않으시면 앱 사용을 중단해 주세요.
-    </p>
+    <p><strong>Briven</strong>(이하 "앱")은 은행 연동, CSV/OFX 가져오기, 계정 없이 사용하는 iOS용 매뉴얼 예산관리 앱입니다. 수입원, 구독, 지출을 직접 입력하면 Briven이 이를 한눈에 보이는 월별 현황으로 정리해 드립니다.</p>
+    <div class="highlight">Briven은 <strong>프라이버시 우선</strong> 앱입니다. 금융 데이터는 기기에 저장되며, 원하실 경우 본인의 비공개 Apple iCloud로만 동기화됩니다. 저희는 별도 서버를 운영하지 않으며 사용자의 수입·지출·구독을 볼 수 없습니다. 익명·집계 사용 통계는 앱 개선에만 쓰이며 금융 데이터는 절대 포함되지 않습니다.</div>
+    <p>앱을 설치하거나 사용하면 본 개인정보 처리방침에 동의하는 것으로 간주됩니다. 동의하지 않으시면 앱 사용을 중단해 주세요.</p>
   </section>
 
   <section class="section">
@@ -676,7 +608,6 @@
       <h2>2. 수집하는 정보</h2>
     </div>
     <p>앱이 수집하거나 처리하는 정보는 다음과 같습니다.</p>
-
     <table class="data-table">
       <thead>
         <tr>
@@ -687,102 +618,80 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>금융 데이터</strong><br>수입원, 구독, 지출, 카테고리, 결제 방식, 예산 설정 — 전부 사용자가 직접 입력</td>
+          <td><strong>금융 데이터</strong><br>수입원, 구독, 지출, 저축 목표, 카테고리, 결제 방식, 예산 설정 — 모두 사용자가 직접 입력</td>
           <td>앱 핵심 기능</td>
-          <td><span class="tag tag-local">기기 전용</span></td>
+          <td><span class="tag tag-local">기기에만 저장</span></td>
         </tr>
         <tr>
-          <td><strong>iCloud 동기화 데이터</strong><br>동일한 금융 데이터를 사용자 본인의 Apple 기기 간 동기화</td>
-          <td>멀티기기 동기화 (무료)</td>
+          <td><strong>iCloud 동기화 데이터</strong><br>위와 같은 금융 데이터를 본인의 Apple 기기 간에 동기화</td>
+          <td>여러 기기 동기화(무료)</td>
           <td><span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
-          <td><strong>Face ID / Touch ID</strong><br>선택적 앱 잠금 인증</td>
+          <td><strong>Face ID / Touch ID</strong><br>선택 사항인 앱 잠금 인증</td>
           <td>앱 잠금</td>
-          <td><span class="tag tag-no">미수집 — 기기 내에서만 처리</span></td>
+          <td><span class="tag tag-no">수집 안 함 — 기기 내 처리</span></td>
         </tr>
         <tr>
-          <td><strong>구매 상태</strong><br>Apple이 발급하는 익명 구매 토큰 (향후 기능)</td>
-          <td>라이프타임 언락 검증</td>
-          <td><span class="tag tag-rc">RevenueCat</span></td>
+          <td><strong>구매 상태</strong><br>선택 사항인 1회 구매 Briven Lifetime 보유 여부(Apple이 확인)</td>
+          <td>유료 기능 잠금 해제</td>
+          <td><span class="tag tag-icloud">Apple App Store</span></td>
         </tr>
         <tr>
-          <td><strong>익명 사용 통계</strong><br>앱 실행, 기능 사용, 크래시 진단 (개인정보 없음)</td>
+          <td><strong>내보낸 파일</strong><br>사용자가 직접 만드는 지출 CSV/PDF 파일</td>
+          <td>데이터 내보내기(선택)</td>
+          <td><span class="tag tag-local">기기 — 사용자가 고른 곳에만 공유</span></td>
+        </tr>
+        <tr>
+          <td><strong>익명 사용 통계</strong><br>앱 실행, 기능 사용, 크래시 진단(개인 식별 정보 없음)</td>
           <td>앱 개선</td>
           <td><span class="tag tag-third">Firebase Analytics / Crashlytics</span></td>
         </tr>
         <tr>
           <td><strong>위치 정보</strong></td>
-          <td>수집하지 않음</td>
-          <td><span class="tag tag-no">미수집</span></td>
+          <td>수집 안 함</td>
+          <td><span class="tag tag-no">수집 안 함</span></td>
         </tr>
         <tr>
-          <td><strong>계정/로그인 정보</strong></td>
-          <td>수집하지 않음</td>
-          <td><span class="tag tag-no">미수집</span></td>
+          <td><strong>계정 / 로그인</strong></td>
+          <td>수집 안 함</td>
+          <td><span class="tag tag-no">수집 안 함</span></td>
         </tr>
         <tr>
-          <td><strong>은행 계좌 정보/연동</strong></td>
+          <td><strong>은행 인증 정보 / 은행 연동</strong></td>
           <td>해당 없음</td>
-          <td><span class="tag tag-no">애초에 요청하지 않음</span></td>
+          <td><span class="tag tag-no">요청하지 않음</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
-      * 기기에서 iCloud에 로그인한 경우에만 적용됩니다. 동기화는 사용자 기기와 Apple의 개인
-      CloudKit 데이터베이스 사이에서 직접 이루어지며, 앱 개발자는 그 사본을 전달받지 않습니다.
-    </p>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">* 기기에서 iCloud에 로그인한 경우에만 해당합니다. 동기화는 사용자의 기기와 Apple의 비공개 CloudKit 데이터베이스 사이에서 직접 이루어지며, 앱 개발자는 데이터 사본을 받지 않습니다.</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">🔥</div>
-      <h2>3. Firebase Analytics &amp; Crashlytics</h2>
+      <h2>3. Firebase Analytics 및 Crashlytics</h2>
     </div>
-    <p>
-      Briven은 앱 사용 방식을 파악하고 크래시를 진단하기 위해 <strong>Firebase Analytics</strong>와
-      <strong>Firebase Crashlytics</strong>(Google LLC)를 사용합니다.
-    </p>
-    <p>이 도구들은 다음과 같은 익명 집계 데이터만 수집합니다.</p>
+    <p>Briven은 앱 사용 방식을 파악하고 크래시를 진단하기 위해 <strong>Firebase Analytics</strong>와 <strong>Firebase Crashlytics</strong>(Google LLC)를 사용합니다.</p>
+    <p>이 도구는 다음과 같은 익명·집계 데이터만 수집합니다.</p>
     <ul>
       <li>앱 실행 빈도 및 세션 시간</li>
-      <li>기능 사용 이벤트 (예: 지출 추가, Reports 화면 열람)</li>
-      <li>기기 유형, OS 버전, 앱 버전</li>
+      <li>기능 사용 이벤트(예: 지출 추가, 리포트 열기)</li>
+      <li>기기 종류, OS 버전, 앱 버전</li>
       <li>크래시 로그 및 스택 트레이스</li>
-      <li>국가/지역 (GPS가 아닌 IP 기반 추정)</li>
+      <li>국가/지역(GPS가 아닌 IP 기반)</li>
     </ul>
-    <div class="highlight">
-      Firebase는 사용자가 입력한 수입, 지출, 구독, 카테고리 등 어떤 금융 데이터도 전달받지
-      않습니다 — 그 데이터는 기기 또는 사용자 본인의 iCloud 밖으로 절대 나가지 않습니다.
-      통계 데이터는 앱 안정성과 기능 설계 개선에만 사용되며, 판매하거나 광고 목적으로 사용하지
-      않습니다.
-    </div>
-    <p>
-      Firebase의 데이터 처리 방식에 대한 자세한 내용은
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호</a>를 참고해 주세요.
-    </p>
+    <div class="highlight">Firebase는 사용자가 입력한 수입, 지출, 구독, 카테고리 등 어떤 금융 데이터도 받지 않습니다 — 이 데이터는 기기와 본인의 iCloud를 벗어나지 않습니다. 통계 데이터는 앱 안정성과 기능 설계 개선에만 쓰이며, 판매되거나 광고에 사용되지 않습니다.</div>
+    <p>Firebase의 데이터 처리에 관한 자세한 내용은 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 처리방침</a>을 참고해 주세요.</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">💳</div>
-      <h2>4. RevenueCat (향후 라이프타임 구매)</h2>
+      <h2>4. 인앱 구매(Apple)</h2>
     </div>
-    <p>
-      Briven은 현재 무료입니다. 향후 업데이트에서 저축 목표, 다년 트렌드 리포트 등을 잠금 해제하는
-      선택적 <strong>라이프타임 구매</strong>(구독 아님, 1회 결제)가 추가될 예정입니다. 이 기능이
-      제공되면 <strong>RevenueCat</strong>을 통해 결제가 처리됩니다.
-    </p>
-    <div class="highlight">
-      RevenueCat은 <strong>개인 식별 정보를 수집하지 않습니다.</strong>
-      Apple의 인앱 결제 시스템이 발급하는 익명의 구매 영수증 토큰만 수신하며, 사용자의 이름,
-      이메일, 결제 카드 정보는 전달되지 않습니다. 해당 데이터는 구매 확인 및 복원 목적으로만
-      사용됩니다.
-    </div>
-    <p>
-      RevenueCat의 데이터 처리 방식에 대한 자세한 내용은
-      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat 개인정보 처리방침</a>을 참고해 주세요.
-    </p>
+    <p>Briven은 선택 사항인 1회 구매 상품 <strong>Briven Lifetime</strong>을 제공합니다 — 구독이 아닙니다. 결제는 App Store를 통해 Apple이 모두 처리합니다.</p>
+    <div class="highlight">저희는 사용자의 이름, 이메일, 결제 정보를 받지 않습니다. 앱은 기기에서 Apple StoreKit을 통해 구매 여부를 확인하며, 구매 복원도 Apple을 통해 이루어집니다. 별도의 외부 결제 서비스는 사용하지 않습니다.</div>
   </section>
 
   <section class="section">
@@ -792,13 +701,15 @@
     </div>
     <p>수집된 정보는 다음 목적으로만 사용됩니다.</p>
     <ul>
-      <li><strong>앱 서비스 제공:</strong> 수입, 구독, 지출을 기록하고 이를 월별 요약·리포트로 정리</li>
-      <li><strong>멀티기기 동기화:</strong> iCloud를 통한 사용자 본인 Apple 기기 간 금융 데이터 동기화</li>
-      <li><strong>앱 잠금:</strong> Face ID/Touch ID를 기기 내에서 검증해 앱 접근 보호</li>
-      <li><strong>구매 관리:</strong> RevenueCat을 통한 라이프타임 구매 검증 및 복원 (기능 제공 시)</li>
-      <li><strong>앱 개선:</strong> Firebase를 통한 기능 사용 현황 파악 및 크래시 진단으로 개발 방향 결정</li>
+      <li><strong>앱 서비스:</strong> 수입, 구독, 지출, 저축 목표를 기록하고 월별 요약과 리포트로 정리</li>
+      <li><strong>여러 기기 동기화:</strong> iCloud를 통해 본인의 Apple 기기 간 금융 데이터 동기화</li>
+      <li><strong>앱 잠금:</strong> Face ID/Touch ID를 기기 안에서 확인해 앱 접근 보호</li>
+      <li><strong>구매:</strong> 선택 사항인 Briven Lifetime 구매를 Apple을 통해 확인·복원</li>
+      <li><strong>데이터 내보내기:</strong> 사용자가 내보내기를 누를 때만 기기에서 CSV/PDF 파일을 만들고, 공유 시트에서 고른 곳으로만 전달하며, 임시 사본은 이후 삭제</li>
+      <li><strong>위젯 및 제어 센터:</strong> 앱을 지출 입력 화면으로 열기만 하며, 금융 데이터를 읽거나 표시하지 않음</li>
+      <li><strong>개선:</strong> Firebase로 기능 사용 현황을 파악하고 크래시를 진단해 개발에 반영</li>
     </ul>
-    <p>당사는 사용자의 금융 데이터나 사용 데이터를 마케팅 목적으로 제3자에게 판매하거나 공유하지 않습니다.</p>
+    <p>저희는 금융 데이터나 사용 데이터를 마케팅 목적으로 제3자에게 판매하거나 공유하지 않습니다.</p>
   </section>
 
   <section class="section">
@@ -811,34 +722,29 @@
         <tr>
           <th>서비스</th>
           <th>목적</th>
-          <th>개인정보처리방침</th>
+          <th>개인정보 처리방침</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Firebase Analytics</strong></td>
           <td>앱 개선을 위한 익명 사용 통계</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">보기 →</a></td>
         </tr>
         <tr>
           <td><strong>Firebase Crashlytics</strong></td>
           <td>크래시 진단</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
-        </tr>
-        <tr>
-          <td><strong>RevenueCat</strong></td>
-          <td>라이프타임 구매 관리 및 검증 (향후 기능)</td>
-          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">바로가기 →</a></td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">보기 →</a></td>
         </tr>
         <tr>
           <td><strong>Apple iCloud (CloudKit)</strong></td>
-          <td>금융 데이터의 무료 멀티기기 동기화 (iCloud 로그인 시에만)</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
+          <td>금융 데이터의 무료 기기 간 동기화(iCloud 로그인 시에만)</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">보기 →</a></td>
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
-          <td>앱 배포 및 인앱 결제</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">바로가기 →</a></td>
+          <td>앱 배포 및 선택 사항인 인앱 구매</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">보기 →</a></td>
         </tr>
       </tbody>
     </table>
@@ -850,48 +756,38 @@
       <h2>7. 데이터 보관 및 삭제</h2>
     </div>
     <ul>
-      <li><strong>금융 데이터 (로컬):</strong> 사용자 기기에 보관되며, 앱 삭제 시 즉시 삭제됩니다.</li>
-      <li><strong>금융 데이터 (iCloud):</strong> iCloud 동기화를 사용하는 경우, 한 기기에서 앱을 삭제해도 개인 iCloud 사본은 제거되지 않습니다. 완전히 삭제하려면 <em>iOS 설정 → [이름] → iCloud → 계정 저장 공간 관리 → Briven</em>에서 앱 데이터를 삭제하거나, 아래 연락처로 문의해 주세요.</li>
-      <li><strong>구매 데이터:</strong> RevenueCat의 익명 영수증 토큰은 RevenueCat의 데이터 보관 정책에 따릅니다. 삭제 요청은 아래 연락처로 문의해 주세요.</li>
-      <li><strong>분석 데이터:</strong> Firebase Analytics/Crashlytics는 Google의 데이터 보관 정책에 따라 집계·익명 이벤트 및 크래시 데이터를 보관합니다.</li>
+      <li><strong>금융 데이터(기기):</strong> 기기에 저장되며, 앱을 삭제하면 영구 삭제됩니다.</li>
+      <li><strong>금융 데이터(iCloud):</strong> iCloud 동기화를 사용 중이면 한 기기에서 앱을 삭제해도 본인의 비공개 iCloud 사본은 남으며, 다시 설치하면 복원됩니다. 지우려면 앱을 삭제하기 전에 앱 안에서 항목을 삭제하시거나, <em>iOS 설정 → [사용자 이름] → iCloud → 계정 저장 공간 관리</em>를 확인해 주세요. 이 데이터는 본인의 비공개 iCloud에 있어 저희가 접근하거나 대신 삭제할 수 없지만, 이메일로 기꺼이 도와드리겠습니다.</li>
+      <li><strong>구매 데이터:</strong> Apple이 관리하며, 저희는 별도의 구매 기록을 보관하지 않습니다.</li>
+      <li><strong>내보낸 파일:</strong> 공유한 파일은 사용자가 관리합니다. 앱은 공유 시트가 닫히는 즉시 임시 사본을 삭제합니다.</li>
+      <li><strong>통계 데이터:</strong> Firebase Analytics와 Crashlytics는 Google의 데이터 보관 정책에 따라 집계·익명 이벤트 및 크래시 데이터를 보관합니다.</li>
     </ul>
-    <div class="highlight">
-      당사가 통제하는 서버에는 사용자의 금융 데이터 사본이 전혀 없습니다. iCloud 동기화를
-      사용하지 않는 경우 앱 삭제만으로 모든 데이터가 완전히 제거됩니다.
-    </div>
+    <p>저희는 저희가 관리하는 어떤 서버에도 사용자의 금융 데이터 사본을 보관하지 않습니다. iCloud 동기화를 사용하지 않는다면 앱 삭제만으로 모든 데이터가 완전히 삭제됩니다.</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">⚖️</div>
-      <h2>8. 사용자 권리</h2>
+      <h2>8. 이용자의 권리</h2>
     </div>
-    <p>거주 지역에 따라 다음 권리를 보유할 수 있습니다.</p>
+    <p>거주 지역에 따라 다음 권리를 가질 수 있습니다.</p>
     <ul>
-      <li><strong>열람권:</strong> 처리되는 개인정보의 확인</li>
-      <li><strong>정정권:</strong> 부정확한 데이터의 수정</li>
-      <li><strong>삭제권(잊힐 권리):</strong> 데이터 삭제 요청</li>
-      <li><strong>처리 제한권:</strong> 특정 목적의 처리 중단 요청</li>
+      <li><strong>열람권:</strong> 개인정보 사본 요청</li>
+      <li><strong>정정권:</strong> 부정확한 데이터 수정</li>
+      <li><strong>삭제권:</strong> 데이터 삭제 요청</li>
+      <li><strong>처리 제한권:</strong> 처리 제한 요청</li>
     </ul>
-    <p>권리 행사 또는 문의는 아래 연락처로 연락해 주세요.</p>
-    <div class="highlight warn">
-      <strong>캘리포니아 거주자(CCPA):</strong> 개인정보 판매 거부권을 보유합니다.
-      당사는 사용자 데이터를 판매하지 않습니다.
-    </div>
+    <p>권리 행사나 문의는 아래 연락처로 연락해 주세요.</p>
+    <div class="highlight"><strong>캘리포니아 거주자(CCPA):</strong> 개인정보 판매를 거부할 권리가 있습니다. 저희는 데이터를 판매하지 않습니다.</div>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">👶</div>
-      <h2>9. 아동 개인정보 보호</h2>
+      <h2>9. 아동의 개인정보</h2>
     </div>
-    <p>
-      Briven은 <strong>만 13세 미만</strong>(미국 기준) 또는 <strong>만 16세 미만</strong>(EU/EEA 기준)
-      아동을 대상으로 하지 않습니다. 당사는 아동의 개인정보를 의도적으로 수집하지 않습니다.
-    </p>
-    <p>
-      아동이 앱을 사용한 사실을 인지한 경우, 아래 연락처로 즉시 알려주시면 관련 데이터를 삭제 조치하겠습니다.
-    </p>
+    <p>Briven은 13세(미국) 또는 16세(EU/EEA) 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+    <p>아동이 앱을 사용한 사실을 알게 되면 즉시 연락해 주세요. 관련 데이터를 삭제하기 위한 조치를 취하겠습니다.</p>
   </section>
 
   <section class="section">
@@ -899,20 +795,9 @@
       <div class="section-icon">🔒</div>
       <h2>10. 보안</h2>
     </div>
-    <p>
-      사용자의 금융 데이터는 Apple의 SwiftData 프레임워크로 저장되며, 기기의 파일 시스템
-      암호화로 보호됩니다.
-    </p>
-    <p>
-      iCloud 동기화를 사용하는 경우, 데이터는 전송 중 및 저장 중 모두 Apple의 개인 CloudKit
-      데이터베이스에서 Apple의 암호화 정책에 따라 보호됩니다. 당사 서버로는 어떠한 데이터도
-      전송되지 않습니다.
-    </p>
-    <p>
-      앱 잠금을 사용하는 경우, Face ID/Touch ID 인증은 전적으로 Apple의
-      <code>LocalAuthentication</code> 프레임워크와 기기의 Secure Enclave에서 처리됩니다 —
-      생체 정보는 기기 밖으로 나가지 않으며 Briven은 이 정보에 접근할 수 없습니다.
-    </p>
+    <p>금융 데이터는 Apple SwiftData 프레임워크로 저장되며 기기의 파일 시스템 암호화로 보호됩니다. 내보낸 파일은 iOS 데이터 보호가 적용된 상태로 만들어지고 공유 후 삭제됩니다.</p>
+    <p>iCloud 동기화를 켜면 데이터는 Apple의 암호화 정책에 따라 전송 중·저장 시 모두 암호화되어 Apple의 비공개 CloudKit 데이터베이스에 저장됩니다. 데이터는 저희 서버로 전송되지 않습니다.</p>
+    <p>앱 잠금을 켜면 Face ID / Touch ID 인증은 Apple LocalAuthentication 프레임워크와 기기의 Secure Enclave에서만 처리됩니다 — 생체 정보는 기기를 벗어나지 않으며 Briven은 이에 접근할 수 없습니다.</p>
   </section>
 
   <section class="section">
@@ -920,14 +805,8 @@
       <div class="section-icon">🔄</div>
       <h2>11. 방침 변경</h2>
     </div>
-    <p>
-      본 방침은 법률 변경 또는 서비스 업데이트에 따라 수정될 수 있습니다.
-      중요한 변경 사항이 있을 경우 앱 내 알림 또는 본 페이지를 통해 공지합니다.
-    </p>
-    <p>
-      변경된 방침은 본 페이지에 게시된 시점부터 효력이 발생합니다.
-      계속 앱을 사용하면 변경된 방침에 동의한 것으로 간주됩니다.
-    </p>
+    <p>본 방침은 법령 변경이나 서비스 업데이트에 따라 수정될 수 있습니다. 중요한 변경 사항은 앱 내 알림이나 이 페이지를 통해 알려 드립니다.</p>
+    <p>변경 사항은 이 페이지에 게시되는 즉시 효력이 발생합니다. 변경 후에도 앱을 계속 사용하면 변경된 방침에 동의한 것으로 간주됩니다.</p>
   </section>
 
   <section class="section">
@@ -935,7 +814,7 @@
       <div class="section-icon">✉️</div>
       <h2>12. 문의</h2>
     </div>
-    <p>개인정보 처리방침에 관한 문의 또는 권리 행사 요청은 아래로 연락해 주세요.</p>
+    <p>본 개인정보 처리방침에 관한 문의나 권리 행사는 아래로 연락해 주세요.</p>
     <div class="contact-card">
       <span class="icon">📧</span>
       <div>
@@ -943,9 +822,7 @@
         <div class="value">hoons.labs@gmail.com</div>
       </div>
     </div>
-    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
-      문의 후 영업일 기준 5일 이내에 답변드립니다.
-    </p>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">영업일 기준 5일 이내에 답변드리겠습니다.</p>
   </section>
 
 </main>
@@ -959,7 +836,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    最終更新: 2026年7月30日 &nbsp;·&nbsp; 施行日: 2026年7月30日
+    最終更新日：2026年10月27日 &nbsp;·&nbsp; 施行日：2026年10月27日
   </div>
 
   <section class="section">
@@ -967,21 +844,9 @@
       <div class="section-icon">📋</div>
       <h2>1. 概要</h2>
     </div>
-    <p>
-      <strong>Briven</strong>（以下「本アプリ」）は、銀行連携・CSV/OFXインポート・アカウント
-      ログインが一切ない、純粋に手入力型の構造的家計管理アプリです。収入源、サブスクリプション、
-      支出をご自身で入力すると、Brivenがそれを分かりやすい月次サマリーに整理します。
-    </p>
-    <div class="highlight">
-      Brivenは<strong>プライバシーファースト</strong>のアプリです。お客様の家計データは端末に
-      保存され、任意でお客様ご自身のApple iCloudにのみ同期されます。当社はバックエンドサーバーを
-      運用しておらず、お客様の収入・支出・サブスクリプションを閲覧することはできません。匿名の
-      集計利用統計のみがアプリ改善に活用され、家計データが含まれることはありません。
-    </div>
-    <p>
-      本アプリをインストールまたは使用することで、本ポリシーに同意したものとみなされます。
-      同意いただけない場合は、本アプリの使用を中止してください。
-    </p>
+    <p><strong>Briven</strong>（以下「本アプリ」）は、銀行連携・CSV/OFXの取り込み・アカウント登録なしで使える、iOS向けの手入力の家計簿・予算管理アプリです。収入源、サブスク、支出をご自身で入力すると、Brivenが毎月の状況をわかりやすくまとめます。</p>
+    <div class="highlight">Brivenは<strong>プライバシー最優先</strong>のアプリです。お金に関するデータはお使いのデバイスに保存され、ご希望の場合はご自身のプライベートなApple iCloudにのみ同期されます。当社はサーバーを運用しておらず、お客様の収入・支出・サブスクを見ることはできません。匿名・集計された利用統計はアプリの改善にのみ使われ、お金に関するデータは含まれません。</div>
+    <p>本アプリをインストールまたは使用することで、本プライバシーポリシーに同意したものとみなされます。同意いただけない場合は、本アプリの使用を中止してください。</p>
   </section>
 
   <section class="section">
@@ -990,114 +855,90 @@
       <h2>2. 収集する情報</h2>
     </div>
     <p>本アプリが収集または処理する情報は以下のとおりです。</p>
-
     <table class="data-table">
       <thead>
         <tr>
           <th>データの種類</th>
           <th>目的</th>
-          <th>保存場所</th>
+          <th>保存先</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>家計データ</strong><br>収入源、サブスクリプション、支出、カテゴリ、支払い方法、予算設定 — すべてお客様が手入力</td>
-          <td>アプリの中核機能</td>
-          <td><span class="tag tag-local">端末のみ</span></td>
+          <td><strong>お金に関するデータ</strong><br>収入源、サブスク、支出、貯金目標、カテゴリ、支払い方法、予算設定 — すべてお客様が手入力したもの</td>
+          <td>アプリの基本機能</td>
+          <td><span class="tag tag-local">デバイスのみ</span></td>
         </tr>
         <tr>
-          <td><strong>iCloud同期データ</strong><br>同じ家計データをお客様ご自身のAppleデバイス間で同期</td>
-          <td>マルチデバイス同期（無料）</td>
+          <td><strong>iCloud同期データ</strong><br>上記と同じデータを、ご自身のAppleデバイス間で同期</td>
+          <td>複数デバイスでの同期（無料）</td>
           <td><span class="tag tag-icloud">Apple iCloud *</span></td>
         </tr>
         <tr>
           <td><strong>Face ID / Touch ID</strong><br>任意のアプリロック認証</td>
           <td>アプリロック</td>
-          <td><span class="tag tag-no">未収集 — 端末内のみで処理</span></td>
+          <td><span class="tag tag-no">収集しません — デバイス上で処理</span></td>
         </tr>
         <tr>
-          <td><strong>購入ステータス</strong><br>Appleが発行する匿名購入トークン（今後の機能）</td>
-          <td>ライフタイムアンロックの認証</td>
-          <td><span class="tag tag-rc">RevenueCat</span></td>
+          <td><strong>購入状況</strong><br>任意の一回限りの購入「Briven 買い切り版」をお持ちかどうか（Appleが確認）</td>
+          <td>有料機能の利用</td>
+          <td><span class="tag tag-icloud">Apple App Store</span></td>
         </tr>
         <tr>
-          <td><strong>匿名利用統計</strong><br>アプリ起動、機能利用、クラッシュ診断（個人情報なし）</td>
+          <td><strong>書き出したファイル</strong><br>お客様が作成する支出のCSV/PDFファイル</td>
+          <td>データの書き出し（任意）</td>
+          <td><span class="tag tag-local">デバイス — 選んだ共有先のみ</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名の利用統計</strong><br>アプリの起動、機能の利用、クラッシュ診断（個人を特定する情報は含みません）</td>
           <td>アプリの改善</td>
           <td><span class="tag tag-third">Firebase Analytics / Crashlytics</span></td>
         </tr>
         <tr>
           <td><strong>位置情報</strong></td>
-          <td>収集しない</td>
-          <td><span class="tag tag-no">未収集</span></td>
+          <td>収集しません</td>
+          <td><span class="tag tag-no">収集しません</span></td>
         </tr>
         <tr>
-          <td><strong>アカウント・ログイン情報</strong></td>
-          <td>収集しない</td>
-          <td><span class="tag tag-no">未収集</span></td>
+          <td><strong>アカウント／ログイン</strong></td>
+          <td>収集しません</td>
+          <td><span class="tag tag-no">収集しません</span></td>
         </tr>
         <tr>
-          <td><strong>銀行口座情報・連携</strong></td>
+          <td><strong>銀行の認証情報／銀行連携</strong></td>
           <td>該当なし</td>
-          <td><span class="tag tag-no">そもそも要求しない</span></td>
+          <td><span class="tag tag-no">求めることはありません</span></td>
         </tr>
       </tbody>
     </table>
-    <p style="margin-top:12px; font-size:13px; color:var(--muted);">
-      * 端末でiCloudにサインインしている場合のみ適用されます。同期はお客様の端末とAppleの
-      プライベートCloudKitデータベース間で直接行われ、アプリ開発者がそのコピーを受け取ることは
-      ありません。
-    </p>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">* デバイスでiCloudにサインインしている場合のみ。同期はお客様のデバイスとAppleのプライベートなCloudKitデータベースの間で直接行われ、開発者がデータのコピーを受け取ることはありません。</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">🔥</div>
-      <h2>3. Firebase Analytics &amp; Crashlytics</h2>
+      <h2>3. Firebase AnalyticsとCrashlytics</h2>
     </div>
-    <p>
-      Brivenはアプリの利用状況を把握し、クラッシュを診断するために<strong>Firebase Analytics</strong>と
-      <strong>Firebase Crashlytics</strong>（Google LLC）を使用しています。
-    </p>
-    <p>これらのツールは以下の匿名・集計データのみを収集します。</p>
+    <p>Brivenは、アプリの使われ方を把握しクラッシュを診断するために、<strong>Firebase Analytics</strong>と<strong>Firebase Crashlytics</strong>（Google LLC）を使用しています。</p>
+    <p>これらのツールが収集するのは、次のような匿名・集計データのみです。</p>
     <ul>
-      <li>アプリ起動頻度とセッション時間</li>
-      <li>機能利用イベント（例：支出の追加、Reports画面の閲覧）</li>
-      <li>端末タイプ、OSバージョン、アプリバージョン</li>
+      <li>アプリの起動頻度と利用時間</li>
+      <li>機能の利用イベント（例：支出の追加、レポートの表示）</li>
+      <li>デバイスの種類、OSのバージョン、アプリのバージョン</li>
       <li>クラッシュログとスタックトレース</li>
-      <li>国・地域（GPSではなくIPによる推定）</li>
+      <li>国・地域（GPSではなくIPから推定）</li>
     </ul>
-    <div class="highlight">
-      Firebaseは、お客様が入力した収入・支出・サブスクリプション・カテゴリなどの家計データを
-      一切受け取りません — そのデータは端末またはお客様自身のiCloudの外に出ることはありません。
-      統計データはアプリの安定性向上と機能設計の改善にのみ使用され、販売や広告目的には使用しません。
-    </div>
-    <p>
-      Firebaseのデータ処理方法の詳細については、
-      <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseプライバシーポリシー</a>をご参照ください。
-    </p>
+    <div class="highlight">Firebaseが、お客様の入力した収入・支出・サブスク・カテゴリなどのお金に関するデータを受け取ることはありません。これらのデータはデバイスとご自身のiCloudから出ることはありません。統計データはアプリの安定性と機能設計の改善にのみ使われ、販売されたり広告に使われたりすることはありません。</div>
+    <p>Firebaseのデータの取り扱いについては、<a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebaseのプライバシーポリシー</a>をご覧ください。</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">💳</div>
-      <h2>4. RevenueCat（今後のライフタイム購入）</h2>
+      <h2>4. アプリ内課金（Apple）</h2>
     </div>
-    <p>
-      Brivenは現在無料でご利用いただけます。今後のアップデートで、貯蓄目標や複数年トレンド
-      レポートなどをアンロックする任意の<strong>ライフタイム購入</strong>（サブスクリプションでは
-      なく買い切り）が導入される予定です。この機能が提供される際は、<strong>RevenueCat</strong>を
-      通じて決済が処理されます。
-    </p>
-    <div class="highlight">
-      RevenueCatは<strong>個人を特定できる情報を収集しません。</strong>
-      Appleのアプリ内課金システムが発行する匿名の購入レシートトークンのみを受信し、
-      お客様の氏名・メールアドレス・支払いカード情報が共有されることはありません。
-      このデータは購入の確認と復元にのみ使用されます。
-    </div>
-    <p>
-      RevenueCatのデータ処理方法の詳細については、
-      <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCatプライバシーポリシー</a>をご参照ください。
-    </p>
+    <p>Brivenでは、任意の一回限りの購入<strong>「Briven 買い切り版」</strong>を提供しています（サブスクではありません）。決済はApp Storeを通じてAppleがすべて処理します。</p>
+    <div class="highlight">当社がお客様の氏名、メールアドレス、決済情報を受け取ることはありません。本アプリはデバイス上でAppleのStoreKitを使って購入状況を確認し、購入の復元もAppleを通じて行われます。外部の決済サービスは使用していません。</div>
   </section>
 
   <section class="section">
@@ -1105,21 +946,23 @@
       <div class="section-icon">🎯</div>
       <h2>5. 情報の利用目的</h2>
     </div>
-    <p>収集した情報は、以下の目的にのみ使用されます。</p>
+    <p>収集した情報は、次の目的にのみ使用します。</p>
     <ul>
-      <li><strong>アプリサービスの提供：</strong>収入・サブスクリプション・支出を記録し、月次サマリー・レポートとして整理</li>
-      <li><strong>マルチデバイス同期：</strong>iCloudを通じたお客様ご自身のAppleデバイス間での家計データ同期</li>
-      <li><strong>アプリロック：</strong>Face ID/Touch IDを端末内で検証し、アプリへのアクセスを保護</li>
-      <li><strong>購入管理：</strong>RevenueCatによるライフタイム購入の認証・復元（機能提供時）</li>
-      <li><strong>アプリ改善：</strong>Firebaseによる機能利用状況の把握とクラッシュ診断による開発方針の決定</li>
+      <li><strong>アプリのサービス：</strong> 収入・サブスク・支出・貯金目標を記録し、月ごとのまとめとレポートを作成</li>
+      <li><strong>複数デバイスでの同期：</strong> iCloudを通じて、ご自身のAppleデバイス間でデータを同期</li>
+      <li><strong>アプリロック：</strong> Face ID／Touch IDをデバイス上で確認し、アプリへのアクセスを保護</li>
+      <li><strong>購入：</strong> 任意の「Briven 買い切り版」の購入をAppleを通じて確認・復元</li>
+      <li><strong>データの書き出し：</strong> 「書き出す」をタップしたときだけデバイス上でCSV/PDFファイルを作成し、共有シートで選んだ先にのみ渡します。一時ファイルはその後削除されます</li>
+      <li><strong>ウィジェットとコントロールセンター：</strong> 支出の入力画面を開くだけで、お金に関するデータを読み取ったり表示したりしません</li>
+      <li><strong>改善：</strong> Firebaseで機能の利用状況を把握し、クラッシュを診断して開発に役立てます</li>
     </ul>
-    <p>当社はお客様の家計データや利用データをマーケティング目的で第三者に販売・共有することはありません。</p>
+    <p>お金に関するデータや利用データを、マーケティング目的で第三者に販売・共有することはありません。</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">🔗</div>
-      <h2>6. 第三者サービス</h2>
+      <h2>6. 外部サービス</h2>
     </div>
     <table class="data-table">
       <thead>
@@ -1132,28 +975,23 @@
       <tbody>
         <tr>
           <td><strong>Firebase Analytics</strong></td>
-          <td>アプリ改善のための匿名利用統計</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
+          <td>アプリ改善のための匿名の利用統計</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">見る →</a></td>
         </tr>
         <tr>
           <td><strong>Firebase Crashlytics</strong></td>
           <td>クラッシュ診断</td>
-          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">確認する →</a></td>
-        </tr>
-        <tr>
-          <td><strong>RevenueCat</strong></td>
-          <td>ライフタイム購入の管理と認証（今後の機能）</td>
-          <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">確認する →</a></td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">見る →</a></td>
         </tr>
         <tr>
           <td><strong>Apple iCloud (CloudKit)</strong></td>
-          <td>家計データの無料マルチデバイス同期（iCloudサインイン時のみ）</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+          <td>データの無料のデバイス間同期（iCloudにサインインしている場合のみ）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">見る →</a></td>
         </tr>
         <tr>
           <td><strong>Apple App Store</strong></td>
-          <td>アプリ配信およびアプリ内課金</td>
-          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">確認する →</a></td>
+          <td>アプリの配信と任意のアプリ内課金</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">見る →</a></td>
         </tr>
       </tbody>
     </table>
@@ -1162,18 +1000,16 @@
   <section class="section">
     <div class="section-header">
       <div class="section-icon">🗂️</div>
-      <h2>7. データの保持と削除</h2>
+      <h2>7. データの保存と削除</h2>
     </div>
     <ul>
-      <li><strong>家計データ（ローカル）：</strong>お客様の端末に保存され、アプリを削除すると即座に消去されます。</li>
-      <li><strong>家計データ（iCloud）：</strong>iCloud同期を使用している場合、1台の端末でアプリを削除するだけでは個人用iCloudのコピーは削除されません。完全に削除するには、<em>iOS設定 → [お名前] → iCloud → アカウントのストレージを管理 → Briven</em>でアプリデータを削除するか、下記までお問い合わせください。</li>
-      <li><strong>購入データ：</strong>RevenueCatの匿名レシートトークンはRevenueCatのデータ保持ポリシーに従います。削除をご希望の場合は下記までお問い合わせください。</li>
-      <li><strong>分析データ：</strong>Firebase Analytics/CrashlyticsはGoogleのデータ保持ポリシーに従い、集計・匿名のイベントおよびクラッシュデータを保持します。</li>
+      <li><strong>お金に関するデータ（デバイス）：</strong> デバイスに保存され、本アプリを削除すると完全に削除されます。</li>
+      <li><strong>お金に関するデータ（iCloud）：</strong> iCloud同期を使っている場合、あるデバイスから本アプリを削除しても、ご自身のプライベートなiCloudのコピーは残り、再インストールすると復元されます。削除するには、本アプリを削除する前にアプリ内で記録を削除するか、<em>iOSの設定 → ［ユーザ名］ → iCloud → アカウントのストレージを管理</em>をご確認ください。このデータはご自身のプライベートなiCloudにあるため、当社がアクセスしたり代わりに削除したりすることはできませんが、メールでのご相談には喜んで対応します。</li>
+      <li><strong>購入データ：</strong> Appleが管理しています。当社は独自の購入記録を保管していません。</li>
+      <li><strong>書き出したファイル：</strong> 共有したファイルはお客様の管理下にあります。本アプリは共有シートが閉じた時点で一時ファイルを削除します。</li>
+      <li><strong>統計データ：</strong> Firebase AnalyticsとCrashlyticsは、Googleのデータ保持ポリシーに従って、集計された匿名のイベントデータとクラッシュデータを保持します。</li>
     </ul>
-    <div class="highlight">
-      当社が管理するサーバーには、お客様の家計データのコピーは一切ありません。iCloud同期を
-      使用していない場合、アプリを削除するだけですべてのデータが完全に消去されます。
-    </div>
+    <p>当社が管理するサーバーに、お客様のお金に関するデータのコピーを保管することはありません。iCloud同期を使っていない場合は、本アプリを削除するだけですべてのデータが完全に削除されます。</p>
   </section>
 
   <section class="section">
@@ -1181,32 +1017,24 @@
       <div class="section-icon">⚖️</div>
       <h2>8. お客様の権利</h2>
     </div>
-    <p>お客様がお住まいの地域によって、以下の権利を有する場合があります。</p>
+    <p>お住まいの地域によって、次の権利をお持ちの場合があります。</p>
     <ul>
-      <li><strong>アクセス権：</strong>処理されている個人データの確認</li>
-      <li><strong>訂正権：</strong>不正確なデータの修正</li>
-      <li><strong>削除権（忘れられる権利）：</strong>データの削除請求</li>
-      <li><strong>処理制限権：</strong>特定目的での処理の停止請求</li>
+      <li><strong>開示請求権：</strong> 個人データのコピーの請求</li>
+      <li><strong>訂正権：</strong> 不正確なデータの訂正</li>
+      <li><strong>削除権：</strong> データの削除の請求</li>
+      <li><strong>処理制限権：</strong> 処理の制限の請求</li>
     </ul>
-    <p>権利の行使またはお問い合わせは、下記の連絡先までご連絡ください。</p>
-    <div class="highlight warn">
-      <strong>カリフォルニア州の居住者（CCPA）：</strong>個人情報の販売に対するオプトアウト権を有します。
-      当社はお客様のデータを販売しておりません。
-    </div>
+    <p>権利の行使やお問い合わせは、下記の連絡先までご連絡ください。</p>
+    <div class="highlight"><strong>カリフォルニア州にお住まいの方（CCPA）：</strong>個人情報の販売を拒否する権利があります。当社はデータを販売していません。</div>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">👶</div>
-      <h2>9. 子供のプライバシー保護</h2>
+      <h2>9. お子さまのプライバシー</h2>
     </div>
-    <p>
-      Brivenは<strong>13歳未満</strong>（米国基準）または<strong>16歳未満</strong>（EU/EEA基準）の子供を対象としていません。
-      当社は子供の個人情報を意図的に収集することはありません。
-    </p>
-    <p>
-      子供が本アプリを使用したことを知った場合は、下記の連絡先までお知らせください。速やかに該当データを削除する措置を講じます。
-    </p>
+    <p>Brivenは13歳未満（米国）または16歳未満（EU/EEA）のお子さまを対象としていません。お子さまの個人情報を故意に収集することはありません。</p>
+    <p>お子さまが本アプリを使用したことがわかった場合は、すぐにご連絡ください。該当するデータを削除するための対応をいたします。</p>
   </section>
 
   <section class="section">
@@ -1214,35 +1042,18 @@
       <div class="section-icon">🔒</div>
       <h2>10. セキュリティ</h2>
     </div>
-    <p>
-      お客様の家計データはAppleのSwiftDataフレームワークを用いて保存され、端末のファイル
-      システム暗号化によって保護されています。
-    </p>
-    <p>
-      iCloud同期を有効にしている場合、データは転送中および保存中の両方でAppleのプライベート
-      CloudKitデータベース内でAppleの暗号化ポリシーに従い保護されます。お客様のデータが当社の
-      サーバーに送信されることはありません。
-    </p>
-    <p>
-      アプリロックを使用している場合、Face ID/Touch ID認証はAppleの<code>LocalAuthentication</code>
-      フレームワークと端末のSecure Enclaveによって完全に処理されます — 生体情報が端末の外に
-      出ることはなく、Brivenがこの情報にアクセスすることはありません。
-    </p>
+    <p>お金に関するデータはAppleのSwiftDataフレームワークで保存され、デバイスのファイルシステム暗号化によって保護されます。書き出したファイルはiOSのデータ保護を適用して作成され、共有後に削除されます。</p>
+    <p>iCloud同期を有効にすると、データはAppleの暗号化ポリシーのもと、通信中も保存時も暗号化されてAppleのプライベートなCloudKitデータベースに保存されます。データが当社のサーバーに送信されることはありません。</p>
+    <p>アプリロックを有効にすると、Face ID／Touch IDの認証はAppleのLocalAuthenticationフレームワークとデバイスのSecure Enclaveですべて処理されます。生体情報がデバイスから出ることはなく、Brivenがアクセスすることもありません。</p>
   </section>
 
   <section class="section">
     <div class="section-header">
       <div class="section-icon">🔄</div>
-      <h2>11. ポリシーの変更</h2>
+      <h2>11. 本ポリシーの変更</h2>
     </div>
-    <p>
-      本ポリシーは、法律の変更またはサービスの更新に伴い改定されることがあります。
-      重要な変更がある場合は、アプリ内通知または本ページを通じてお知らせします。
-    </p>
-    <p>
-      変更されたポリシーは、本ページに掲載された時点から効力を持ちます。
-      変更後も引き続き本アプリをご利用の場合は、改定されたポリシーに同意したものとみなされます。
-    </p>
+    <p>本ポリシーは、法令の改正やサービスの更新に伴い変更されることがあります。重要な変更は、アプリ内のお知らせまたは本ページでお知らせします。</p>
+    <p>変更は本ページに掲載した時点で有効となります。変更後も本アプリを使い続けることで、変更後のポリシーに同意したものとみなされます。</p>
   </section>
 
   <section class="section">
@@ -1250,55 +1061,314 @@
       <div class="section-icon">✉️</div>
       <h2>12. お問い合わせ</h2>
     </div>
-    <p>プライバシーポリシーに関するご質問や権利行使のご要望は、下記までご連絡ください。</p>
+    <p>本プライバシーポリシーに関するご質問や権利の行使については、下記までご連絡ください。</p>
     <div class="contact-card">
       <span class="icon">📧</span>
       <div>
-        <div class="label">メールアドレス</div>
+        <div class="label">メール</div>
         <div class="value">hoons.labs@gmail.com</div>
       </div>
     </div>
-    <p style="margin-top:16px; font-size:14px; color: var(--muted);">
-      営業日5日以内にご返答いたします。
-    </p>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">営業日5日以内にご返答いたします。</p>
   </section>
 
 </main>
 </div><!-- /content-ja -->
 
+<!-- ══════════════════════════════════════════════
+     TRADITIONAL CHINESE VERSION
+══════════════════════════════════════════════ -->
+<div lang-block="zh-Hant" id="content-zh-Hant">
+<main class="container">
+
+  <div class="meta-badge">
+    <span class="dot"></span>
+    最後更新：2026 年 10 月 27 日 &nbsp;·&nbsp; 生效日期：2026 年 10 月 27 日
+  </div>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📋</div>
+      <h2>1. 概述</h2>
+    </div>
+    <p><strong>Briven</strong>（以下稱「本 App」）是一款 iOS 手動記帳與預算管理 App——不綁定銀行、不匯入 CSV/OFX，也不需要帳號。你自行輸入收入來源、訂閱與支出，Briven 就會整理成清楚的每月全貌。</p>
+    <div class="highlight">Briven 是一款<strong>隱私優先</strong>的 App。你的財務資料儲存在你的裝置上，並可選擇只同步到你自己的私人 Apple iCloud。我們不經營任何後端伺服器，也看不到你的收入、支出或訂閱。匿名、彙總的使用統計只用於改善 App，絕不包含你的財務資料。</div>
+    <p>安裝或使用本 App，即表示你同意本隱私權政策。若不同意，請停止使用本 App。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">📊</div>
+      <h2>2. 我們收集的資訊</h2>
+    </div>
+    <p>本 App 收集或處理的資訊如下。</p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>資料類型</th>
+          <th>用途</th>
+          <th>儲存位置</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>財務資料</strong><br>收入來源、訂閱、支出、儲蓄目標、分類、付款方式、預算設定——全部由你手動輸入</td>
+          <td>App 核心功能</td>
+          <td><span class="tag tag-local">僅限裝置</span></td>
+        </tr>
+        <tr>
+          <td><strong>iCloud 同步資料</strong><br>上述財務資料，在你自己的 Apple 裝置之間同步</td>
+          <td>多裝置同步（免費）</td>
+          <td><span class="tag tag-icloud">Apple iCloud *</span></td>
+        </tr>
+        <tr>
+          <td><strong>Face ID / Touch ID</strong><br>可選用的 App 鎖定驗證</td>
+          <td>App 鎖定</td>
+          <td><span class="tag tag-no">不收集——僅在裝置上處理</span></td>
+        </tr>
+        <tr>
+          <td><strong>購買狀態</strong><br>你是否擁有可選購的一次性購買「Briven 終身版」（由 Apple 驗證）</td>
+          <td>解鎖付費功能</td>
+          <td><span class="tag tag-icloud">Apple App Store</span></td>
+        </tr>
+        <tr>
+          <td><strong>匯出的檔案</strong><br>你選擇從支出建立的 CSV/PDF 檔案</td>
+          <td>資料匯出（選用）</td>
+          <td><span class="tag tag-local">裝置——只分享到你選擇的地方</span></td>
+        </tr>
+        <tr>
+          <td><strong>匿名使用統計</strong><br>App 開啟、功能使用、當機診斷（不含個人身分資訊）</td>
+          <td>改善 App</td>
+          <td><span class="tag tag-third">Firebase Analytics / Crashlytics</span></td>
+        </tr>
+        <tr>
+          <td><strong>位置資訊</strong></td>
+          <td>不收集</td>
+          <td><span class="tag tag-no">不收集</span></td>
+        </tr>
+        <tr>
+          <td><strong>帳號／登入</strong></td>
+          <td>不收集</td>
+          <td><span class="tag tag-no">不收集</span></td>
+        </tr>
+        <tr>
+          <td><strong>銀行憑證／銀行連結</strong></td>
+          <td>不適用</td>
+          <td><span class="tag tag-no">從不要求</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:12px; font-size:13px; color:var(--muted);">* 僅在你的裝置已登入 iCloud 時適用。同步直接在你的裝置與 Apple 的私人 CloudKit 資料庫之間進行——本 App 開發者不會收到你資料的任何副本。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔥</div>
+      <h2>3. Firebase Analytics 與 Crashlytics</h2>
+    </div>
+    <p>Briven 使用 <strong>Firebase Analytics</strong> 與 <strong>Firebase Crashlytics</strong>（Google LLC）來了解 App 的使用情況並診斷當機。</p>
+    <p>這些工具只收集匿名、彙總的資料，例如：</p>
+    <ul>
+      <li>App 開啟頻率與使用時間</li>
+      <li>功能使用事件（例如：新增支出、開啟報表）</li>
+      <li>裝置類型、作業系統版本與 App 版本</li>
+      <li>當機紀錄與堆疊追蹤</li>
+      <li>國家／地區（由 IP 推估，非 GPS）</li>
+    </ul>
+    <div class="highlight">Firebase 絕不會收到你輸入的收入、支出、訂閱、分類或任何其他財務資料——這些資料不會離開你的裝置或你自己的 iCloud。統計資料只用於改善 App 的穩定性與功能設計，絕不出售或用於廣告。</div>
+    <p>關於 Firebase 如何處理資料，請參閱 <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 隱私權政策</a>。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">💳</div>
+      <h2>4. App 內購買（Apple）</h2>
+    </div>
+    <p>Briven 提供可選購的一次性購買<strong>「Briven 終身版」</strong>——不是訂閱制。付款完全由 Apple 透過 App Store 處理。</p>
+    <div class="highlight">我們絕不會收到你的姓名、電子郵件或付款資訊。本 App 在你的裝置上透過 Apple 的 StoreKit 確認購買狀態，回復購買也透過 Apple 進行。我們不使用任何第三方購買服務。</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <h2>5. 資訊的使用方式</h2>
+    </div>
+    <p>收集的資訊僅用於以下目的。</p>
+    <ul>
+      <li><strong>App 服務：</strong> 記錄你的收入、訂閱、支出與儲蓄目標，並整理成每月摘要與報表</li>
+      <li><strong>多裝置同步：</strong> 透過 iCloud 在你自己的 Apple 裝置之間同步財務資料</li>
+      <li><strong>App 鎖定：</strong> 在裝置上驗證 Face ID／Touch ID，保護 App 的存取</li>
+      <li><strong>購買：</strong> 透過 Apple 確認與回復可選購的「Briven 終身版」</li>
+      <li><strong>資料匯出：</strong> 只有在你點選匯出時才在裝置上建立 CSV 或 PDF 檔案，只傳送到你在分享選單中選擇的地方，之後刪除暫存副本</li>
+      <li><strong>小工具與控制中心：</strong> 只會開啟 App 的新增支出畫面，不會讀取或顯示你的財務資料</li>
+      <li><strong>改善：</strong> 透過 Firebase 了解功能使用情況並診斷當機，作為開發參考</li>
+    </ul>
+    <p>我們不會為了行銷目的，將你的財務資料或使用資料出售或分享給任何第三方。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔗</div>
+      <h2>6. 第三方服務</h2>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>服務</th>
+          <th>用途</th>
+          <th>隱私權政策</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Firebase Analytics</strong></td>
+          <td>用於改善 App 的匿名使用統計</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Firebase Crashlytics</strong></td>
+          <td>當機診斷</td>
+          <td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple iCloud (CloudKit)</strong></td>
+          <td>財務資料的免費多裝置同步（僅在登入 iCloud 時）</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+        <tr>
+          <td><strong>Apple App Store</strong></td>
+          <td>App 發佈與可選購的 App 內購買</td>
+          <td><a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">查看 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🗂️</div>
+      <h2>7. 資料保存與刪除</h2>
+    </div>
+    <ul>
+      <li><strong>財務資料（裝置）：</strong> 儲存在你的裝置上，刪除本 App 後即永久刪除。</li>
+      <li><strong>財務資料（iCloud）：</strong> 若使用 iCloud 同步，從一台裝置刪除本 App 並不會移除你私人 iCloud 中的副本——重新安裝後會自動回復。若要移除，請在刪除 App 前先於 App 內刪除紀錄，或前往<em>iOS 設定 → ［你的名稱］ → iCloud → 管理帳號儲存空間</em>確認。由於這些資料位於你自己的私人 iCloud，我們無法存取或代為刪除，但很樂意透過電子郵件協助你。</li>
+      <li><strong>購買資料：</strong> 由 Apple 管理，我們不另外保存任何購買紀錄。</li>
+      <li><strong>匯出的檔案：</strong> 你分享出去的檔案由你自行管理。分享選單關閉後，本 App 會立即刪除暫存副本。</li>
+      <li><strong>統計資料：</strong> Firebase Analytics 與 Crashlytics 依照 Google 的資料保存政策保存彙總、匿名的事件與當機資料。</li>
+    </ul>
+    <p>我們不會在任何我們管理的伺服器上保存你的財務資料副本。若你未使用 iCloud 同步，只要刪除本 App 就能完全移除所有資料。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">⚖️</div>
+      <h2>8. 你的權利</h2>
+    </div>
+    <p>依你所在地區，你可能享有以下權利。</p>
+    <ul>
+      <li><strong>查閱權：</strong> 要求取得你的個人資料副本</li>
+      <li><strong>更正權：</strong> 更正不正確的資料</li>
+      <li><strong>刪除權：</strong> 要求刪除你的資料</li>
+      <li><strong>限制處理權：</strong> 要求限制資料處理</li>
+    </ul>
+    <p>如需行使權利或有任何疑問，請透過下方聯絡方式與我們聯繫。</p>
+    <div class="highlight"><strong>加州居民（CCPA）：</strong>你有權拒絕個人資料被出售。我們不會出售你的資料。</div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">👶</div>
+      <h2>9. 兒童隱私</h2>
+    </div>
+    <p>Briven 並非以未滿 13 歲（美國）或 16 歲（歐盟／歐洲經濟區）的兒童為對象，我們不會故意收集兒童的個人資料。</p>
+    <p>若你得知有兒童使用本 App，請立即與我們聯絡，我們會採取適當措施刪除相關資料。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔒</div>
+      <h2>10. 安全性</h2>
+    </div>
+    <p>你的財務資料以 Apple 的 SwiftData 框架儲存，並受到裝置檔案系統加密的保護。匯出的檔案會在 iOS 資料保護下建立，並於分享後刪除。</p>
+    <p>啟用 iCloud 同步時，資料會依照 Apple 的加密政策，在傳輸與儲存時皆加密，並存放在 Apple 的私人 CloudKit 資料庫中。你的資料絕不會傳送到我們的伺服器。</p>
+    <p>啟用 App 鎖定時，Face ID／Touch ID 驗證完全由 Apple 的 LocalAuthentication 框架與裝置的 Secure Enclave 處理——你的生物辨識資料不會離開裝置，Briven 也無法存取。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <h2>11. 政策變更</h2>
+    </div>
+    <p>本政策可能因法規變更或服務更新而修訂。重大變更將透過 App 內通知或本頁面告知。</p>
+    <p>變更自公布於本頁面時生效。變更後繼續使用本 App，即表示你同意更新後的政策。</p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">✉️</div>
+      <h2>12. 聯絡我們</h2>
+    </div>
+    <p>如對本隱私權政策有任何疑問或欲行使權利，歡迎與我們聯絡。</p>
+    <div class="contact-card">
+      <span class="icon">📧</span>
+      <div>
+        <div class="label">電子郵件</div>
+        <div class="value">hoons.labs@gmail.com</div>
+      </div>
+    </div>
+    <p style="margin-top:16px; font-size:14px; color: var(--muted);">我們會在 5 個工作天內回覆。</p>
+  </section>
+
+</main>
+</div><!-- /content-zh-Hant -->
+
 <footer class="site-footer">
   <p>© 2026 Briven. All rights reserved.</p>
   <p style="margin-top:6px;">
-    <span id="footer-en">This policy is provided in English, Korean, and Japanese. In case of conflict, the English version prevails.</span>
-    <span id="footer-ko" style="display:none;">본 방침은 영어, 한국어, 일본어로 제공됩니다. 내용이 상충할 경우 영어 버전이 우선합니다.</span>
-    <span id="footer-ja" style="display:none;">本ポリシーは英語・韓国語・日本語で提供されています。内容に相違がある場合は、英語版が優先されます。</span>
+    <span id="footer-en">This policy is provided in English, Korean, Japanese, and Traditional Chinese. In case of conflict, the English version prevails.</span>
+    <span id="footer-ko" style="display:none;">본 방침은 영어, 한국어, 일본어, 중국어(번체)로 제공됩니다. 내용이 상충할 경우 영어 버전이 우선합니다.</span>
+    <span id="footer-ja" style="display:none;">本ポリシーは英語・韓国語・日本語・繁体字中国語で提供されています。内容に相違がある場合は、英語版が優先されます。</span>
+    <span id="footer-zh-Hant" style="display:none;">本政策提供英文、韓文、日文與繁體中文版本。若內容有所出入，以英文版為準。</span>
   </p>
 </footer>
 
 <script>
+  const LANGS = ['en','ko','ja','zh-Hant'];
+
   function setLang(lang) {
     document.querySelectorAll('[lang-block]').forEach(el => {
       el.classList.toggle('visible', el.id.endsWith('-' + lang));
     });
-    ['en','ko','ja'].forEach(l => {
+    LANGS.forEach(l => {
       document.getElementById('btn-' + l).classList.toggle('active', l === lang);
     });
     document.getElementById('footer-en').style.display = lang === 'en' ? '' : 'none';
     document.getElementById('footer-ko').style.display = lang === 'ko' ? '' : 'none';
     document.getElementById('footer-ja').style.display = lang === 'ja' ? '' : 'none';
+    document.getElementById('footer-zh-Hant').style.display = lang === 'zh-Hant' ? '' : 'none';
     document.documentElement.lang = lang;
-    localStorage.setItem('briven-lang', lang);
+    try { localStorage.setItem('briven-lang', lang); } catch (e) {}
+  }
+
+  // 브라우저(=앱에서 열면 기기) 언어 → 지원 언어로. 대만·홍콩·마카오 중국어는 번체.
+  function detectLang() {
+    for (const raw of (navigator.languages || [navigator.language || 'en'])) {
+      const l = raw.toLowerCase();
+      if (l.startsWith('ja')) return 'ja';
+      if (l.startsWith('ko')) return 'ko';
+      if (l.startsWith('zh') && (l.includes('hant') || l.endsWith('-tw') || l.endsWith('-hk') || l.endsWith('-mo'))) return 'zh-Hant';
+      if (l.startsWith('en')) return 'en';
+    }
+    return 'en';
   }
 
   (function () {
-    const params  = new URLSearchParams(window.location.search);
-    const urlLang = params.get('lang');
-    if (['en','ko','ja'].includes(urlLang)) { setLang(urlLang); return; }
-
-    const saved = localStorage.getItem('briven-lang');
-    if (['en','ko','ja'].includes(saved)) { setLang(saved); return; }
-
-    setLang('en');
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (LANGS.includes(urlLang)) { setLang(urlLang); return; }
+    let saved = null;
+    try { saved = localStorage.getItem('briven-lang'); } catch (e) {}
+    if (LANGS.includes(saved)) { setLang(saved); return; }
+    setLang(detectLang());
   })();
 </script>
 
