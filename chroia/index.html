@@ -150,7 +150,7 @@
 
   <div class="meta-badge">
     <span class="dot"></span>
-    <span>Effective: September 4, 2026</span>
+    <span>Effective: October 29, 2026</span>
   </div>
 
   <section class="section">
@@ -167,7 +167,7 @@
       <thead><tr><th>Data Type</th><th>Purpose</th><th>Storage</th></tr></thead>
       <tbody>
         <tr>
-          <td><strong>Photos</strong><br>Captured images</td>
+          <td><strong>Photos</strong><br>Captured images, and processed copies of photos you choose to import</td>
           <td>Core app functionality</td>
           <td><span class="tag tag-local">Your Photos Library</span></td>
         </tr>
@@ -177,7 +177,7 @@
           <td><span class="tag tag-local">Device only</span></td>
         </tr>
         <tr>
-          <td><strong>Anonymous Usage Events</strong><br>App open, screen views</td>
+          <td><strong>Anonymous Usage Events</strong><br>App open, screen views, and three in-app events: a locked look was previewed, a save with a locked look was attempted, Full Unlock was purchased (mechanism name and camera/import only)</td>
           <td>App quality &amp; stability improvement</td>
           <td><span class="tag tag-third">Firebase Analytics</span></td>
         </tr>
@@ -212,6 +212,7 @@
     <ul>
       <li>Photos are protected by whatever device-level security you already have configured (device passcode, Face ID / Touch ID, Photos app permissions) — Chroia adds no separate lock of its own.</li>
       <li>The App also stores the name of the mechanism used (e.g. "Riso Duotone", "Offset Newsprint") in the photo's standard EXIF/TIFF metadata, so it travels with the photo when you share or export it.</li>
+      <li>When you import a photo, you choose it in Apple's system photo picker; the App processes it entirely on your device and saves the result as a new photo in the "Chroia" album. Your original is never modified, and location (GPS) data from the original is not copied into the new photo.</li>
       <li>Media is never transmitted to any server we operate. We have no ability to view, copy, or retrieve your photos.</li>
     </ul>
     <div class="highlight">Your photos live <strong>only in your own Photos Library</strong>. Deleting the App does not delete photos already saved there — they remain exactly where iOS Photos keeps them, under your control.</div>
@@ -220,7 +221,7 @@
   <section class="section">
     <div class="section-header"><div class="section-icon">🔥</div><h2>4. Firebase Services</h2></div>
     <p>Chroia uses <strong>Firebase Analytics</strong> and <strong>Firebase Crashlytics</strong> (Google LLC) to understand app quality and stability.</p>
-    <p><strong>Firebase Analytics</strong> collects only Firebase's default, automatically-gathered events (such as app opens and screen views). The App does not send any custom event beyond this default collection.</p>
+    <p><strong>Firebase Analytics</strong> collects Firebase's default, automatically-gathered events (such as app opens and screen views) plus three anonymous in-app events used to understand how people try and unlock print processes: a locked print process was previewed, a save with a locked print process was attempted, and Full Unlock was purchased. These events carry only the print process name and whether the camera or photo import was used — never your photos, their contents, or any identifier of you.</p>
     <div class="highlight">All advertising-related consent signals (<code>ad_storage</code>, <code>ad_user_data</code>, <code>ad_personalization</code>) are permanently set to <strong>denied</strong>. Chroia shows no ads, does no ad tracking, and never requests App Tracking Transparency permission.</div>
     <p><strong>Firebase Crashlytics</strong> collects the following only when the App crashes:</p>
     <ul>
